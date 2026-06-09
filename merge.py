@@ -77,7 +77,7 @@ def main():
     db, new_count, expired_count = update_db(db, unique)
     save_db(DB_FILE, db)
 
-    export_all(unique)
+    export_all(normalized)
 
     stats = {
         "run_time": str(datetime.utcnow()),
