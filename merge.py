@@ -1,30 +1,29 @@
 import requests
-from bs4 import BeautifulSoup
 
-# صفحه‌ای که ۲۶ repo داخلشه
-INDEX_URL = "https://github.com/AvenCores/goida-vpn-configs"
+INDEX_REPO = "AvenCores/goida-vpn-configs"
 
-def get_repos():
+def get_all_repos():
+    url = f"https://api.github.com/repos/{INDEX_REPO}/contents"
     try:
-        r = requests.get(INDEX_URL, timeout=10)
-        soup = BeautifulSoup(r.text, "html.parser")
+        r = requests.get(url, timeout=10)
+        if r.status_code != 200:
+            return []
 
-        repos = set()
+        items = r.json()
 
-        for a in soup.find_all("a"):
-            href = a.get("href")
-            if href and "/tree/main" in href:
-                full = "https://github.com" + href
-                repo_name = full.replace("https://github.com/", "").replace("/tree/main", "")
-                repos.add(repo_name)
+        repos = []
 
-        return list(repos)
+        for i in items:
+            if i.get("type") == "dir":
+                repos.append(i["name"])
+
+        return repos
 
     except:
         return []
 
 def get_files(repo):
-    url = f"https://api.github.com/repos/{repo}/contents"
+    url = f"https://api.github.com/repos/{INDEX_REPO}/{repo}/contents"
     try:
         r = requests.get(url, timeout=10)
         if r.status_code == 200:
@@ -42,13 +41,13 @@ def fetch(url):
         pass
     return None
 
-def is_config(text):
+def is_valid(text):
     if not text:
         return False
 
     t = text.lower()
 
-    if "<html" in t or "doctype html" in t:
+    if "<html" in t:
         return False
 
     keywords = ["vmess", "vless", "trojan", "ss://", "ssr://"]
@@ -56,7 +55,7 @@ def is_config(text):
     return any(k in t for k in keywords)
 
 def main():
-    repos = get_repos()
+    repos = get_all_repos()
 
     results = []
     seen = set()
@@ -74,7 +73,7 @@ def main():
 
             content = fetch(url)
 
-            if is_config(content):
+            if is_valid(content):
                 if content not in seen:
                     seen.add(content)
                     results.append(content)
@@ -82,7 +81,7 @@ def main():
     with open("all.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(results))
 
-    print(f"Done: {len(results)} configs")
+    print("Done:", len(results))
 
 if __name__ == "__main__":
     main()
