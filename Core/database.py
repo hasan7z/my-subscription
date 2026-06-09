@@ -1,7 +1,7 @@
 import json
 import os
 from datetime import datetime
-from core.logger import log
+from Core.logger import log
 
 
 def load_db(path):
