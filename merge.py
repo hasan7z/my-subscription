@@ -1,18 +1,16 @@
 import os
-import sys
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from core.downloader import download_sources
-from core.parser import parse_sources
-from core.validator import validate_configs
-from core.normalizer import normalize
-from core.deduplicator import deduplicate_configs
-from core.database import load_db, update_db, save_db
-from core.exporter import export_all
-from core.logger import log
-
-import os
 import json
+from datetime import datetime
+
+# --- modules (بدون core) ---
+from downloader import download_sources
+from parser import parse_sources
+from validator import validate_configs
+from normalizer import normalize
+from deduplicator import deduplicate_configs
+from database import load_db, update_db, save_db
+from exporter import export_all
+from logger import log
 
 
 SOURCES_FILE = "sources/sources.txt"
@@ -58,7 +56,8 @@ def main():
         "configs_found": len(valid),
         "duplicates_removed": removed_dup,
         "new_configs": new_count,
-        "expired_removed": expired_count
+        "expired_removed": expired_count,
+        "run_time": str(datetime.utcnow())
     }
 
     save_stats(stats)
