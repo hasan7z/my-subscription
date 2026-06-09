@@ -1,6 +1,6 @@
 import requests
 import time
-from core.logger import log
+from Core.logger import log
 
 
 DEFAULT_TIMEOUT = 20
