@@ -2,66 +2,24 @@ import os
 from Core.logger import log
 
 
-def detect_protocol(config):
-    c = config.lower()
-
-    if c.startswith("vmess://"):
-        return "vmess"
-    if c.startswith("vless://"):
-        return "vless"
-    if c.startswith("trojan://"):
-        return "trojan"
-    if c.startswith("ss://"):
-        return "ss"
-    if c.startswith("ssr://"):
-        return "ssr"
-    if c.startswith("hy2://") or "hysteria" in c:
-        return "hy2"
-    if c.startswith("hysteria://"):
-        return "hysteria"
-    if c.startswith("tuic://"):
-        return "tuic"
-    if c.startswith("wg://") or "wireguard" in c:
-        return "wireguard"
-    if c.startswith("socks://"):
-        return "socks"
-    if c.startswith("http://") or c.startswith("https://"):
-        return "http"
-
-    return "others"
+OUTPUT_DIR = "output"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "all.txt")
 
 
-def export_all(configs, output_dir="output"):
-    os.makedirs(output_dir, exist_ok=True)
+def export_all(configs):
 
-    buckets = {
-        "all": [],
-        "vmess": [],
-        "vless": [],
-        "trojan": [],
-        "ss": [],
-        "ssr": [],
-        "hy2": [],
-        "hysteria": [],
-        "tuic": [],
-        "wireguard": [],
-        "socks": [],
-        "http": [],
-        "others": []
-    }
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    for c in configs:
-        proto = detect_protocol(c)
-        buckets["all"].append(c)
-        buckets[proto].append(c)
+    with open(
+        OUTPUT_FILE,
+        "w",
+        encoding="utf-8"
+    ) as f:
 
-    # نوشتن فایل‌ها
-    for name, items in buckets.items():
-        path = os.path.join(output_dir, f"{name}.txt")
+        for item in configs:
+            f.write(item.strip())
+            f.write("\n")
 
-        with open(path, "w", encoding="utf-8") as f:
-            f.write("\n".join(items))
-
-        log(f"[EXPORT] {name}.txt -> {len(items)}")
-
-    log("[EXPORT DONE]")
+    log(
+        f"[EXPORT] {len(configs)} configs -> {OUTPUT_FILE}"
+    )
