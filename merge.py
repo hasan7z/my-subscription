@@ -9,8 +9,7 @@ def get_all_files(repo):
     if r.status_code != 200:
         return []
 
-    data = r.json()
-    return data.get("tree", [])
+    return r.json().get("tree", [])
 
 def fetch(url):
     try:
@@ -19,18 +18,30 @@ def fetch(url):
             return r.text
     except:
         pass
-    return None
+    return ""
 
-def is_config(text):
+def extract_configs(text):
     if not text:
-        return False
+        return []
 
-    t = text.lower()
+    lines = text.splitlines()
+    configs = []
 
-    if "<html" in t:
-        return False
+    for line in lines:
+        line = line.strip()
 
-    return any(k in t for k in ["vmess", "vless", "trojan", "ss://", "ssr://"])
+        if not line:
+            continue
+
+        # حذف HTML
+        if "<html" in line.lower():
+            continue
+
+        # فقط خطوط کانفیگ
+        if any(k in line for k in ["vmess", "vless", "trojan", "ss://", "ssr://"]):
+            configs.append(line)
+
+    return configs
 
 def main():
     results = []
@@ -45,22 +56,25 @@ def main():
 
             path = f.get("path", "")
 
-            if not any(ext in path for ext in [".txt", ".sub", ".json", ".yaml", ""]):
+            # فقط فایل‌های قابل استفاده
+            if not any(ext in path for ext in [".txt", ".sub", ".json", ".yaml", ".md", ""]):
                 continue
 
             raw_url = f"https://raw.githubusercontent.com/{repo}/main/{path}"
 
             content = fetch(raw_url)
 
-            if is_config(content):
-                if content not in seen:
-                    seen.add(content)
-                    results.append(content)
+            configs = extract_configs(content)
+
+            for c in configs:
+                if c not in seen:
+                    seen.add(c)
+                    results.append(c)
 
     with open("all.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(results))
 
-    print("Done:", len(results))
+    print(f"Done: {len(results)} configs")
 
 if __name__ == "__main__":
     main()
