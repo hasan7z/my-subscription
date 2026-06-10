@@ -1,5 +1,6 @@
 from Core.logger import log
 
+
 VALID_PROTOCOLS = (
     "vmess://",
     "vless://",
@@ -16,31 +17,24 @@ VALID_PROTOCOLS = (
     "https://"
 )
 
+
 def validate_configs(configs):
 
     valid = []
-    seen = set()
 
-    for config in configs:
+    for c in configs:
 
-        if not config:
+        if not c:
             continue
 
-        config = config.strip()
+        c = c.strip()
 
-        if len(config) < 5:
+        if "<html" in c.lower():
             continue
 
-        if "<html" in config.lower():
-            continue
+        if any(c.startswith(p) for p in VALID_PROTOCOLS):
+            valid.append(c)
 
-        if not config.startswith(VALID_PROTOCOLS):
-            continue
-
-        if config not in seen:
-            seen.add(config)
-            valid.append(config)
-
-    log(f"[VALIDATE] valid={len(valid)}")
+    log(f"[VALIDATE] {len(valid)}/{len(configs)}")
 
     return valid
