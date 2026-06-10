@@ -5,10 +5,6 @@ from Core.logger import log
 
 
 def parse_sources(raw_sources):
-    """
-    ورودی: dict {url: content}
-    خروجی: list of raw configs
-    """
 
     all_configs = []
 
@@ -19,53 +15,49 @@ def parse_sources(raw_sources):
 
         configs = []
 
-        # JSON source
-        if content.strip().startswith("{") or content.strip().startswith("["):
+        content_str = content.strip()
+
+        # JSON
+        if content_str.startswith("{") or content_str.startswith("["):
             try:
-                data = json.loads(content)
+                data = json.loads(content_str)
 
-                # اگر لیست URL بود
                 if isinstance(data, list):
-                    for item in data:
-                        if isinstance(item, str):
-                            configs.append(item)
+                    configs.extend([x for x in data if isinstance(x, str)])
 
-                # اگر dict بود
                 elif isinstance(data, dict):
                     for v in data.values():
                         if isinstance(v, str):
                             configs.append(v)
 
-                log(f"[PARSE] JSON -> {url}")
+                log(f"[PARSE] JSON {url}")
 
-            except Exception:
+            except:
                 pass
 
-        # Base64 detection
-        elif len(content) > 100 and not "<html" in content.lower():
+        # Base64
+        elif len(content_str) > 100 and "<html" not in content_str.lower():
             try:
-                decoded = base64.b64decode(content).decode("utf-8", errors="ignore")
+                decoded = base64.b64decode(content_str).decode("utf-8", errors="ignore")
                 configs.extend(decoded.splitlines())
-                log(f"[PARSE] BASE64 -> {url}")
+                log(f"[PARSE] BASE64 {url}")
 
-            except Exception:
+            except:
                 pass
 
-        # HTML filter
-        elif "<html" in content.lower():
-            log(f"[SKIP] HTML ignored -> {url}")
-            continue
-
-        # Plain text
+        # Text
         else:
-            configs.extend(content.splitlines())
-            log(f"[PARSE] TEXT -> {url}")
+            configs.extend(content_str.splitlines())
+            log(f"[PARSE] TEXT {url}")
 
         all_configs.extend(configs)
 
-    # پاکسازی اولیه
-    cleaned = [c.strip() for c in all_configs if c and len(c.strip()) > 5]
+    cleaned = [
+        c.strip()
+        for c in all_configs
+        if c and len(c.strip()) > 5
+    ]
 
-    log(f"[PARSE DONE] total={len(cleaned)}")
+    log(f"[PARSE DONE] {len(cleaned)}")
 
     return cleaned
