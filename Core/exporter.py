@@ -77,3 +77,41 @@ def export_best(configs, name="Best100.txt"):
     log(
         f"[BEST EXPORT] {name} total={len(configs)}"
     )
+def export_best_sets(best_sets):
+
+    os.makedirs(
+        OUTPUT_DIR,
+        exist_ok=True
+    )
+
+    for n, configs in best_sets.items():
+
+        path = os.path.join(
+
+            OUTPUT_DIR,
+
+            f"Best{n}.txt"
+
+        )
+
+        with open(
+
+            path,
+
+            "w",
+
+            encoding="utf-8"
+
+        ) as f:
+
+            f.write(
+
+                "\n".join(configs)
+
+            )
+
+        log(
+
+            f"[BEST {n}] {len(configs)}"
+
+        )
