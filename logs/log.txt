@@ -210,3 +210,33 @@
 [2026-06-10T17:19:13.986853] [NEW] 5417
 [2026-06-10T17:19:13.986899] [EXPIRED] 0
 [2026-06-10T17:19:13.986929] ===== RUN END =====
+[2026-06-10T17:46:06.393332] ===== RUN START =====
+[2026-06-10T17:46:09.590813] [DOWNLOAD DONE] success=39 total=39
+[2026-06-10T17:46:09.628391] [PARSE] BASE64 https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt
+[2026-06-10T17:46:09.650000] [PARSE] BASE64 https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+[2026-06-10T17:46:09.656918] [PARSE] BASE64 https://github.com/Mr-Meshky/vify/raw/refs/heads/main/configs/vless.txt
+[2026-06-10T17:46:09.677663] [PARSE] JSON https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/source/config/urls.json
+[2026-06-10T17:46:09.684741] [PARSE] BASE64 https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BASE64/BLACK_FULL.txt
+[2026-06-10T17:46:09.695931] [PARSE] BASE64 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
+[2026-06-10T17:46:09.696028] [PARSE] BASE64 https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub
+[2026-06-10T17:46:09.696395] [PARSE] BASE64 https://raw.githubusercontent.com/acymz/AutoVPN/refs/heads/main/data/V2.txt
+[2026-06-10T17:46:09.696497] [PARSE] BASE64 https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/refs/heads/main/mix/sub.html
+[2026-06-10T17:46:09.696732] [PARSE] BASE64 https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt
+[2026-06-10T17:46:09.699464] [PARSE] BASE64 https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt
+[2026-06-10T17:46:09.705969] [PARSE] BASE64 https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/vless
+[2026-06-10T17:46:09.706152] [PARSE] BASE64 https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt
+[2026-06-10T17:46:09.741231] [PARSE] BASE64 https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt
+[2026-06-10T17:46:09.745947] [PARSE] BASE64 https://raw.githubusercontent.com/yebekhe/vpn-fail/refs/heads/main/sub-link.txt
+[2026-06-10T17:46:09.763040] [PARSE] BASE64 https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
+[2026-06-10T17:46:09.764540] [PARSE DONE] 11556
+[2026-06-10T17:46:09.775514] [VALIDATE] 11423/11556
+[2026-06-10T17:46:09.820158] [NORMALIZE] 11423 configs cleaned
+[2026-06-10T17:46:09.836780] [DEDUP] unique=11394 removed=0
+[2026-06-10T17:46:09.850544] [SORT] total=11394
+[2026-06-10T17:46:09.902106] [DB] total=29052 new=5863 expired=0
+[2026-06-10T17:46:10.089620] [EXPORT] all=11394 archive=11394
+[2026-06-10T17:46:10.089870] [AUTO SOURCE] 1
+[2026-06-10T17:46:10.089912] [FINAL] 11394
+[2026-06-10T17:46:10.089943] [NEW] 5863
+[2026-06-10T17:46:10.089969] [EXPIRED] 0
+[2026-06-10T17:46:10.089995] ===== RUN END =====
