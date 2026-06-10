@@ -41,11 +41,18 @@ STATS_FILE = "stats/stats.json"
 # LOAD SOURCES
 # =========================
 def load_sources():
+    print("SOURCES_FILE =", SOURCES_FILE)
+    print("EXISTS =", os.path.exists(SOURCES_FILE))
+
     if not os.path.exists(SOURCES_FILE):
         return []
 
     with open(SOURCES_FILE, "r", encoding="utf-8") as f:
-        return [x.strip() for x in f if x.strip()]
+        data = [x.strip() for x in f if x.strip()]
+
+    print("LINES =", len(data))
+
+    return data
 
 
 # =========================
