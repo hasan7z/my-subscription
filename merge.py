@@ -32,7 +32,7 @@ from Core.logger import log
 # =========================
 # PATHS
 # =========================
-SOURCES_FILE = "sources/sources.txt"
+SOURCES_FILE = "Sources/Sources.txt"
 DB_FILE = "database/database.json"
 STATS_FILE = "stats/stats.json"
 
