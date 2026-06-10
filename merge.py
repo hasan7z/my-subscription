@@ -1,56 +1,48 @@
-from datetime import datetime
+from Core.source_cleaner import clean
+from Core.source_merger import merge
 
 from Core.downloader import download_sources
+from Core.auto_source_manager import process
+
 from Core.engine import execute
+
 from Core.database import (
     load_db,
     update_db,
     save_db
 )
+
 from Core.exporter import export_all
-from Core.final_stats import save as save_final_stats
+
+from Core.final_stats import save
+
 from Core.logger import log
 
 
-SOURCES_FILE = "Sources/Sources.txt"
 DB_FILE = "database/database.json"
-
-
-def load_sources():
-
-    with open(
-        SOURCES_FILE,
-        "r",
-        encoding="utf-8"
-    ) as f:
-
-        return [
-            x.strip()
-            for x in f
-            if x.strip()
-        ]
 
 
 def main():
 
     log("===== RUN START =====")
 
-    sources = load_sources()
+    clean()
+
+    sources = merge()
 
     db = load_db(DB_FILE)
 
     raw = download_sources(sources)
 
-    result = execute(
-        raw,
-        db
-    )
+    added = process(raw)
 
-    final_configs = result["final"]
+    result = execute(raw, db)
 
-    db, new_count, expired_count = update_db(
+    final = result["final"]
+
+    db, new_count, expired = update_db(
         db,
-        final_configs
+        final
     )
 
     save_db(
@@ -59,20 +51,30 @@ def main():
     )
 
     export_all(
-        final_configs
+        final
     )
 
-    save_final_stats(
+    save(
         len(sources),
         len(result["parsed"]),
         len(result["valid"]),
-        len(final_configs)
+        len(final)
     )
 
     log(
-        f"[DONE] total={len(final_configs)} "
-        f"new={new_count} "
-        f"expired={expired_count}"
+        f"[AUTO SOURCE] {added}"
+    )
+
+    log(
+        f"[FINAL] {len(final)}"
+    )
+
+    log(
+        f"[NEW] {new_count}"
+    )
+
+    log(
+        f"[EXPIRED] {expired}"
     )
 
     log("===== RUN END =====")
