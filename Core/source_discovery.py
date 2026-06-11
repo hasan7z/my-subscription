@@ -16,21 +16,21 @@ def discover(text):
     for url in PATTERN.findall(text):
 
         url = url.strip()
-        
+
         if len(url) > 500:
             continue
 
-if "ocsp" in url:
-    continue
+        if "ocsp" in url:
+            continue
 
-if "crl" in url:
-    continue
+        if "crl" in url:
+            continue
 
-if "ldap" in url:
-    continue
+        if "ldap" in url:
+            continue
 
-if ".crt" in url:
-    continue
+        if ".crt" in url:
+            continue
 
         if "github.com" in url and "/blob/" in url:
 
