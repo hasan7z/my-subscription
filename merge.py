@@ -12,7 +12,14 @@ from Core.database import (
     save_db
 )
 
-from Core.exporter import export_all
+from Core.exporter import (
+    export_all,
+    export_best_sets
+)
+
+from Core.best_manager import (
+    build_best
+)
 
 from Core.final_stats import save
 
@@ -71,9 +78,18 @@ def main():
         db
     )
 
-    # خروجی ها
+    # خروجی اصلی
     export_all(
         final
+    )
+
+    # خروجی Best ها
+    best_sets = build_best(
+        db
+    )
+
+    export_best_sets(
+        best_sets
     )
 
     # آمار
