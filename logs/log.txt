@@ -1702,3 +1702,43 @@
 [2026-06-11T23:23:04.348553] [NEW] 6561
 [2026-06-11T23:23:04.348605] [EXPIRED] 0
 [2026-06-11T23:23:04.348642] ===== RUN END =====
+[2026-06-11T23:36:41.244230] ===== RUN START =====
+[2026-06-11T23:36:43.563629] [DOWNLOAD DONE] success=39 total=39
+[2026-06-11T23:36:43.610230] [PARSE] BASE64 https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt
+[2026-06-11T23:36:43.610400] [PARSE] BASE64 https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt
+[2026-06-11T23:36:43.633060] [PARSE] BASE64 https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
+[2026-06-11T23:36:43.635810] [PARSE] TEXT https://github.com/MatinGhanbari/v2ray-configs
+[2026-06-11T23:36:43.641710] [PARSE] BASE64 https://github.com/Mr-Meshky/vify/raw/refs/heads/main/configs/vless.txt
+[2026-06-11T23:36:43.643576] [PARSE] BASE64 https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/raw/refs/heads/main/url_work.txt
+[2026-06-11T23:36:43.651883] [PARSE] JSON https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/source/config/urls.json
+[2026-06-11T23:36:43.661112] [PARSE] BASE64 https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BASE64/BLACK_FULL.txt
+[2026-06-11T23:36:43.666445] [PARSE] BASE64 https://raw.githubusercontent.com/MahsaNetConfigTopic/config/refs/heads/main/xray_final.txt
+[2026-06-11T23:36:43.673197] [PARSE] BASE64 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
+[2026-06-11T23:36:43.673259] [PARSE] BASE64 https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub
+[2026-06-11T23:36:43.673772] [PARSE] BASE64 https://raw.githubusercontent.com/acymz/AutoVPN/refs/heads/main/data/V2.txt
+[2026-06-11T23:36:43.673887] [PARSE] BASE64 https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/refs/heads/main/mix/sub.html
+[2026-06-11T23:36:43.674071] [PARSE] BASE64 https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt
+[2026-06-11T23:36:43.676788] [PARSE] BASE64 https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt
+[2026-06-11T23:36:43.683789] [PARSE] BASE64 https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/vless
+[2026-06-11T23:36:43.683924] [PARSE] BASE64 https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt
+[2026-06-11T23:36:43.722180] [PARSE] BASE64 https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt
+[2026-06-11T23:36:43.727089] [PARSE] BASE64 https://raw.githubusercontent.com/yebekhe/vpn-fail/refs/heads/main/sub-link.txt
+[2026-06-11T23:36:43.745351] [PARSE] BASE64 https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
+[2026-06-11T23:36:43.747556] [PARSE DONE] 14497
+[2026-06-11T23:36:43.762164] [VALIDATE] 12935/14497
+[2026-06-11T23:36:43.812095] [NORMALIZE] 12935 configs cleaned
+[2026-06-11T23:36:43.830586] [DEDUP] unique=12899 removed=0
+[2026-06-11T23:36:43.847318] [SORT] total=12899
+[2026-06-11T23:36:43.971690] [DB] total=93195 new=11947 expired=0
+[2026-06-11T23:36:44.693729] [EXPORT] all=12899 archive=75619
+[2026-06-11T23:36:44.744496] [BEST 10] 10
+[2026-06-11T23:36:44.744595] [BEST 20] 20
+[2026-06-11T23:36:44.744687] [BEST 50] 50
+[2026-06-11T23:36:44.744819] [BEST 100] 100
+[2026-06-11T23:36:44.745064] [BEST 500] 500
+[2026-06-11T23:36:44.745398] [BEST 1000] 1000
+[2026-06-11T23:36:44.745586] [AUTO SOURCE] 37
+[2026-06-11T23:36:44.745619] [FINAL] 12899
+[2026-06-11T23:36:44.745644] [NEW] 11947
+[2026-06-11T23:36:44.745666] [EXPIRED] 0
+[2026-06-11T23:36:44.745690] ===== RUN END =====
