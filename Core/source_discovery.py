@@ -16,6 +16,7 @@ def discover(text):
     for url in PATTERN.findall(text):
 
         url = url.strip()
+        
         if len(url) > 500:
             continue
 
