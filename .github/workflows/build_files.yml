@@ -1,0 +1,28 @@
+name: Build Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Run builders
+        run: |
+          python build_test_configs.py
+          python build_config_health.py
+      
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Core/test_configs.py Core/config_health.py
+          git commit -m "Build config files" || echo "No changes"
+          git push
