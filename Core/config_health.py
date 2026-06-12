@@ -1,7 +1,7 @@
 import json
 import os
 
-FILE = "Database/config_health.json"
+FILE = "database/config_health.json"
 
 
 def load():
