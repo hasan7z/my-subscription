@@ -25,6 +25,12 @@ from Core.final_stats import save
 
 from Core.logger import log
 
+from Core.health_manager import (
+    load as load_health,
+    save as save_health,
+    update as update_health
+)
+
 
 DB_FILE = "database/database.json"
 
@@ -33,20 +39,24 @@ def main():
 
     log("===== RUN START =====")
 
-    # آماده سازی سورس ها
     clean()
+
     sources = merge()
 
-    # بارگذاری دیتابیس
-    db = load_db(DB_FILE)
+    db = load_db(
+        DB_FILE
+    )
 
-    # دانلود
-    raw = download_sources(sources)
+    health = load_health()
 
-    # کشف سورس های جدید
-    added = process(raw)
+    raw = download_sources(
+        sources
+    )
 
-    # اجرای Engine
+    added = process(
+        raw
+    )
+
     result = execute(
         raw,
         db
@@ -67,7 +77,6 @@ def main():
         []
     )
 
-    # بروزرسانی دیتابیس
     db, new_count, expired = update_db(
         db,
         final
@@ -78,12 +87,10 @@ def main():
         db
     )
 
-    # خروجی اصلی
     export_all(
         final
     )
 
-    # خروجی Best ها
     best_sets = build_best(
         db
     )
@@ -92,7 +99,29 @@ def main():
         best_sets
     )
 
-    # آمار
+    for url, content in raw.items():
+
+        ok = bool(content)
+
+        count = 0
+
+        if content:
+
+            count = content.count(
+                "\n"
+            ) + 1
+
+        health = update_health(
+            url,
+            ok,
+            count,
+            health
+        )
+
+    save_health(
+        health
+    )
+
     save(
         len(sources),
         len(parsed),
@@ -100,7 +129,6 @@ def main():
         len(final)
     )
 
-    # لاگ
     log(
         f"[AUTO SOURCE] {added}"
     )
@@ -117,7 +145,9 @@ def main():
         f"[EXPIRED] {expired}"
     )
 
-    log("===== RUN END =====")
+    log(
+        "===== RUN END ====="
+    )
 
 
 if __name__ == "__main__":
