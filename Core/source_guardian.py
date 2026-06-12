@@ -6,15 +6,12 @@ from Core.logger import log
 HEALTH_FILE = "database/sources_health.json"
 BLACKLIST_FILE = "database/source_blacklist.txt"
 ACTIVE_SOURCES_FILE = "Sources/sources.txt"
+MAX_SOURCES_LIMIT = 50  # 🚨 محدودیت سخت: حداکثر ۵۰ لینک در فایل سورس
 
 def normalize_url(url):
-    """تبدیل تمام لینک‌های آینه‌ای گیت‌هاب به یک فرمت استاندارد raw"""
     url = url.strip().rstrip("/")
-    # تبدیل لینک‌های blob گیت‌هاب به raw
     url = re.sub(r'github\.com/([^/]+/[^/]+)/blob/(.+)', r'raw.githubusercontent.com/\1/\2', url)
-    # تبدیل لینک‌های jsdelivr به raw
     url = re.sub(r'cdn\.jsdelivr\.net/gh/([^/]+/[^/]+)@(.+)', r'raw.githubusercontent.com/\1/\2', url)
-    # حذف پارامترهای اضافی URL
     parsed = urlparse(url)
     return f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
 
@@ -46,7 +43,6 @@ def evaluate_sources(sources_results):
     for url, result in sources_results.items():
         norm_url = normalize_url(url)
         if norm_url in blacklist: continue
-        
         if norm_url not in health:
             health[norm_url] = {"success": 0, "fail": 0, "last_check": None, "total_valid": 0}
             
@@ -61,15 +57,15 @@ def evaluate_sources(sources_results):
             entry["fail"] += 1
             entry["success"] = 0
             
-        if entry["fail"] >= 3:
+        if entry["fail"] >= 2: # 🚨 حساس‌تر شد: با ۲ بار شکست بن می‌شود
             blacklist.add(norm_url)
             if norm_url in health: del health[norm_url]
             banned_count += 1
-            log(f"🚫 Blacklisted source (3 fails): {norm_url}")
+            log(f"🚫 Blacklisted source (2 fails): {norm_url}")
             
     save_health(health)
     save_blacklist(blacklist)
-    log(f"✅ Source Guardian: {banned_count} sources moved to blacklist.")
+    log(f"✅ Source Guardian: {banned_count} sources blacklisted.")
 
 def clean_active_sources():
     if not os.path.exists(ACTIVE_SOURCES_FILE): return
@@ -78,16 +74,24 @@ def clean_active_sources():
         lines = f.readlines()
         
     blacklist = load_blacklist()
-    clean_urls = set()
+    health = load_health()
+    scored_sources = []
     
     for line in lines:
         norm_url = normalize_url(line)
-        # فقط اگر در لیست سیاه نباشد و خالی نباشد اضافه کن
         if norm_url and norm_url.startswith("http") and norm_url not in blacklist:
-            clean_urls.add(norm_url)
+            # محاسبه امتیاز سلامت سورس
+            h = health.get(norm_url, {"success": 0, "fail": 0})
+            # فرمول امتیاز: هر موفقیت +۱۰، هر شکست -۲۰
+            score = (h["success"] * 10) - (h["fail"] * 20)
+            scored_sources.append((score, norm_url))
             
+    # 🚨 مرتب‌سازی بر اساس امتیاز و نگهداری فقط ۵۰ تای برتر
+    scored_sources.sort(key=lambda x: x[0], reverse=True)
+    top_sources = [item[1] for item in scored_sources[:MAX_SOURCES_LIMIT]]
+    
     with open(ACTIVE_SOURCES_FILE, "w", encoding="utf-8") as f:
-        for url in sorted(list(clean_urls)):
+        for url in top_sources:
             f.write(url + "\n")
             
-    log(f"🧹 Cleaned active sources: {len(lines)} -> {len(clean_urls)} (Removed mirrors & blacklisted)")
+    log(f"🧹 Sources trimmed: {len(lines)} -> {len(top_sources)} (Hard limit: {MAX_SOURCES_LIMIT})")
