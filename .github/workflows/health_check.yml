@@ -16,7 +16,7 @@ jobs:
           python-version: "3.11"
       
       - name: Run Parallel Health Check
-        run:  python install_health.py
+        run:  python -m Core.health_checker
       
       - name: Commit Results
         run: |
