@@ -41,6 +41,13 @@ def build_best(db):
         if "config" not in info:
             continue
 
+config = info["config"]
+
+if not config.startswith(
+    ALLOWED_PROTOCOLS
+):
+    continue
+    
         score = info.get(
             "score",
             0
