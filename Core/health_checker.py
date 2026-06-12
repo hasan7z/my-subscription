@@ -1,4 +1,5 @@
-import json, os, time, socket, re, base64
+import json, os, time, socket, base64
+from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from Core.logger import log
@@ -7,16 +8,18 @@ def extract_addr_port(cfg):
     try:
         cfg = cfg.strip()
         if cfg.startswith("vmess://"):
-            data = json.loads(base64.b64decode(cfg[8:]).decode())
-            return data.get("add"), data.get("port")
-        for p in ["vless://", "trojan://", "ss://", "hy2://", "hysteria://", "tuic://"]:
-            if cfg.startswith(p):
-                m = re.search(rf"{re.escape(p)}[^@]+@([^:]+):(\\d+)", cfg)
-                if m: return m.group(1), m.group(2)
-        if cfg.startswith("ssr://"):
-            dec = base64.b64decode(cfg[6:]).decode()
-            parts = dec.split(":")
-            if len(parts) >= 2: return parts[0], parts[1]
+            b64 = cfg[8:]
+            b64 += "=" * ((4 - len(b64) % 4) % 4)
+            data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
+            addr = data.get("add") or data.get("address") or data.get("server")
+            return str(addr), str(data.get("port"))
+        if "://" in cfg:
+            p = urlparse(cfg)
+            addr, port = p.hostname, p.port
+            if not addr and "@" in p.netloc:
+                parts = p.netloc.split("@")[-1].split(":")
+                if len(parts) == 2: addr, port = parts[0], parts[1]
+            if addr and port: return str(addr), str(port)
     except: pass
     return None, None
 def worker(args):
@@ -29,18 +32,14 @@ def worker(args):
         sock.settimeout(TIMEOUT)
         sock.connect((addr, int(port)))
         sock.close()
-        ms = (time.time() - t0) * 1000
-        return h, True, ms, "open"
-    except socket.timeout: return h, False, 0, "timeout"
-    except ConnectionRefusedError: return h, False, 0, "refused"
-    except Exception as e: return h, False, 0, str(e)
+        return h, True, (time.time() - t0) * 1000, "open"
+    except: return h, False, 0, "fail"
 def main():
     if not os.path.exists(DB_FILE): return log("DB not found")
     with open(DB_FILE, "r", encoding="utf-8") as f: db = json.load(f)
     cutoff = datetime.now() - timedelta(hours=24)
-    untested = [(h, i) for h, i in db.items() if not i.get("last_test") or datetime.fromisoformat(i.get("last_test")) < cutoff]
-    targets = untested[:CHUNK]
-    log(f"Testing {len(targets)} configs (Dynamic TCP, parallel={WORKERS})...")
+    targets = [(h, i) for h, i in db.items() if not i.get("last_test") or datetime.fromisoformat(i.get("last_test")) < cutoff][:CHUNK]
+    log(f"Testing {len(targets)} configs...")
     ok_cnt, fail_cnt, avg_ms = 0, 0, 0.0
     health_db = json.load(open(HEALTH_FILE, "r", encoding="utf-8")) if os.path.exists(HEALTH_FILE) else {}
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
@@ -51,15 +50,11 @@ def main():
             entry = health_db.get(h, {"success": 0, "fail": 0, "history": [], "last_test": None})
             entry["last_test"] = now
             if ok:
-                ok_cnt += 1
-                avg_ms += ms
-                entry["success"] += 1
+                ok_cnt += 1; avg_ms += ms; entry["success"] += 1
                 entry["history"].append(ms)
                 if len(entry["history"]) > 30: entry["history"] = entry["history"][-30:]
             else:
-                fail_cnt += 1
-                entry["fail"] += 1
-                entry["history"].append(9999)
+                fail_cnt += 1; entry["fail"] += 1; entry["history"].append(9999)
                 if len(entry["history"]) > 30: entry["history"] = entry["history"][-30:]
             health_db[h] = entry
     if ok_cnt: avg_ms /= ok_cnt
