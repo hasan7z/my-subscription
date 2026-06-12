@@ -1,0 +1,125 @@
+name: Debug Health Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 1. Check if files exist
+        run: |
+          echo "=== Checking files ==="
+          ls -lh Core/health_checker.py || echo "❌ health_checker.py NOT FOUND"
+          ls -lh Core/smart_best.py || echo "❌ smart_best.py NOT FOUND"
+          ls -lh database/database.json || echo "❌ database.json NOT FOUND"
+          echo "=== First 3 lines of database.json ==="
+          head -n 3 database/database.json
+
+      - name: 2. Run merge.py first
+        run: |
+          echo "=== Running merge.py ==="
+          python merge.py || echo "❌ merge.py FAILED"
+
+      - name: 3. Debug Health Checker (Detailed Logs)
+        run: |
+          echo "=== Running health_checker with DEBUG ==="
+          python3 << 'EOF'
+          import json, os, time, socket, base64
+          from urllib.parse import urlparse
+          from datetime import datetime
+          
+          DB_FILE = "database/database.json"
+          
+          def extract_addr_port(cfg):
+              try:
+                  cfg = cfg.strip()
+                  if cfg.startswith("vmess://"):
+                      b64 = cfg[8:] + "=" * ((4 - len(cfg[8:]) % 4) % 4)
+                      data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
+                      return str(data.get("add") or data.get("address")), str(data.get("port"))
+                  if "://" in cfg:
+                      p = urlparse(cfg)
+                      addr, port = p.hostname, p.port
+                      if not addr and "@" in p.netloc:
+                          parts = p.netloc.split("@")[-1].split(":")
+                          if len(parts) == 2:
+                              addr, port = parts[0], parts[1]
+                      if addr and port:
+                          return str(addr), str(port)
+              except Exception as e:
+                  pass
+              return None, None
+          
+          print("📂 Loading database...")
+          with open(DB_FILE, "r", encoding="utf-8") as f:
+              db = json.load(f)
+          
+          print(f"📊 Total configs in DB: {len(db)}")
+          
+          # بررسی ۱۰ کانفیگ اول
+          print("\n=== DEBUG: Testing first 10 configs ===")
+          tested = 0
+          ok_count = 0
+          fail_count = 0
+          
+          for i, (h, info) in enumerate(list(db.items())[:10]):
+              cfg = info.get("config", "")
+              addr, port = extract_addr_port(cfg)
+              last_test = info.get("last_test")
+              success = info.get("success", 0)
+              fail = info.get("fail", 0)
+              
+              print(f"\n[{i+1}] Hash: {h[:16]}...")
+              print(f"    Config preview: {cfg[:50]}...")
+              print(f"    Extracted: {addr}:{port}")
+              print(f"    Last test: {last_test}")
+              print(f"    Success: {success}, Fail: {fail}")
+              
+              if addr and port:
+                  try:
+                      t0 = time.time()
+                      sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                      sock.settimeout(3)
+                      sock.connect((addr, int(port)))
+                      sock.close()
+                      ms = (time.time() - t0) * 1000
+                      print(f"    ✅ TCP CONNECT SUCCESS: {ms:.1f}ms")
+                      ok_count += 1
+                  except socket.timeout:
+                      print(f"    ❌ TIMEOUT")
+                      fail_count += 1
+                  except ConnectionRefusedError:
+                      print(f"    ❌ CONNECTION REFUSED")
+                      fail_count += 1
+                  except Exception as e:
+                      print(f"    ❌ ERROR: {e}")
+                      fail_count += 1
+              else:
+                  print(f"    ❌ NO ADDR/PORT EXTRACTED")
+                  fail_count += 1
+              
+              tested += 1
+          
+          print(f"\n=== SUMMARY ===")
+          print(f"Tested: {tested}")
+          print(f"OK: {ok_count}")
+          print(f"FAIL: {fail_count}")
+          print(f"Success Rate: {ok_count/tested*100:.1f}%" if tested > 0 else "N/A")
+          EOF
+
+      - name: 4. Show database sample
+        run: |
+          echo "=== Sample config from database ==="
+          python3 -c "
+          import json
+          with open('database/database.json', 'r', encoding='utf-8') as f:
+              db = json.load(f)
+          sample = list(db.values())[0]
+          print('Config:', sample.get('config', '')[:100])
+          print('Success:', sample.get('success', 0))
+          print('Fail:', sample.get('fail', 0))
+          print('Last test:', sample.get('last_test'))
+          "
