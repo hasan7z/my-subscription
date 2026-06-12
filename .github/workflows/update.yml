@@ -1,4 +1,4 @@
-name: Smart Complete Update
+name: Complete Smart Update
 
 on:
   schedule:
@@ -11,184 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: 1. Create Source Guardian
-        run: |
-          mkdir -p Core database
-          printf '%s\n' \
-          'import json, os' \
-          'from datetime import datetime' \
-          'from Core.logger import log' \
-          'HEALTH_FILE = "database/sources_health.json"' \
-          'BLACKLIST_FILE = "database/source_blacklist.txt"' \
-          'ACTIVE_SOURCES_FILE = "Sources/sources.txt"' \
-          'def load_health():' \
-          '    if not os.path.exists(HEALTH_FILE): return {}' \
-          '    try:' \
-          '        with open(HEALTH_FILE, "r", encoding="utf-8") as f: return json.load(f)' \
-          '    except: return {}' \
-          'def save_health(data):' \
-          '    os.makedirs("database", exist_ok=True)' \
-          '    with open(HEALTH_FILE, "w", encoding="utf-8") as f: json.dump(data, f, indent=2, ensure_ascii=False)' \
-          'def load_blacklist():' \
-          '    if not os.path.exists(BLACKLIST_FILE): return set()' \
-          '    with open(BLACKLIST_FILE, "r", encoding="utf-8") as f: return set(line.strip() for line in f if line.strip())' \
-          'def save_blacklist(blacklist):' \
-          '    os.makedirs("database", exist_ok=True)' \
-          '    with open(BLACKLIST_FILE, "w", encoding="utf-8") as f:' \
-          '        for url in sorted(list(blacklist)): f.write(url + "\\n")' \
-          'def normalize_url(url): return url.strip().rstrip("/")' \
-          'def evaluate_sources(sources_results):' \
-          '    health = load_health()' \
-          '    blacklist = load_blacklist()' \
-          '    now = datetime.now().isoformat()' \
-          '    banned_count = 0' \
-          '    for url, result in sources_results.items():' \
-          '        norm_url = normalize_url(url)' \
-          '        if norm_url in blacklist: continue' \
-          '        if norm_url not in health: health[norm_url] = {"success": 0, "fail": 0, "last_check": None, "total_valid": 0}' \
-          '        entry = health[norm_url]' \
-          '        entry["last_check"] = now' \
-          '        if result.get("success") and result.get("valid_count", 0) >= 5:' \
-          '            entry["success"] += 1; entry["fail"] = 0; entry["total_valid"] += result.get("valid_count", 0)' \
-          '        else:' \
-          '            entry["fail"] += 1; entry["success"] = 0' \
-          '        if entry["fail"] >= 3:' \
-          '            blacklist.add(norm_url)' \
-          '            del health[norm_url]' \
-          '            banned_count += 1' \
-          '            log(f"🚫 Blacklisted source (3 fails): {norm_url}")' \
-          '    save_health(health); save_blacklist(blacklist)' \
-          '    log(f"✅ Source Guardian: {banned_count} sources moved to blacklist.")' \
-          'def clean_active_sources():' \
-          '    if not os.path.exists(ACTIVE_SOURCES_FILE): return' \
-          '    with open(ACTIVE_SOURCES_FILE, "r", encoding="utf-8") as f: lines = f.readlines()' \
-          '    blacklist = load_blacklist()' \
-          '    clean_urls = set()' \
-          '    for line in lines:' \
-          '        norm_url = normalize_url(line)' \
-          '        if norm_url and norm_url not in blacklist: clean_urls.add(norm_url)' \
-          '    with open(ACTIVE_SOURCES_FILE, "w", encoding="utf-8") as f:' \
-          '        for url in sorted(list(clean_urls)): f.write(url + "\\n")' \
-          '    log(f"🧹 Cleaned active sources: {len(lines)} -> {len(clean_urls)}")' \
-          'if __name__ == "__main__": pass' > Core/source_guardian.py
-
-      - name: 2. Run merge.py (Gather configs)
+      - name: 1. Run merge.py (Collect configs & generate Best files)
         run: python merge.py
 
-      - name: 3. Create SMART Health Checker (Forces test on untested configs)
-        run: |
-          mkdir -p Core
-          printf '%s\n' \
-          'import json, os, time, socket, base64' \
-          'from urllib.parse import urlparse' \
-          'from concurrent.futures import ThreadPoolExecutor, as_completed' \
-          'from datetime import datetime, timedelta' \
-          'from Core.logger import log' \
-          'DB_FILE = "database/database.json"' \
-          'WORKERS, TIMEOUT, CHUNK = 50, 4, 3000' \
-          'def extract_addr_port(cfg):' \
-          '    try:' \
-          '        cfg = cfg.strip()' \
-          '        if cfg.startswith("vmess://"):' \
-          '            b64 = cfg[8:] + "=" * ((4 - len(cfg[8:]) % 4) % 4)' \
-          '            data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))' \
-          '            return str(data.get("add") or data.get("address")), str(data.get("port"))' \
-          '        if "://" in cfg:' \
-          '            p = urlparse(cfg)' \
-          '            addr, port = p.hostname, p.port' \
-          '            if not addr and "@" in p.netloc:' \
-          '                parts = p.netloc.split("@")[-1].split(":")' \
-          '                if len(parts) == 2: addr, port = parts[0], parts[1]' \
-          '            if addr and port: return str(addr), str(port)' \
-          '    except: pass' \
-          '    return None, None' \
-          'def worker(args):' \
-          '    h, info = args' \
-          '    addr, port = extract_addr_port(info.get("config", ""))' \
-          '    if not addr or not port: return h, False, 0' \
-          '    try:' \
-          '        t0 = time.time()' \
-          '        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)' \
-          '        sock.settimeout(TIMEOUT)' \
-          '        sock.connect((addr, int(port)))' \
-          '        sock.close()' \
-          '        return h, True, (time.time() - t0) * 1000' \
-          '    except: return h, False, 0' \
-          'def main():' \
-          '    if not os.path.exists(DB_FILE): return log("DB not found")' \
-          '    with open(DB_FILE, "r", encoding="utf-8") as f: db = json.load(f)' \
-          '    now = datetime.now()' \
-          '    to_test = []' \
-          '    for h, i in db.items():' \
-          '        s, f_cnt = i.get("success", 0), i.get("fail", 0)' \
-          '        last = i.get("last_test")' \
-          '        # قانون هوشمند: تست کن اگر >24 ساعت گذشته، یا اگر اصلاً تست نشده (s=0, f=0)' \
-          '        if not last or (now - datetime.fromisoformat(last)).total_seconds() > 86400 or (s == 0 and f_cnt == 0):' \
-          '            to_test.append((h, i))' \
-          '    targets = to_test[:CHUNK]' \
-          '    log(f"Smart Filter: {len(to_test)} need testing. Running {len(targets)}...")' \
-          '    ok_cnt, fail_cnt = 0, 0' \
-          '    with ThreadPoolExecutor(max_workers=WORKERS) as ex:' \
-          '        for f in as_completed({ex.submit(worker, t): t[0] for t in targets}):' \
-          '            h, ok, ms = f.result()' \
-          '            db[h]["last_test"] = datetime.now().isoformat()' \
-          '            hist = db[h].get("history", [])' \
-          '            if ok:' \
-          '                ok_cnt += 1; db[h]["success"] = db[h].get("success", 0) + 1; hist.append(ms)' \
-          '            else:' \
-          '                fail_cnt += 1; db[h]["fail"] = db[h].get("fail", 0) + 1; hist.append(9999)' \
-          '            if len(hist) > 30: hist = hist[-30:]' \
-          '            db[h]["history"] = hist' \
-          '    log(f"Done: {ok_cnt} OK, {fail_cnt} FAIL")' \
-          '    with open(DB_FILE, "w", encoding="utf-8") as f: json.dump(db, f, indent=2, ensure_ascii=False)' \
-          'if __name__ == "__main__": main()' > Core/health_checker.py
-
-      - name: 4. Run Config Health Check
+      - name: 2. Run Health Checker (Test configs with TCP ping)
         run: python -m Core.health_checker
 
-      - name: 5. Create SMART Best Generator (Penalizes untested configs)
-        run: |
-          printf '%s\n' \
-          'import json, os' \
-          'from Core.logger import log' \
-          'def calc_score(info):' \
-          '    s, f = info.get("success", 0), info.get("fail", 0)' \
-          '    hist = info.get("history", [])' \
-          '    total = s + f' \
-          '    if total == 0: return -1000  # جریمه سنگین برای کانفیگ‌های تست‌نشده' \
-          '    score = (s / total) * 500' \
-          '    valid_hist = [x for x in hist if x < 9000]' \
-          '    if valid_hist:' \
-          '        median = sorted(valid_hist)[len(valid_hist)//2]' \
-          '        score += max(0, 300 - median)' \
-          '    score += min(total, 20) * 10' \
-          '    return round(score, 2)' \
-          'def main():' \
-          '    log("Loading DB...")' \
-          '    with open("database/database.json", "r", encoding="utf-8") as f: db = json.load(f)' \
-          '    log("Calculating scores...")' \
-          '    for h, info in db.items():' \
-          '        db[h]["score"] = calc_score(info)' \
-          '    log("Sorting (Score desc, then last_seen desc)...")' \
-          '    # مرتب‌سازی: اول امتیاز، اگر مساوی بود کانفیگ جدیدتر (last_seen) اول بیاید' \
-          '    sorted_cfgs = sorted(db.values(), key=lambda x: (x.get("score", -1000), x.get("last_seen", "")), reverse=True)' \
-          '    os.makedirs("output", exist_ok=True)' \
-          '    for limit in [10, 20, 50, 100, 500, 1000]:' \
-          '        path = f"output/Best{limit}.txt"' \
-          '        with open(path, "w", encoding="utf-8") as f:' \
-          '            for cfg in sorted_cfgs[:limit]:' \
-          '                if cfg.get("score", -1000) > 0:  # فقط کانفیگ‌هایی که امتیاز مثبت دارند' \
-          '                    f.write(cfg.get("config", "") + "\\n")' \
-          '        log(f"✅ Wrote {path}")' \
-          'if __name__ == "__main__": main()' > Core/smart_best.py
-
-      - name: 6. Generate Smart Best Files
+      - name: 3. Run Smart Best Generator (Rebuild Best files with ping data)
         run: python -m Core.smart_best
 
-      - name: 7. PROOF & STATS
+      - name: 4. PROOF & STATS
         run: |
           echo "========================================="
-          echo "🔍 Config Health Sample (Tested configs):"
+          echo "🔍 Config Health Sample:"
           python3 -c "
           import json
           with open('database/database.json', 'r', encoding='utf-8') as f:
@@ -196,21 +31,22 @@ jobs:
           tested = [v for v in db.values() if v.get('last_test')]
           if tested:
               sample = tested[0]
-              print('  ✅ Success:', sample.get('success', 0), '| ❌ Fail:', sample.get('fail', 0))
+              print('  ✅ Success:', sample.get('success', 0))
+              print('  ❌ Fail:', sample.get('fail', 0))
               print('  🏆 Score:', sample.get('score', 0))
               print('  📜 History (last 5):', sample.get('history', [])[-5:])
           else:
-              print('  No tested configs yet.')
+              print('  No tested configs yet')
           "
-          echo "📁 Lines in Best10.txt (Must be > 0 and working):"
+          echo "📁 Lines in Best10.txt:"
           wc -l output/Best10.txt
           echo "========================================="
 
-      - name: 8. Commit
+      - name: 5. Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "🔄 Smart Update: Force Test Untested + Penalize Dead Configs in Best: $(date +%H:%M:%S)" || echo "No changes"
+          git commit -m "🔄 Complete Smart Update: $(date +%H:%M:%S)" || echo "No changes"
           git pull --rebase origin main
           git push
