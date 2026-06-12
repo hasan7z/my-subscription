@@ -1,0 +1,132 @@
+name: Smart Health & Best Update
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 1. Create Health Checker (Updates DB Fields Used by best_manager)
+        run: |
+          mkdir -p Core
+          printf '%s\n' \
+          'import json, os, time, socket, base64' \
+          'from urllib.parse import urlparse' \
+          'from concurrent.futures import ThreadPoolExecutor, as_completed' \
+          'from datetime import datetime, timedelta' \
+          'from Core.logger import log' \
+          'DB_FILE, HEALTH_FILE, WORKERS, TIMEOUT, CHUNK = "database/database.json", "database/config_health.json", 50, 4, 3000' \
+          'def extract_addr_port(cfg):' \
+          '    try:' \
+          '        cfg = cfg.strip()' \
+          '        if cfg.startswith("vmess://"):' \
+          '            b64 = cfg[8:]' \
+          '            b64 += "=" * ((4 - len(b64) % 4) % 4)' \
+          '            data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))' \
+          '            addr = data.get("add") or data.get("address") or data.get("server")' \
+          '            return str(addr), str(data.get("port"))' \
+          '        if "://" in cfg:' \
+          '            p = urlparse(cfg)' \
+          '            addr, port = p.hostname, p.port' \
+          '            if not addr and "@" in p.netloc:' \
+          '                parts = p.netloc.split("@")[-1].split(":")' \
+          '                if len(parts) == 2: addr, port = parts[0], parts[1]' \
+          '            if addr and port: return str(addr), str(port)' \
+          '    except: pass' \
+          '    return None, None' \
+          'def worker(args):' \
+          '    h, info = args' \
+          '    addr, port = extract_addr_port(info.get("config", ""))' \
+          '    if not addr or not port: return h, False, 0, "no_addr_port"' \
+          '    try:' \
+          '        t0 = time.time()' \
+          '        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)' \
+          '        sock.settimeout(TIMEOUT)' \
+          '        sock.connect((addr, int(port)))' \
+          '        sock.close()' \
+          '        return h, True, (time.time() - t0) * 1000, "open"' \
+          '    except: return h, False, 0, "fail"' \
+          'def main():' \
+          '    if not os.path.exists(DB_FILE): return log("DB not found")' \
+          '    with open(DB_FILE, "r", encoding="utf-8") as f: db = json.load(f)' \
+          '    cutoff = datetime.now() - timedelta(hours=24)' \
+          '    targets = [(h, i) for h, i in db.items() if not i.get("last_test") or datetime.fromisoformat(i.get("last_test")) < cutoff][:CHUNK]' \
+          '    log(f"Testing {len(targets)} configs...")' \
+          '    ok_cnt, fail_cnt, avg_ms = 0, 0, 0.0' \
+          '    health_db = json.load(open(HEALTH_FILE, "r", encoding="utf-8")) if os.path.exists(HEALTH_FILE) else {}' \
+          '    with ThreadPoolExecutor(max_workers=WORKERS) as ex:' \
+          '        for f in as_completed({ex.submit(worker, t): t[0] for t in targets}):' \
+          '            h, ok, ms, err = f.result()' \
+          '            now = datetime.now().isoformat()' \
+          '            # آپدیت database.json با فیلدهای مورد نیاز best_manager' \
+          '            if ok:' \
+          '                ok_cnt += 1; avg_ms += ms' \
+          '                db[h]["success"] = db[h].get("success", 0) + 1' \
+          '                db[h]["fail"] = db[h].get("fail", 0)' \
+          '                history = db[h].get("history", [])' \
+          '                history.append(ms)' \
+          '                if len(history) > 30: history = history[-30:]' \
+          '                db[h]["history"] = history' \
+          '            else:' \
+          '                fail_cnt += 1' \
+          '                db[h]["fail"] = db[h].get("fail", 0) + 1' \
+          '                db[h]["success"] = db[h].get("success", 0)' \
+          '                history = db[h].get("history", [])' \
+          '                history.append(9999)' \
+          '                if len(history) > 30: history = history[-30:]' \
+          '                db[h]["history"] = history' \
+          '            db[h]["last_test"] = now' \
+          '            # آپدیت config_health.json' \
+          '            entry = health_db.get(h, {"success": 0, "fail": 0, "history": [], "last_test": None})' \
+          '            entry["last_test"] = now' \
+          '            entry["success"] = db[h]["success"]' \
+          '            entry["fail"] = db[h]["fail"]' \
+          '            entry["history"] = db[h]["history"]' \
+          '            health_db[h] = entry' \
+          '    if ok_cnt: avg_ms /= ok_cnt' \
+          '    log(f"Done: {ok_cnt} OK, {fail_cnt} FAIL. Avg: {avg_ms:.1f}ms")' \
+          '    with open(DB_FILE, "w", encoding="utf-8") as f: json.dump(db, f, indent=2, ensure_ascii=False)' \
+          '    with open(HEALTH_FILE, "w", encoding="utf-8") as f: json.dump(health_db, f, indent=2, ensure_ascii=False)' \
+          'if __name__ == "__main__": main()' > Core/health_checker.py
+
+      - name: 2. Create Rebuild Script
+        run: |
+          printf '%s\n' \
+          'import json' \
+          'from Core.best_manager import build_best' \
+          'from Core.exporter import export_best_sets' \
+          'from Core.logger import log' \
+          'def main():' \
+          '    try:' \
+          '        with open("database/database.json", "r", encoding="utf-8") as f: db = json.load(f)' \
+          '        best_sets = build_best(db)' \
+          '        export_best_sets(best_sets)' \
+          '        log("✅ Rebuild SUCCESS")' \
+          '    except Exception as e:' \
+          '        log(f"❌ Rebuild ERROR: {e}")' \
+          'if __name__ == "__main__": main()' > Core/rebuild_best.py
+
+      - name: 3. Run Health & Rebuild
+        run: |
+          python -m Core.health_checker
+          python -m Core.rebuild_best
+
+      - name: 4. FORENSIC CHECK
+        run: |
+          echo "=== Git Status ==="
+          git status
+          echo "=== First 3 lines of Best100.txt ==="
+          head -n 3 output/Best100.txt || echo "File not found!"
+
+      - name: 5. Commit Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "🔄 Smart Update: $(date +%H:%M:%S)" || echo "No changes"
+          git push
