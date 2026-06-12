@@ -1,64 +1,64 @@
 {
   "https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 2642,
     "rate": 100.0
   },
   "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 3529,
     "rate": 100.0
   },
   "https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 7732,
     "rate": 100.0
   },
   "https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 1963,
+    "rate": 100.0
+  },
+  "https://github.com/MatinGhanbari/v2ray-configs.git": {
     "success": 12,
     "failed": 0,
     "runs": 12,
     "last_configs": 1963,
     "rate": 100.0
   },
-  "https://github.com/MatinGhanbari/v2ray-configs.git": {
-    "success": 11,
-    "failed": 0,
-    "runs": 11,
-    "last_configs": 1963,
-    "rate": 100.0
-  },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/static.yml": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 5493,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/static.yml%5C": {
-    "success": 10,
+    "success": 11,
     "failed": 0,
-    "runs": 10,
+    "runs": 11,
     "last_configs": 2341,
     "rate": 100.0
   },
@@ -77,9 +77,9 @@
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/static.yml%5C&quot;,&quot;user_id&quot;:null}}": {
-    "success": 9,
+    "success": 10,
     "failed": 0,
-    "runs": 9,
+    "runs": 10,
     "last_configs": 2341,
     "rate": 100.0
   },
@@ -98,30 +98,30 @@
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/static.yml&quot;,&quot;user_id&quot;:null}}": {
-    "success": 10,
+    "success": 11,
     "failed": 0,
-    "runs": 10,
+    "runs": 11,
     "last_configs": 2341,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/static.yml\\": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 2341,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/update-configs.yml": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 5377,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/update-configs.yml%5C": {
-    "success": 10,
+    "success": 11,
     "failed": 0,
-    "runs": 10,
+    "runs": 11,
     "last_configs": 2341,
     "rate": 100.0
   },
@@ -140,9 +140,9 @@
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/update-configs.yml%5C&quot;,&quot;user_id&quot;:null}}": {
-    "success": 9,
+    "success": 10,
     "failed": 0,
-    "runs": 9,
+    "runs": 10,
     "last_configs": 2341,
     "rate": 100.0
   },
@@ -161,23 +161,23 @@
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/update-configs.yml&quot;,&quot;user_id&quot;:null}}": {
-    "success": 10,
+    "success": 11,
     "failed": 0,
-    "runs": 10,
+    "runs": 11,
     "last_configs": 2341,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/actions/workflows/update-configs.yml\\": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 2341,
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/stargazers": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 2190,
     "rate": 100.0
   },
@@ -189,9 +189,9 @@
     "rate": 100.0
   },
   "https://github.com/MatinGhanbari/v2ray-configs/stargazers?page=2": {
-    "success": 6,
+    "success": 7,
     "failed": 0,
-    "runs": 6,
+    "runs": 7,
     "last_configs": 2172,
     "rate": 100.0
   },
@@ -210,310 +210,310 @@
     "rate": 100.0
   },
   "https://github.com/MhdiTaheri/V2rayCollector/raw/refs/heads/main/sub/mix": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 2639,
     "rate": 100.0
   },
   "https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 456,
     "rate": 100.0
   },
   "https://github.com/Mr-Meshky/vify/raw/refs/heads/main/configs/vless.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 921,
     "rate": 100.0
   },
   "https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/raw/refs/heads/main/url_work.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 6215,
     "rate": 100.0
   },
   "https://github.com/igareck/vpn-configs-for-russia/raw/refs/heads/main/BLACK_VLESS_RUS.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 347,
     "rate": 100.0
   },
   "https://github.com/sakha1370/OpenRay/raw/refs/heads/main/output/all_valid_proxies.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 3866,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/source/config/urls.json": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 28,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/CidVpn/cid-vpn-config/refs/heads/main/general.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 364,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BASE64/BLACK_FULL.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/WHITE_FULL.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 2375,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MahsaNetConfigTopic/config/refs/heads/main/xray_final.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 12,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/LICENSE": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 22,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/hysteria2.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 4005,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub1.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 201,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub2.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 206,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub3.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 206,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub39.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 178,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub4.txt": {
-    "success": 11,
+    "success": 12,
     "failed": 0,
-    "runs": 11,
+    "runs": 12,
     "last_configs": 206,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
-    "last_configs": 183,
+    "runs": 13,
+    "last_configs": 201,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/acymz/AutoVPN/refs/heads/main/data/V2.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 1,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/refs/heads/main/mix/sub.html": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 415,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 2,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 157,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/liMilCo/v2r/main/sub/1.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 501,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/liMilCo/v2r/main/sub/2.txt": {
-    "success": 13,
+    "success": 14,
     "failed": 0,
-    "runs": 13,
+    "runs": 14,
     "last_configs": 506,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 1993,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/vless": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 1,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 265,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 55,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 330,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 150,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 162559,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 2367,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri": {
-    "success": 12,
-    "failed": 0,
-    "runs": 12,
-    "last_configs": 338,
-    "rate": 100.0
-  },
-  "https://raw.githubusercontent.com/yebekhe/vpn-fail/refs/heads/main/sub-link.txt": {
     "success": 13,
     "failed": 0,
     "runs": 13,
     "last_configs": 1,
     "rate": 100.0
   },
-  "https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt": {
-    "success": 12,
+  "https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt": {
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
+    "last_configs": 265,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 55,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 330,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 150,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 162559,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 2367,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
+    "last_configs": 338,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/yebekhe/vpn-fail/refs/heads/main/sub-link.txt": {
+    "success": 14,
+    "failed": 0,
+    "runs": 14,
+    "last_configs": 1,
+    "rate": 100.0
+  },
+  "https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt": {
+    "success": 13,
+    "failed": 0,
+    "runs": 13,
     "last_configs": 12203,
     "rate": 100.0
   },
   "https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt": {
-    "success": 12,
+    "success": 13,
     "failed": 0,
-    "runs": 12,
+    "runs": 13,
     "last_configs": 746,
     "rate": 100.0
   },

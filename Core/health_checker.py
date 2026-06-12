@@ -41,9 +41,8 @@ def main():
     for h, i in db.items():
         s, f_cnt = i.get("success", 0), i.get("fail", 0)
         last = i.get("last_test")
-        if s == 0 and f_cnt > 5:
-            if last and (now - datetime.fromisoformat(last)).days < 7: continue
-        if not last or (now - datetime.fromisoformat(last)).total_seconds() > 86400:
+        # قانون هوشمند: تست کن اگر >24 ساعت گذشته، یا اگر اصلاً تست نشده (s=0, f=0)
+        if not last or (now - datetime.fromisoformat(last)).total_seconds() > 86400 or (s == 0 and f_cnt == 0):
             to_test.append((h, i))
     targets = to_test[:CHUNK]
     log(f"Smart Filter: {len(to_test)} need testing. Running {len(targets)}...")
