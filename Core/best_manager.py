@@ -1,3 +1,27 @@
+ALLOWED_PROTOCOLS = (
+
+    "vmess://",
+
+    "vless://",
+
+    "trojan://",
+
+    "ss://",
+
+    "ssr://",
+
+    "hy2://",
+
+    "hysteria://",
+
+    "tuic://",
+
+    "wg://",
+
+    "wireguard://"
+
+)
+
 BEST_LEVELS = [
     10,
     20,
