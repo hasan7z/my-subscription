@@ -52,7 +52,6 @@ def main():
     for h, i in db.items():
         s, f_cnt = i.get("success", 0), i.get("fail", 0)
         last = i.get("last_test")
-        # تست کن اگر: >24 ساعت گذشته، یا اصلاً تست نشده، یا زامبی (هفته‌ای یکبار)
         if s == 0 and f_cnt > 5:
             if last and (now - datetime.fromisoformat(last)).days < 7:
                 continue
