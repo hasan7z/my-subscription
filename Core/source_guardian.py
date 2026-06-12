@@ -1,25 +1,40 @@
 import json, os
 from datetime import datetime
 from Core.logger import log
+
 HEALTH_FILE = "database/sources_health.json"
 BLACKLIST_FILE = "database/source_blacklist.txt"
 ACTIVE_SOURCES_FILE = "Sources/sources.txt"
+
 def load_health():
-    if not os.path.exists(HEALTH_FILE): return {}
+    if not os.path.exists(HEALTH_FILE):
+        return {}
     try:
-        with open(HEALTH_FILE, "r", encoding="utf-8") as f: return json.load(f)
-    except: return {}
+        with open(HEALTH_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {}
+
 def save_health(data):
     os.makedirs("database", exist_ok=True)
-    with open(HEALTH_FILE, "w", encoding="utf-8") as f: json.dump(data, f, indent=2, ensure_ascii=False)
+    with open(HEALTH_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
 def load_blacklist():
-    if not os.path.exists(BLACKLIST_FILE): return set()
-    with open(BLACKLIST_FILE, "r", encoding="utf-8") as f: return set(line.strip() for line in f if line.strip())
+    if not os.path.exists(BLACKLIST_FILE):
+        return set()
+    with open(BLACKLIST_FILE, "r", encoding="utf-8") as f:
+        return set(line.strip() for line in f if line.strip())
+
 def save_blacklist(blacklist):
     os.makedirs("database", exist_ok=True)
     with open(BLACKLIST_FILE, "w", encoding="utf-8") as f:
-        for url in sorted(list(blacklist)): f.write(url + "\\n")
-def normalize_url(url): return url.strip().rstrip("/")
+        for url in sorted(list(blacklist)):
+            f.write(url + "\n")
+
+def normalize_url(url):
+    return url.strip().rstrip("/")
+
 def evaluate_sources(sources_results):
     health = load_health()
     blacklist = load_blacklist()
@@ -27,30 +42,41 @@ def evaluate_sources(sources_results):
     banned_count = 0
     for url, result in sources_results.items():
         norm_url = normalize_url(url)
-        if norm_url in blacklist: continue
-        if norm_url not in health: health[norm_url] = {"success": 0, "fail": 0, "last_check": None, "total_valid": 0}
+        if norm_url in blacklist:
+            continue
+        if norm_url not in health:
+            health[norm_url] = {"success": 0, "fail": 0, "last_check": None, "total_valid": 0}
         entry = health[norm_url]
         entry["last_check"] = now
         if result.get("success") and result.get("valid_count", 0) >= 5:
-            entry["success"] += 1; entry["fail"] = 0; entry["total_valid"] += result.get("valid_count", 0)
+            entry["success"] += 1
+            entry["fail"] = 0
+            entry["total_valid"] += result.get("valid_count", 0)
         else:
-            entry["fail"] += 1; entry["success"] = 0
+            entry["fail"] += 1
+            entry["success"] = 0
         if entry["fail"] >= 3:
             blacklist.add(norm_url)
-            del health[norm_url]
+            if norm_url in health:
+                del health[norm_url]
             banned_count += 1
             log(f"🚫 Blacklisted source (3 fails): {norm_url}")
-    save_health(health); save_blacklist(blacklist)
+    save_health(health)
+    save_blacklist(blacklist)
     log(f"✅ Source Guardian: {banned_count} sources moved to blacklist.")
+
 def clean_active_sources():
-    if not os.path.exists(ACTIVE_SOURCES_FILE): return
-    with open(ACTIVE_SOURCES_FILE, "r", encoding="utf-8") as f: lines = f.readlines()
+    if not os.path.exists(ACTIVE_SOURCES_FILE):
+        return
+    with open(ACTIVE_SOURCES_FILE, "r", encoding="utf-8") as f:
+        lines = f.readlines()
     blacklist = load_blacklist()
     clean_urls = set()
     for line in lines:
         norm_url = normalize_url(line)
-        if norm_url and norm_url not in blacklist: clean_urls.add(norm_url)
+        if norm_url and norm_url not in blacklist:
+            clean_urls.add(norm_url)
     with open(ACTIVE_SOURCES_FILE, "w", encoding="utf-8") as f:
-        for url in sorted(list(clean_urls)): f.write(url + "\\n")
+        for url in sorted(list(clean_urls)):
+            f.write(url + "\n")
     log(f"🧹 Cleaned active sources: {len(lines)} -> {len(clean_urls)}")
-if __name__ == "__main__": pass
