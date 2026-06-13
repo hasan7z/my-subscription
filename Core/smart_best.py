@@ -1,5 +1,21 @@
-import json, os, base64, urllib.parse
+import json, os, base64, urllib.parse, re
 from Core.logger import log
+
+def is_cloudflare(cfg):
+    """شناسایی هوشمند کانفیگ‌های پشت کلادفلیر"""
+    cfg_lower = cfg.lower()
+    cf_ips = ['104.', '172.64.', '172.67.', '188.114.', '104.16.', '104.18.', '104.21.']
+    if any(ip in cfg_lower for ip in cf_ips): return True
+    if 'cloudflare' in cfg_lower or 'cdn-cgi' in cfg_lower or 'workers.dev' in cfg_lower: return True
+    
+    # بررسی SNI یا Host
+    try:
+        if cfg_lower.startswith("vless://") or cfg_lower.startswith("vmess://"):
+            # استخراج ساده هاست برای بررسی
+            match = re.search(r'@([^:]+):\d+', cfg_lower)
+            if match and any(ip in match.group(1) for ip in cf_ips): return True
+    except: pass
+    return False
 
 def get_country_boost(info):
     cfg = info.get("config", "").lower()
@@ -10,45 +26,26 @@ def get_country_boost(info):
             data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
             search_text += " " + str(data.get("ps", "")).lower()
         except: pass
-    try:
-        search_text += " " + urllib.parse.unquote(cfg).lower()
+    try: search_text += " " + urllib.parse.unquote(cfg).lower()
     except: pass
 
     tier_1 = ['ae', 'tr', 'fi', 'de', '🇦🇪', '🇹🇷', '🇫🇮', '🇩🇪', 'dubai', 'istanbul', 'frankfurt', 'امارات', 'ترکیه', 'فنلاند', 'آلمان']
     for c in tier_1:
         if c in search_text: return 300
-
     tier_2 = ['nl', 'fr', 'gb', 'ch', '🇳🇱', '🇫🇷', '🇬🇧', '🇨🇭', 'amsterdam', 'paris', 'london', 'هلند', 'فرانسه', 'انگلیس']
     for c in tier_2:
         if c in search_text: return 200
-
     tier_3 = ['us', 'ca', 'jp', 'sg', '🇺🇸', '🇨🇦', '🇯🇵', '🇸🇬', 'آمریکا', 'کانادا', 'ژاپن']
     for c in tier_3:
         if c in search_text: return 100
-
     return 0
-
-def detect_protocol(cfg):
-    cfg_lower = cfg.lower()
-    if "security=reality" in cfg_lower or "reality" in cfg_lower:
-        return "reality"
-    if cfg_lower.startswith("vless://"):
-        return "vless"
-    if cfg_lower.startswith("trojan://"):
-        return "trojan"
-    if cfg_lower.startswith("vmess://"):
-        return "vmess"
-    if cfg_lower.startswith("ss://") or cfg_lower.startswith("ssr://"):
-        return "shadowsocks"
-    return "other"
 
 def calc_final_score(info):
     s, f = info.get("success", 0), info.get("fail", 0)
     total = s + f
     base = 200 if total == 0 else (s / total) * 500
     hist = info.get("history", [])
-    if hist and hist[-1] == 9999:
-        base *= 0.7
+    if hist and hist[-1] == 9999: base *= 0.7
     return round(max(0, base + get_country_boost(info)), 2)
 
 def main():
@@ -63,88 +60,69 @@ def main():
     sorted_all = sorted(db.values(), key=lambda x: x.get("final_score", 0), reverse=True)
     
     unique_configs = []
-    seen = set()
+    seen_fingerprints = set()
     for cfg in sorted_all:
         cfg_str = cfg.get("config", "").strip()
-        if cfg_str and cfg_str not in seen:
-            seen.add(cfg_str)
-            unique_configs.append(cfg)
+        if cfg_str:
+            fp = hashlib.sha256(cfg_str.encode('utf-8')).hexdigest() # اثر انگشت نهایی
+            if fp not in seen_fingerprints:
+                seen_fingerprints.add(fp)
+                unique_configs.append(cfg)
             
-    log(f"Total unique configs: {len(unique_configs)}")
+    log(f"Total unique configs (Fingerprint verified): {len(unique_configs)}")
     os.makedirs("output", exist_ok=True)
     
-    # ۱. ساخت فایل‌های استاندارد (تقسیم‌بندی مجزا)
+    # ۱. فایل‌های استاندارد
     limits = [10, 20, 50, 100, 500, 1000, 2500, 5000]
     pos = 0
     for limit in limits:
         path = f"output/Best{limit}.txt"
         selected = unique_configs[pos:pos + limit]
         with open(path, "w", encoding="utf-8") as f:
-            for cfg in selected:
-                f.write(cfg.get("config", "") + "\n")
+            for cfg in selected: f.write(cfg.get("config", "") + "\n")
         pos += limit
 
-    # ۲. ساخت فایل ویژه best_i.txt
-    final_best_i = unique_configs[:100]
+    # ۲. فایل ویژه best_i.txt
     with open("output/best_i.txt", "w", encoding="utf-8") as f:
-        for cfg in final_best_i:
-            f.write(cfg.get("config", "") + "\n")
+        for cfg in unique_configs[:100]: f.write(cfg.get("config", "") + "\n")
 
-    # ۳. ✨ ویژگی پیشرفته: تفکیک بر اساس پروتکل
+    # ۳. ✨ تفکیک پروتکل و کلادفلیر
     protocols = {"vless": [], "vmess": [], "trojan": [], "reality": [], "shadowsocks": []}
-    for cfg in unique_configs: # استفاده از کل لیست مرتب شده برای پر کردن فایل‌های پروتکل
-        proto = detect_protocol(cfg.get("config", ""))
-        if proto in protocols:
-            protocols[proto].append(cfg.get("config", ""))
+    cloudflare_configs = []
+    
+    for cfg in unique_configs:
+        cfg_str = cfg.get("config", "").lower()
+        
+        # بررسی کلادفلیر
+        if is_cloudflare(cfg_str):
+            cloudflare_configs.append(cfg.get("config", ""))
+            
+        # بررسی پروتکل
+        if "security=reality" in cfg_str or "reality" in cfg_str: protocols["reality"].append(cfg.get("config", ""))
+        elif cfg_str.startswith("vless://"): protocols["vless"].append(cfg.get("config", ""))
+        elif cfg_str.startswith("trojan://"): protocols["trojan"].append(cfg.get("config", ""))
+        elif cfg_str.startswith("vmess://"): protocols["vmess"].append(cfg.get("config", ""))
+        elif cfg_str.startswith("ss://") or cfg_str.startswith("ssr://"): protocols["shadowsocks"].append(cfg.get("config", ""))
             
     for proto, configs in protocols.items():
         if configs:
-            path = f"output/best_{proto}.txt"
-            with open(path, "w", encoding="utf-8") as f:
-                for c in configs:
-                    f.write(c + "\n")
-            log(f"✅ Wrote {len(configs)} {proto.upper()} configs to {path}")
+            with open(f"output/best_{proto}.txt", "w", encoding="utf-8") as f:
+                for c in configs: f.write(c + "\n")
+            log(f"✅ Wrote {len(configs)} {proto.upper()} configs")
+            
+    if cloudflare_configs:
+        with open("output/best_cloudflare.txt", "w", encoding="utf-8") as f:
+            for c in cloudflare_configs: f.write(c + "\n")
+        log(f"✅ Wrote {len(cloudflare_configs)} CLOUDFLARE optimized configs")
 
-    # ۴. ✨ ویژگی پیشرفته: تولید فایل Base64
-    all_configs_str = "\n".join([cfg.get("config", "") for cfg in unique_configs])
-    base64_encoded = base64.b64encode(all_configs_str.encode('utf-8')).decode('utf-8')
+    # ۴. خروجی Base64
+    all_str = "\n".join([cfg.get("config", "") for cfg in unique_configs])
     with open("output/subscription_base64.txt", "w", encoding="utf-8") as f:
-        f.write(base64_encoded)
+        f.write(base64.b64encode(all_str.encode('utf-8')).decode('utf-8'))
     log("✅ Generated subscription_base64.txt")
-
-    # ۵. ✨ ویژگی پیشرفته: تولید آمار زنده (stats.md)
-    country_counts = {}
-    for cfg in unique_configs:
-        # یک شمارش ساده بر اساس پرچم‌ها و کدهای کشور
-        search_text = cfg.get("config", "").lower()
-        found = False
-        for c in ['🇩🇪', 'de', 'germany', 'آلمان']:
-            if c in search_text: country_counts['Germany'] = country_counts.get('Germany', 0) + 1; found = True; break
-        if not found:
-            for c in ['🇹🇷', 'tr', 'turkey', 'ترکیه']:
-                if c in search_text: country_counts['Turkey'] = country_counts.get('Turkey', 0) + 1; found = True; break
-        if not found:
-            for c in ['🇦🇪', 'ae', 'dubai', 'امارات']:
-                if c in search_text: country_counts['UAE'] = country_counts.get('UAE', 0) + 1; found = True; break
-        
-        if not found:
-            country_counts['Other'] = country_counts.get('Other', 0) + 1
-
-    stats_content = f"# 📊 Live Subscription Stats\n\n"
-    stats_content += f"- **Total Unique Configs:** `{len(unique_configs)}`\n"
-    stats_content += f"- **VLESS:** `{len(protocols['vless'])}`\n"
-    stats_content += f"- **VMess:** `{len(protocols['vmess'])}`\n"
-    stats_content += f"- **Trojan:** `{len(protocols['trojan'])}`\n"
-    stats_content += f"- **Reality:** `{len(protocols['reality'])}`\n\n"
-    stats_content += "### 🌍 Top Countries:\n"
-    for country, count in sorted(country_counts.items(), key=lambda item: item[1], reverse=True)[:5]:
-        stats_content += f"- {country}: `{count}`\n"
-
-    with open("stats.md", "w", encoding="utf-8") as f:
-        f.write(stats_content)
-    log("✅ Generated stats.md")
     
     log("✅ ALL advanced features generated successfully!")
 
 if __name__ == "__main__":
+    import hashlib # اضافه شده برای اثر انگشت
     main()
