@@ -112,3 +112,39 @@
 [2026-06-13T09:58:40.929029] ✅ Wrote output/Best5000.txt (5000 configs, Rank 4181 to 9180)
 [2026-06-13T09:58:40.929191] 👑 Wrote 100 country-optimized configs to output/best_i.txt
 [2026-06-13T09:58:40.929223] ✅ ALL files generated: Country-Boosted, NO GitHub Ping, ZERO duplicates!
+[2026-06-13T10:08:21.977865] ===== RUN START =====
+[2026-06-13T10:08:21.979323] 🧹 Sources cleaned: 3 -> 3 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:08:21.979407] Downloading sources...
+[2026-06-13T10:08:22.282609] ✅ Downloaded: https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt
+[2026-06-13T10:08:22.573829] ✅ Downloaded: https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+[2026-06-13T10:08:22.639250] ✅ Downloaded: https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt
+[2026-06-13T10:08:22.642720] [AUTO SOURCE] Added 2 new sources
+[2026-06-13T10:08:22.643604] 🧹 Sources cleaned: 5 -> 3 (Removed 2 invalid, limit: 50)
+[2026-06-13T10:08:22.643672] Parsing configs...
+[2026-06-13T10:08:22.647045]   https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt: 3854 configs
+[2026-06-13T10:08:22.652710]   https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt: 5855 configs
+[2026-06-13T10:08:22.654226]   https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt: 1983 configs
+[2026-06-13T10:08:22.654268] [PARSE DONE] 11692
+[2026-06-13T10:08:22.656479] [DEDUP] 11662 unique configs
+[2026-06-13T10:08:22.656515] Updating database...
+[2026-06-13T10:08:24.889173] [DB] total=196706 new=0
+[2026-06-13T10:08:24.889278] Exporting configs...
+[2026-06-13T10:08:24.992973] [EXPORT] 196706 configs
+[2026-06-13T10:08:25.007282] ✅ Source Guardian: 0 sources blacklisted.
+[2026-06-13T10:08:25.007934] 🧹 Sources cleaned: 3 -> 3 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:08:25.008007] [FINAL] 11662
+[2026-06-13T10:08:25.008040] [NEW] 0
+[2026-06-13T10:08:25.008065] ===== RUN END =====
+[2026-06-13T10:08:25.115017] Loading DB...
+[2026-06-13T10:08:25.745535] Calculating scores based on COUNTRY ONLY...
+[2026-06-13T10:08:26.852146] Total unique configs: 194614
+[2026-06-13T10:08:26.852411] ✅ Wrote output/Best10.txt (10 configs)
+[2026-06-13T10:08:26.852539] ✅ Wrote output/Best20.txt (20 configs)
+[2026-06-13T10:08:26.852731] ✅ Wrote output/Best50.txt (50 configs)
+[2026-06-13T10:08:26.852939] ✅ Wrote output/Best100.txt (100 configs)
+[2026-06-13T10:08:26.853405] ✅ Wrote output/Best500.txt (500 configs)
+[2026-06-13T10:08:26.854078] ✅ Wrote output/Best1000.txt (1000 configs)
+[2026-06-13T10:08:26.855612] ✅ Wrote output/Best2500.txt (2500 configs)
+[2026-06-13T10:08:26.858619] ✅ Wrote output/Best5000.txt (5000 configs)
+[2026-06-13T10:08:26.858791] 👑 Wrote 100 country-optimized configs to output/best_i.txt
+[2026-06-13T10:08:26.858824] ✅ ALL files generated successfully!
