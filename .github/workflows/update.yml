@@ -1,9 +1,9 @@
-name: Smart Country-Boosted Update
+name: Advanced Smart Update
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"  # هر ۶ ساعت
+    - cron: "0 */6 * * *"
 
 jobs:
   update:
@@ -11,17 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: 1. Run Core Engine (Download, Parse, Dedup)
+      - name: 1. Run Core Engine
         run: python merge.py
 
-      - name: 2. Run Smart Best Generator (Country Boost + No False Pings)
+      - name: 2. Run Advanced Smart Best Generator
         run: python -m Core.smart_best
 
       - name: 3. PROOF & STATS
         run: |
           echo "========================================="
           echo "📊 Generated Files:"
-          wc -l output/Best*.txt output/best_i.txt || echo "No files found"
+          wc -l output/Best*.txt output/best_*.txt output/best_i.txt output/subscription_base64.txt || echo "No files found"
+          echo "========================================="
+          echo "📈 Live Stats:"
+          cat stats.md
           echo "========================================="
 
       - name: 4. Commit and Push
@@ -29,6 +32,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "🔄 Auto Update: Country-Boosted Best Files $(date +%H:%M:%S)" || echo "No changes"
+          git commit -m "🔄 Advanced Update: Protocol Split + Base64 + Auto Stats $(date +%H:%M:%S)" || echo "No changes"
           git pull --rebase origin main
           git push
