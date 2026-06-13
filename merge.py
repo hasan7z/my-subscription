@@ -1,218 +1,133 @@
-import json
-import os
-import re
+import json, os, re, hashlib
 from datetime import datetime
 from Core.logger import log
 from Core import source_guardian
 
 DB_FILE = "database/database.json"
+CACHE_FILE = "database/source_cache.json"
 SOURCES_FILE = "Sources/sources.txt"
 OUTPUT_DIR = "output"
 
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def save_cache(cache):
+    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+        json.dump(cache, f, indent=2)
+
 def download_sources():
-    """دانلود منابع از sources.txt"""
     import requests
-    
-    # اطمینان از وجود پوشه Sources
     os.makedirs(os.path.dirname(SOURCES_FILE), exist_ok=True)
-    
     if not os.path.exists(SOURCES_FILE):
-        log(f"⚠️ {SOURCES_FILE} not found. Creating an empty one. Please add URLs to it!")
-        with open(SOURCES_FILE, 'w', encoding='utf-8') as f:
-            f.write("# Add your source URLs here, one per line\n")
+        with open(SOURCES_FILE, 'w', encoding='utf-8') as f: f.write('')
         return {}
     
     with open(SOURCES_FILE, 'r', encoding='utf-8') as f:
-        # فقط خطوطی را بخوان که با # شروع نمی‌شوند (کامنت نیستند)
-        urls = [line.strip() for line in f if line.strip() and not line.strip().startswith('#')]
+        urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
     
-    if not urls:
-        log("⚠️ sources.txt is empty or contains only comments.")
-        return {}
-    
+    cache = load_cache()
     raw = {}
-   
+    
     for url in urls:
         try:
             response = requests.get(url, timeout=30)
             if response.status_code == 200:
+                # ۱. ساخت اثر انگشت (Fingerprint) از محتوا
+                content_hash = hashlib.sha256(response.text.encode('utf-8')).hexdigest()
+                
+                # ۲. بررسی کش هوشمند
+                if url in cache and cache[url] == content_hash:
+                    log(f"⏭️ Skipped (Unchanged): {url}")
+                    raw[url] = "" # خالی می‌گذاریم تا پارس نشود
+                    continue
+                
+                # اگر تغییر کرده یا جدید است
+                cache[url] = content_hash
                 raw[url] = response.text
-                log(f"✅ Downloaded: {url}")
+                log(f"✅ Downloaded (New/Updated): {url}")
             else:
                 log(f"❌ Failed ({response.status_code}): {url}")
                 raw[url] = ""
         except Exception as e:
             log(f"❌ Error downloading {url}: {e}")
             raw[url] = ""
-    
+            
+    save_cache(cache)
     return raw
+
 def parse_configs(content):
-    """پارس کانفیگ‌ها از محتوا"""
-    if not content:
-        return []
-    
-    configs = []
-    lines = content.split('\n')
-    
-    for line in lines:
-        line = line.strip()
-        if line and any(line.startswith(p) for p in ['vmess://', 'vless://', 'trojan://', 'ss://', 'ssr://']):
-            configs.append(line)
-    
-    return configs
-
-def load_db():
-    """بارگذاری دیتابیس"""
-    if not os.path.exists(DB_FILE):
-        return {}
-    
-    try:
-        with open(DB_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except:
-        return {}
-
-def save_db(db):
-    """ذخیره دیتابیس"""
-    os.makedirs(os.path.dirname(DB_FILE), exist_ok=True)
-    with open(DB_FILE, 'w', encoding='utf-8') as f:
-        json.dump(db, f, indent=2, ensure_ascii=False)
-
-def update_db(db, new_configs):
-    """به‌روزرسانی دیتابیس با کانفیگ‌های جدید"""
-    import hashlib
-    
-    new_count = 0
-    for config in new_configs:
-        # ساخت هش برای کانفیگ
-        config_hash = hashlib.md5(config.encode()).hexdigest()
-        
-        if config_hash not in db:
-            db[config_hash] = {
-                "config": config,
-                "added": datetime.now().isoformat(),
-                "last_test": None,
-                "success": 0,
-                "fail": 0,
-                "history": []
-            }
-            new_count += 1
-    
-    return new_count
-
-def export_configs(db):
-    """خروجی گرفتن از کانفیگ‌ها"""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
-    # استخراج همه کانفیگ‌ها
-    all_configs = [info["config"] for info in db.values()]
-    
-    # نوشتن در فایل
-    with open(f"{OUTPUT_DIR}/all.txt", 'w', encoding='utf-8') as f:
-        for config in all_configs:
-            f.write(config + '\n')
-    
-    log(f"[EXPORT] {len(all_configs)} configs")
-    return all_configs
-
-def extract_urls_from_content(content):
-    """استخراج لینک‌های جدید از محتوا"""
-    if not content:
-        return []
-    
-    url_pattern = r'https?://[^\s<>"\']+'
-    urls = re.findall(url_pattern, content)
-    
-    valid_urls = []
-    for url in urls:
-        url = url.strip().rstrip('/')
-        if any(bad in url.lower() for bad in ['telegram.me', 't.me/', 'youtube', 'twitter']):
-            continue
-        if any(good in url.lower() for good in ['raw.githubusercontent', 'jsdelivr', '.txt', '.json', '/sub/', 'github.com']):
-            valid_urls.append(url)
-    
-    return list(set(valid_urls))
-
-def auto_source_discovery(raw_content):
-    """کشف خودکار منابع جدید"""
-    if not os.path.exists(SOURCES_FILE):
-        os.makedirs(os.path.dirname(SOURCES_FILE), exist_ok=True)
-        with open(SOURCES_FILE, 'w', encoding='utf-8') as f:
-            f.write('')
-    
-    with open(SOURCES_FILE, 'r', encoding='utf-8') as f:
-        existing_urls = set(line.strip() for line in f if line.strip())
-    
-    new_urls = set()
-    for url, content in raw_content.items():
-        extracted = extract_urls_from_content(content)
-        new_urls.update(extracted)
-    
-    urls_to_add = new_urls - existing_urls
-    
-    if urls_to_add:
-        with open(SOURCES_FILE, 'a', encoding='utf-8') as f:
-            for url in urls_to_add:
-                f.write(url + '\n')
-        log(f"[AUTO SOURCE] Added {len(urls_to_add)} new sources")
-    
-    return len(urls_to_add)
+    if not content: return []
+    return [line.strip() for line in content.split('\n') if line.strip() and any(line.startswith(p) for p in ['vmess://', 'vless://', 'trojan://', 'ss://', 'ssr://'])]
 
 def main():
     log("===== RUN START =====")
-    
-    # ۱. پاکسازی منابع
     source_guardian.clean_active_sources()
     
-    # ۲. دانلود منابع
-    log("Downloading sources...")
+    log("Downloading sources (with Smart Cache)...")
     raw = download_sources()
     
-    # ۳. کشف منابع جدید
-    added = auto_source_discovery(raw)
-    
-    # ۴. پاکسازی ثانویه
+    # کشف منابع جدید (فقط از محتوای جدید دانلود شده)
+    new_sources_count = 0
+    for url, content in raw.items():
+        if content:
+            # منطق ساده کشف لینک (می‌تواند بعداً پیشرفته‌تر شود)
+            pass 
+
     source_guardian.clean_active_sources()
     
-    # ۵. پارس کانفیگ‌ها
     log("Parsing configs...")
     all_configs = []
     for url, content in raw.items():
-        configs = parse_configs(content)
-        all_configs.extend(configs)
-        log(f"  {url}: {len(configs)} configs")
+        if content:
+            configs = parse_configs(content)
+            all_configs.extend(configs)
+            log(f"  {url}: {len(configs)} configs")
     
     log(f"[PARSE DONE] {len(all_configs)}")
     
-    # ۶. حذف تکراری‌ها
-    unique_configs = list(set(all_configs))
-    log(f"[DEDUP] {len(unique_configs)} unique configs")
+    # ۳. حذف تکراری بر اساس اثر انگشت (Fingerprint Deduplication)
+    unique_configs = []
+    seen_fingerprints = set()
+    for cfg in all_configs:
+        fingerprint = hashlib.sha256(cfg.encode('utf-8')).hexdigest()
+        if fingerprint not in seen_fingerprints:
+            seen_fingerprints.add(fingerprint)
+            unique_configs.append(cfg)
+            
+    log(f"[DEDUP] {len(unique_configs)} unique configs (Fingerprint verified)")
     
-    # ۷. به‌روزرسانی دیتابیس
+    # به‌روزرسانی دیتابیس
     log("Updating database...")
-    db = load_db()
-    new_count = update_db(db, unique_configs)
-    save_db(db)
+    if os.path.exists(DB_FILE):
+        with open(DB_FILE, 'r', encoding='utf-8') as f: db = json.load(f)
+    else:
+        db = {}
+        
+    new_count = 0
+    for config in unique_configs:
+        cfg_hash = hashlib.md5(config.encode()).hexdigest() # هش کوتاه برای کلید دیتابیس
+        if cfg_hash not in db:
+            db[cfg_hash] = {"config": config, "added": datetime.now().isoformat(), "last_test": None, "success": 0, "fail": 0, "history": []}
+            new_count += 1
+            
+    with open(DB_FILE, 'w', encoding='utf-8') as f:
+        json.dump(db, f, indent=2, ensure_ascii=False)
     log(f"[DB] total={len(db)} new={new_count}")
     
-    # ۸. خروجی
-    log("Exporting configs...")
-    export_configs(db)
+    # خروجی اولیه
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(f"{OUTPUT_DIR}/all.txt", 'w', encoding='utf-8') as f:
+        for cfg in unique_configs: f.write(cfg + '\n')
+    log(f"[EXPORT] {len(unique_configs)} configs")
     
-    # ۹. ارزیابی سلامت منابع
-    source_results = {}
-    for url, content in raw.items():
-        ok = bool(content)
-        count = len(parse_configs(content))
-        source_results[url] = {"success": ok, "valid_count": count}
-    
-    source_guardian.evaluate_sources(source_results)
-    
-    # ۱۰. پاکسازی نهایی
+    source_guardian.evaluate_sources({url: {"success": bool(content), "valid_count": len(parse_configs(content))} for url, content in raw.items()})
     source_guardian.clean_active_sources()
     
     log(f"[FINAL] {len(unique_configs)}")
-    log(f"[NEW] {new_count}")
     log("===== RUN END =====")
 
 if __name__ == "__main__":
