@@ -66,33 +66,46 @@ def evaluate_sources(sources_results):
     blacklist = load_blacklist()
     now = datetime.now().isoformat()
     banned_count = 0
+    
     for url, result in sources_results.items():
         norm_url = normalize_url(url)
+        
+        # اگر لینک نامعتبر است، مستقیم بن شود
         if not is_valid_sub_url(norm_url):
             if norm_url and norm_url not in blacklist:
                 blacklist.add(norm_url)
                 banned_count += 1
                 log(f"🚫 Invalid format blacklisted: {norm_url}")
             continue
-        if norm_url in blacklist:
-            continue
+            
+        if norm_url in blacklist: continue
+        
         if norm_url not in health:
             health[norm_url] = {"success": 0, "fail": 0, "last_check": None, "total_valid": 0}
+            
         entry = health[norm_url]
         entry["last_check"] = now
-        if result.get("success") and result.get("valid_count", 0) >= 10:
+        
+        # ✅ اصلاح مهم: فقط اگر واقعاً شکست خورده (نه Skipped)
+        # اگر valid_count > 0 باشد، یعنی موفق بوده (حتی اگر Skipped شده)
+        if result.get("valid_count", 0) > 0:
             entry["success"] += 1
             entry["fail"] = 0
             entry["total_valid"] += result.get("valid_count", 0)
-        else:
+        elif result.get("success"):  # اگر موفق بوده ولی کانفیگ نداشته
+            entry["success"] += 1
+            entry["fail"] = 0
+        else:  # فقط اگر واقعاً شکست خورده
             entry["fail"] += 1
             entry["success"] = 0
-        if entry["fail"] >= 2:
+            
+        # با 3 بار شکست واقعی، بن شود (نه 2 بار)
+        if entry["fail"] >= 3:
             blacklist.add(norm_url)
-            if norm_url in health:
-                del health[norm_url]
+            if norm_url in health: del health[norm_url]
             banned_count += 1
-            log(f"🚫 Failed source blacklisted (2 fails): {norm_url}")
+            log(f"🚫 Failed source blacklisted (3 fails): {norm_url}")
+            
     save_health(health)
     save_blacklist(blacklist)
     log(f"✅ Source Guardian: {banned_count} sources blacklisted.")
