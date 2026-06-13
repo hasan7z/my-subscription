@@ -1,962 +1,507 @@
 # Clash Meta / Mihomo Configuration
 proxies:
-  - name: "英國_4"
-    type: vmess
-    server: "82.198.246.214"
-    port: 180
-    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
-    alterId: 0
-    cipher: auto
-    network: tcp
-    udp: true
-  - name: "美国4|@ripaojiedian"
-    type: vmess
-    server: "82.198.246.250"
-    port: 180
-    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
-    alterId: 0
-    cipher: auto
-    network: tcp
-    udp: true
-  - name: "🇭🇰 香港|@ripaojiedian"
-    type: vmess
-    server: "v10.hdacd.com"
-    port: 30807
-    uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    alterId: 2
-    cipher: auto
-    network: tcp
-    udp: true
-  - name: "🇺🇸 美国4|@ripaojiedian"
-    type: vmess
-    server: "82.198.246.250"
-    port: 180
-    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
-    alterId: 0
-    cipher: auto
-    network: tcp
-    udp: true
-  - name: "@KAFING_2"
+  - name: "[OpenRay] 🇨🇦 CA-17160"
     type: trojan
-    server: "172.64.152.23"
+    server: "104.19.229.21"
     port: 443
-    uuid: "20ba0c60-0133-11f1-95ef-1239d0255272"
+    uuid: "humanity"
     network: ws
     udp: true
     tls: true
-    servername: "uk1.test3.net"
+    servername: "www.creationlong.org"
     client-fingerprint: chrome
     ws-opts:
-      path: "/howdy"
+      path: "/assignment"
       headers:
-        Host: "uk1.test3.net"
-  - name: "🇽🇽 XX | TROJAN | @teamvpnpro #1"
-    type: trojan
-    server: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
+        Host: "www.creationlong.org"
+  - name: "[OpenRay] 🇨🇦 CA-17990"
+    type: vless
+    server: "188.114.98.0"
     port: 443
-    uuid: "22f86840-bcac-11ee-abea-1239d0255272"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
-    client-fingerprint: chrome
-  - name: "@ho3ino00🤣+آخوندی+در+جزایر+اسکاندیناوی"
-    type: trojan
-    server: "188.114.97.82"
-    port: 443
-    uuid: "2f211aae-3678-47a6-b231-46304443772f"
+    uuid: "fc965ad9-bdd7-4815-ad71-b39ec5972dc1"
     network: ws
     udp: true
     tls: true
-    servername: "cdir-0203.wlfvip.com"
+    servername: "octopusss4.com"
     client-fingerprint: chrome
     ws-opts:
-      path: "/trojanws?ed=2048"
+      path: "/tsghdws"
       headers:
-        Host: "cdir-0203.wlfvip.com"
-  - name: "@ho3ino00🤣+آخوندی+در+%D…"
+        Host: "octopusss4.com"
+  - name: "[OpenRay] 🇨🇦 CA-17935"
     type: trojan
-    server: "188.114.97.82"
+    server: "104.18.139.67"
     port: 443
-    uuid: "2f211aae-3678-47a6-b231-46304443772f"
+    uuid: "humanity"
     network: ws
     udp: true
     tls: true
-    servername: "cdir-0203.wlfvip.com"
+    servername: "www.creationlong.org"
     client-fingerprint: chrome
     ws-opts:
-      path: "/trojanws?ed=2048"
+      path: "/assignment"
       headers:
-        Host: "cdir-0203.wlfvip.com"
-  - name: "چنلعضوشو@v2ra_config"
+        Host: "www.creationlong.org"
+  - name: "[OpenRay] 🇨🇦 CA-18261"
+    type: trojan
+    server: "104.19.229.21"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-11962"
+    type: trojan
+    server: "188.114.98.0"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.gossipglove.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "188.114.98.0"
+  - name: "[OpenRay] 🇨🇦 CA-17297"
+    type: trojan
+    server: "104.20.6.134"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.creationlong.org"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "104.20.6.134"
+  - name: "[OpenRay] 🇨🇦 CA-17772"
+    type: trojan
+    server: "104.16.79.73"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.creationlong.org"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "[OpenRay] 🇨🇦 CA-18280"
+    type: trojan
+    server: "104.16.174.14"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.ignitelimit.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
+  - name: "[OpenRay] 🇨🇦 CA-18430"
     type: trojan
     server: "188.114.97.6"
     port: 443
-    uuid: "2t5hATPZBk"
+    uuid: "humanity"
     network: ws
     udp: true
     tls: true
-    servername: "dd.aananas.ir."
+    servername: "www.ignitelimit.com"
     client-fingerprint: chrome
     ws-opts:
-      path: "/?ed=2048"
+      path: "/assignment"
       headers:
-        Host: "188.114.97.6"
-  - name: "🇺🇸 US | TROJAN | @vpn_ioss #1"
-    type: trojan
-    server: "208.103.161.170"
+        Host: "www.ignitelimit.com"
+  - name: "[OpenRay] 🇨🇦 CA-18725"
+    type: vless
+    server: "104.253.43.47"
+    port: 5775
+    uuid: "a2e5ac45-fd88-4f77-8e23-a7751f6a69e6"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "www.yahoo.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "ny33x7ljQJAzFN1sDxaTb90zlGIPABs3SskxeuXE4kI"
+      short-id: "6443cb87ea"
+  - name: "[OpenRay] 🇨🇦 CA-18559"
+    type: vless
+    server: "188.114.97.6"
     port: 443
-    uuid: "386bd471-4e29-4e79-9a3c-6bc6076ce4b6"
-    network: tcp
-    udp: true
-  - name: "美国"
-    type: trojan
-    server: "103.177.136.43"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "103.177.136.44"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "103.177.136.45"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.3"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.3"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.84"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.84"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.84"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.85"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.85"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.85"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.89"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.89"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.89"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.89"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.90"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.90"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "155.117.198.90"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.90"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.92"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.92"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.93"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.93"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.93"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.93"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.93"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.94"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.94"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.94"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.94"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.96"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.96"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.96"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.96"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.96"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.98"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.98"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.98"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.99"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.99"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.99"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "美国"
-    type: trojan
-    server: "188.253.12.99"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇨🇦_CA_加拿大->🇦🇿_AZ_阿塞拜疆"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "美国"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "az.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇦🇿AZ阿塞拜疆"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 41943
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "🇺🇸_US_美国->🇨🇭_CH_瑞士"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "香港"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "ch.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇨🇭CH瑞士"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 45553
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "法国"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 45619
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "fr.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇺🇸_US_美国->🇩🇪_DE_德国"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "美国"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 46424
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "de.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇺🇸_US_美国->🇮🇸_IS_冰岛"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "香港"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "is.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇮🇸IS冰岛"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 47909
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-  - name: "美国"
-    type: trojan
-    server: "90081bb25c.node.tro.cac.cab"
-    port: 48697
-    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "gh.01.naiun.bilibili.com"
-    client-fingerprint: chrome
-  - name: "🇽🇽 XX | TROJAN | @vpnv2raytop #1"
-    type: trojan
-    server: "persiancdn.top"
-    port: 443
-    uuid: "51410d3cb2931a01b366bb5c868264bf"
-    network: tcp
-    udp: true
-  - name: "🩵+@Azarakhsh_Proxy+🩷"
-    type: trojan
-    server: "104.16.159.6"
-    port: 443
-    uuid: "669d0ac7b5b64ebbb1abb75d5d540a5c"
+    uuid: "25b83e2f-f5d2-4d08-ae77-74485e2c4758"
     network: ws
     udp: true
     tls: true
-    servername: "bangladeshipatri.com"
+    servername: "api24-normal.tiktokv.com.r3xxe.eu.cc"
     client-fingerprint: chrome
     ws-opts:
-      path: "/6b777a91"
+      path: "/au-do"
       headers:
-        Host: "bangladeshipatri.com"
-  - name: "香港節點丨yoyapai.com\r"
-    type: trojan
-    server: "adak.sonofthewinds.com"
-    port: 34436
-    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
-    network: tcp
+        Host: "api24-normal.tiktokv.com.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18528"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "c148c68d-aba0-44b8-8f93-ded816246e2c"
+    network: ws
     udp: true
-  - name: "臺灣節點丨yoyapai.com\r"
-    type: trojan
-    server: "adak.sonofthewinds.com"
-    port: 34450
-    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
-    network: tcp
+    tls: true
+    servername: "zaintest.vuclip.com.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/us-gllc"
+      headers:
+        Host: "zaintest.vuclip.com.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18535"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "dda82c5a-9ae8-4d89-af81-ebf28568d710"
+    network: ws
     udp: true
-  - name: "日本節點丨yoyapai.com\r"
-    type: trojan
-    server: "adak.sonofthewinds.com"
-    port: 34470
-    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
-    network: tcp
+    tls: true
+    servername: "unnes.ac.id.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/us-gllc"
+      headers:
+        Host: "unnes.ac.id.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18476"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "9aecf22f-2cb9-41c8-b533-04534a5b150b"
+    network: ws
     udp: true
-  - name: "🇽🇽 XX | TROJAN | @spikevpn #1"
-    type: trojan
+    tls: true
+    servername: "space.byu.id.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/sg-amz"
+      headers:
+        Host: "space.byu.id.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18518"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "31b793bd-e20c-414f-96a6-e3afded9a8a9"
+    network: ws
+    udp: true
+    tls: true
+    servername: "df.infra.test.shopee.co.id.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/sg-orcl"
+      headers:
+        Host: "df.infra.test.shopee.co.id.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18594"
+    type: vless
+    server: "104.17.3.81"
+    port: 80
+    uuid: "878352ed-8eef-4dd6-a44e-21e66164a67d"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/id-pusat"
+      headers:
+        Host: "r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18661"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "a92ab0af-1968-4107-86de-cceea0a60f53"
+    network: ws
+    udp: true
+    tls: true
+    servername: "cdn.opensignal.com.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/us-gllc"
+      headers:
+        Host: "cdn.opensignal.com.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18701"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "3e3c810a-5107-48da-bad3-01b37dd45aee"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.genflix.co.id.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/us-gllc"
+      headers:
+        Host: "www.genflix.co.id.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18702"
+    type: vless
+    server: "188.114.97.6"
+    port: 80
+    uuid: "44098455-565c-4c45-9f9a-7aaeb350990c"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/in-do"
+      headers:
+        Host: "zaintest.vuclip.com.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-16376"
+    type: vless
+    server: "104.24.45.247"
+    port: 80
+    uuid: "2e71d8fc-d2e8-44fc-89bd-c8a449a193aa"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "odd-bread-435d.ahmadrezasteamacc.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-13493"
+    type: vless
+    server: "104.19.173.68"
+    port: 443
+    uuid: "7e346122-2ee0-406e-b964-a8ee665f1814"
+    network: ws
+    udp: true
+    tls: true
+    servername: "paRMis-1Tk63J.PArMiS.WoRkeRs.DeV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "paRMis-1Tk63J.PArMiS.WoRkeRs.DeV"
+  - name: "[OpenRay] 🇨🇦 CA-14273"
+    type: vless
+    server: "104.19.174.68"
+    port: 443
+    uuid: "7e346122-2ee0-406e-b964-a8ee665f1814"
+    network: ws
+    udp: true
+    tls: true
+    servername: "paRMis-1Tk63J.PArMiS.WoRkeRs.DeV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "paRMis-1Tk63J.PArMiS.WoRkeRs.DeV"
+  - name: "[OpenRay] 🇨🇦 CA-17271"
+    type: vless
+    server: "104.18.189.112"
+    port: 80
+    uuid: "f929cc78-e2a1-4ce3-8051-3e9538405144"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/@WireXnet?ed=2048"
+      headers:
+        Host: "us.xydcqd.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-17585"
+    type: vless
+    server: "104.17.15.87"
+    port: 80
+    uuid: "f929cc78-e2a1-4ce3-8051-3e9538405144"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/@WireXnet"
+      headers:
+        Host: "germany.xydcqd.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-17591"
+    type: vless
+    server: "104.17.254.236"
+    port: 80
+    uuid: "f929cc78-e2a1-4ce3-8051-3e9538405144"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "netherlands.xydcqd.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18181"
+    type: vless
+    server: "104.19.173.68"
+    port: 443
+    uuid: "7e346122-2ee0-406e-b964-a8ee665f1814"
+    network: ws
+    udp: true
+    tls: true
+    servername: "parmis-1tk63j.parmis.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "parmis-1tk63j.parmis.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18560"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "302929e6-37ae-4d63-9e84-b0e781ceb72a"
+    network: ws
+    udp: true
+    tls: true
+    servername: "cache.netflix.com.r3xxe.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/us-gllc"
+      headers:
+        Host: "cache.netflix.com.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18721"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "1043634e-8d9d-4736-83fa-f14ddc9d464c"
+    network: ws
+    udp: true
+    tls: true
+    servername: "dfsuporte.garena.com.ex33r.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/id-amz"
+      headers:
+        Host: "dfsuporte.garena.com.ex33r.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18697"
+    type: vless
+    server: "188.114.97.6"
+    port: 80
+    uuid: "6faeb6a0-5055-4e4b-8fb1-ffd77e57aefa"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/au-do"
+      headers:
+        Host: "somersby.pt.r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18754"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "1c94a079-e41d-48d3-b5b6-d8f7f761a00d"
+    network: ws
+    udp: true
+    tls: true
+    servername: "SILENt-kiNG-5030.AipRoINteR.WorkErS.DEv"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoiZ3RXWk45UVhpRVB3R3VPIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OjExOjY0OjpdIl19?ed=2560"
+      headers:
+        Host: "silent-king-5030.aiprointer.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18758"
+    type: vless
+    server: "162.159.19.202"
+    port: 80
+    uuid: "e284098e-7ffd-4fce-a9d3-ea6bc98ce629"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "empty-sea-3392.amir-1385-poo.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18760"
+    type: vless
+    server: "104.17.3.81"
+    port: 80
+    uuid: "00000000-0000-0000-0000-000000000000"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/id-pusat"
+      headers:
+        Host: "r3xxe.eu.cc"
+  - name: "[OpenRay] 🇨🇦 CA-18801"
+    type: vless
+    server: "104.17.28.42"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    network: ws
+    udp: true
+    tls: true
+    servername: "round-art-52ee.eadfgv.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "round-art-52ee.eadfgv.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18802"
+    type: vless
+    server: "104.17.103.53"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    network: ws
+    udp: true
+    tls: true
+    servername: "round-art-52ee.eadfgv.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "round-art-52ee.eadfgv.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18804"
+    type: vless
+    server: "104.21.204.182"
+    port: 8880
+    uuid: "a0a262a4-1ac7-428e-9acc-3d8187ad292c"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/chAKKalXDoesKnow?ed=8080"
+      headers:
+        Host: "ghtp.kharabetam.de."
+  - name: "[OpenRay] 🇨🇦 CA-18808"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "ed88c6b2-4881-4919-b9b0-b2189ec3bda7"
+    network: ws
+    udp: true
+    tls: true
+    servername: "amin.ferrarikingfr.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/amin"
+      headers:
+        Host: "amin.ferrarikingfr.ir"
+  - name: "[OpenRay] 🇨🇦 CA-18757"
+    type: vless
     server: "104.16.7.70"
     port: 443
-    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
-    network: tcp
+    uuid: "bbd67e54-1b4b-488b-a5df-708ef896ecaa"
+    network: ws
     udp: true
-  - name: "🇽🇽 XX | TROJAN | @spikevpn #2"
-    type: trojan
-    server: "104.18.109.147"
+    tls: true
+    servername: "wf1.cerosmakom.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/api/v2/sync/data-stream"
+      headers:
+        Host: "104.16.7.70"
+  - name: "[OpenRay] 🇨🇦 CA-15202"
+    type: vless
+    server: "104.17.147.22"
     port: 443
-    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
-    network: tcp
-    udp: true
-  - name: "意大利節點🇮🇹IT丨yoyapai.com\r"
-    type: trojan
-    server: "151.241.215.148"
-    port: 443
-    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
-    network: tcp
-    udp: true
-  - name: "荷蘭節點丨yoyapai.com\r"
-    type: trojan
-    server: "152.53.200.89"
-    port: 8443
-    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
-    network: tcp
-    udp: true
-  - name: "🇳🇱NL荷蘭丨yoyapai.com\r"
-    type: trojan
-    server: "91.221.190.80"
-    port: 443
-    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
-    network: tcp
-    udp: true
-  - name: "@Arvand_soul@Arvand_soul❤️🧑‍💻کانفیگملیدر"
-    type: trojan
-    server: "www.speedtest.net"
-    port: 443
-    uuid: "A4u^p(_UR*F6"
+    uuid: "8a36be1d-7c78-4885-8a1f-bedf5ba7db1c"
     network: ws
     udp: true
     tls: true
-    servername: "027.ELeCTroCelLco-CF-027.wORkERS.dEv"
-    client-fingerprint: chrome
+    servername: "luCky-LAB-AC6D.CAveyi8071.WoRkeRS.DEV"
+    client-fingerprint: randomized
     ws-opts:
-      path: "/eyJqdW5rIjoidlhnMXN5OXFUSiIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560"
+      path: "/rN50nmm9L1DeY73C?ed=2560"
       headers:
-        Host: "027.electrocellco-cf-027.workers.dev"
-  - name: "برایاتصالدائمیجوینشو🌐TelegramID⌲Express_freevpn🪩"
-    type: trojan
-    server: "185.126.236.44"
-    port: 443
-    uuid: "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "www.mesaly.click"
-    client-fingerprint: chrome
-  - name: "برایاتصالدائمیجوینشو🎏TelegramID⌲Express_freevpn🪩"
-    type: trojan
-    server: "185.126.236.44"
-    port: 443
-    uuid: "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "www.mesaly.click"
-    client-fingerprint: chrome
-  - name: "@Net2rayServer🔥3"
-    type: trojan
-    server: "104.16.75.127"
-    port: 443
-    uuid: "Config0plus"
-    network: ws
-    udp: true
-    tls: true
-    servername: "api24-normal.tiktokv.com.cyylr.eu.cc"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/id-tksi"
-      headers:
-        Host: "api24-normal.tiktokv.com.cyylr.eu.cc"
-  - name: "@V2raySup0|🚀"
-    type: trojan
-    server: "45.130.125.160"
-    port: 443
-    uuid: "Config0plus"
-    network: ws
-    udp: true
-    tls: true
-    servername: "api24-normal.tiktokv.com.cyylr.eu.cc"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/id-tksi"
-      headers:
-        Host: "api24-normal.tiktokv.com.cyylr.eu.cc"
-  - name: "🇯🇵 JP | TROJAN | @free4allvpn #1"
-    type: trojan
-    server: "kuame.missionsec.us"
-    port: 443
-    uuid: "FDIypSwe64a3DA7un2R8DFjYXZO3NS05gKZTTOC8SxO0Fy3cqYg3EaFDA3ABaEYKNx39D"
-    network: tcp
-    udp: true
-    tls: true
-    servername: "kuame.missionsec.us"
-    client-fingerprint: chrome
-  - name: "韩国+KT电信\r"
-    type: trojan
-    server: "121.178.83.161"
-    port: 26214
-    uuid: "GKHWMe2R4qwNcNxu6l3KMkdd"
-    network: tcp
-    udp: true
-  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "45.85.119.179"
-    port: 2087
-    uuid: "Go5e2nJM8U"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "@v2rayNG_VPNN"
-      headers:
-        Host: "ee.v2jey.fun"
-  - name: "🇫🇮🇫🇮🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "188.42.88.252"
-    port: 2083
-    uuid: "Go5e2nKM8P"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "45.95.241.101"
-    port: 2083
-    uuid: "Go5e2nKM8P"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "@v2rayNG_VPNN[همراهاول]"
-    type: trojan
-    server: "188.42.88.144"
-    port: 2053
-    uuid: "Go5e2nKM8T"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "@v2rayNG_VPNN⚙ایرانسل"
-    type: trojan
-    server: "45.85.119.0"
-    port: 2053
-    uuid: "Go5e2nKM8U-v2rayNG_VPNN"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "🇩🇪🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "188.42.88.252"
-    port: 2087
-    uuid: "Go5e2nKM9U"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "JoinUs@v2rayNG_VPNN"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "🇫🇷🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "188.42.88.252"
-    port: 2087
-    uuid: "Go5e2nKM9U"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "JoinUs@v2rayNG_VPNN"
-      headers:
-        Host: "aa.v2jey.fun"
-  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
-    type: trojan
-    server: "45.85.119.179"
-    port: 8443
-    uuid: "Go5e2nKO8U"
-    network: ws
-    udp: true
-    tls: true
-    servername: "aa.v2jey.fun"
-    client-fingerprint: chrome
-    ws-opts:
-      path: "JoinUs@v2rayNG_VPNN"
-      headers:
-        Host: "cc.v2jey.fun"
-  - name: "⚡@V2ray_official"
+        Host: "lucky-lab-ac6d.caveyi8071.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18750"
     type: trojan
     server: "188.114.97.6"
     port: 443
@@ -965,60 +510,792 @@ proxies:
     udp: true
     tls: true
     servername: "dd.aananas.ir."
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     ws-opts:
       path: "/?ed=2048"
       headers:
         Host: "188.114.97.6"
-  - name: "@internet_azad_2026"
-    type: trojan
-    server: "195.15.253.72"
+  - name: "[OpenRay] 🇨🇦 CA-18770"
+    type: vless
+    server: "188.114.97.6"
     port: 443
-    uuid: "Masir_Sefid"
+    uuid: "abe50676-d90e-4d13-8344-ee38c21da55a"
+    network: ws
+    udp: true
+    tls: true
+    servername: "SiLeNt-tHUNdEr-8469.sHSFHhdfh.WOrkERS.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoiUDF3NHE0c1QiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0=?ed=2560"
+      headers:
+        Host: "SiLeNt-tHUNdEr-8469.sHSFHhdfh.WOrkERS.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16250"
+    type: trojan
+    server: "104.18.155.119"
+    port: 443
+    uuid: "988sR-269PKCKlb%263pMrFTEr"
+    network: ws
+    udp: true
+    tls: true
+    servername: "LetiRanbrEaTh-7RrkEvFu2HJBIs5UHCXWztz24T5Vp6trF1oka8Dkrw0n.HE3fmQ6z0mfSZSK3Xy2E.wOrkers.deV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoicGpncHl4eVZoSnZQcFRTIiwicHJvdG9jb2wiOiJ0ciIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==?ed=2560"
+      headers:
+        Host: "letiranbreath-7rrkevfu2hjbis5uhcxwztz24t5vp6trf1oka8dkrw0n.he3fmq6z0mfszsk3xy2e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16251"
+    type: trojan
+    server: "104.18.156.119"
+    port: 443
+    uuid: "988sR-269PKCKlb%263pMrFTEr"
+    network: ws
+    udp: true
+    tls: true
+    servername: "LetiRanbrEaTh-7RrkEvFu2HJBIs5UHCXWztz24T5Vp6trF1oka8Dkrw0n.HE3fmQ6z0mfSZSK3Xy2E.wOrkers.deV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoicGpncHl4eVZoSnZQcFRTIiwicHJvdG9jb2wiOiJ0ciIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==?ed=2560"
+      headers:
+        Host: "letiranbreath-7rrkevfu2hjbis5uhcxwztz24t5vp6trf1oka8dkrw0n.he3fmq6z0mfszsk3xy2e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18606"
+    type: vless
+    server: "188.114.97.7"
+    port: 2083
+    uuid: "8525fe74-67e6-4a55-8a26-95f227bd1384"
+    network: ws
+    udp: true
+    tls: true
+    servername: "shy-fog-af06.alvlirm333.workers.dev"
+    client-fingerprint: random
+    ws-opts:
+      path: "/proxyip=104.223.62.204,99.254.66.219,45.133.17.106,40.233.87.120,40.233.110.251,40.233.68.138,68.233.122.42,144.217.76.62"
+      headers:
+        Host: "shy-fog-af06.alvlirm333.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-11586"
+    type: vless
+    server: "104.26.3.125"
+    port: 2052
+    uuid: "e8d06b09-acd9-448c-9874-3c36151d36ee"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/🔒 [By EbraSha]"
+      headers:
+        Host: "icy-wildflower-2590.lihuifeng595.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-11689"
+    type: vless
+    server: "104.18.4.46"
+    port: 8880
+    uuid: "5b002005-7fb1-413e-8cbd-08e50c87c2ea"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "wetfleagidc-8tsbi8xd-v3.wet-flea-gidc.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-11834"
+    type: vless
+    server: "104.18.5.46"
+    port: 8880
+    uuid: "5b002005-7fb1-413e-8cbd-08e50c87c2ea"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed=2560Join---V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz"
+      headers:
+        Host: "wetfleagidc-8tsbi8xd-v3.wet-flea-gidc.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-17679"
+    type: vless
+    server: "104.16.158.162"
+    port: 80
+    uuid: "a7444b2b-20fb-461f-9840-63e5c8c7d883"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "mute-violet-c674.poviy66273.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18179"
+    type: vless
+    server: "104.21.18.85"
+    port: 80
+    uuid: "78e7a591-55bc-4e30-b497-2babd4636731"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "v2configlab.v2configlab17.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18180"
+    type: vless
+    server: "172.67.181.128"
+    port: 80
+    uuid: "78e7a591-55bc-4e30-b497-2babd4636731"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "v2configlab.v2configlab17.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-12446"
+    type: vless
+    server: "188.114.97.7"
+    port: 443
+    uuid: "ba49d874-fe02-465d-82d3-ed981dc7694f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "o94Yv7LIF0-aNXISd9eFehvvS7mxn6bH.Z-ULe-iKa-d-e-ne-K-e.wORkeRs.Dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/7J5lLqtBnJg9WjVT?ed=2560"
+      headers:
+        Host: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-12448"
+    type: vless
+    server: "188.114.96.7"
+    port: 443
+    uuid: "ba49d874-fe02-465d-82d3-ed981dc7694f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "o94yv7lIF0-AnXiSd9EFeHVVS7mxn6Bh.z-ULe-IKA-d-e-Ne-k-E.WORKERs.DEv"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/dbJqwUHWfrXV0Z3Q?ed=2560"
+      headers:
+        Host: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-12450"
+    type: vless
+    server: "188.114.98.134"
+    port: 443
+    uuid: "ba49d874-fe02-465d-82d3-ed981dc7694f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "o94yv7LiF0-AnxIsd9EFehVvs7mXn6bh.z-UlE-ikA-d-e-nE-k-E.WorkeRs.dEv"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/yraL4HRbwB8cMc0F?ed=2560"
+      headers:
+        Host: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18170"
+    type: vless
+    server: "172.67.171.247"
+    port: 80
+    uuid: "0c54bdcb-945b-423c-9d86-c6df16ef40ad"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "v2configlab.v2configlab15.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18185"
+    type: vless
+    server: "188.114.97.7"
+    port: 443
+    uuid: "ba49d874-fe02-465d-82d3-ed981dc7694f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18811"
+    type: vless
+    server: "104.21.88.19"
+    port: 80
+    uuid: "0c54bdcb-945b-423c-9d86-c6df16ef40ad"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "v2configlab.v2configlab15.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18812"
+    type: vless
+    server: "188.114.97.6"
+    port: 2086
+    uuid: "9c10d8b0-e1fb-48d5-af5d-03ad736f37bb"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/eyJqdW5rIjoiMENyWGlPUjVmIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiODcuMTIwLjE2Ni4xNCJdfQ==?ed=2560"
+      headers:
+        Host: "snowy-fire-7369.mmdiborobav.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-17638"
+    type: vless
+    server: "188.114.96.1"
+    port: 443
+    uuid: "b03db3b9-6edb-4aef-8485-41c66e502487"
+    network: ws
+    udp: true
+    tls: true
+    servername: "24VvD-4imRvfaQv7hQxYbU9WzJv378Qi.v2Raygulf.WorkeRS.DeV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoicGtPV3BFY3BySDMwSUYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119?ed=2560"
+      headers:
+        Host: "188.114.96.1"
+  - name: "[OpenRay] 🇨🇦 CA-18604"
+    type: vless
+    server: "hyst.purplrose.ir"
+    port: 8443
+    uuid: "5e042049-f74d-4ccc-a3ac-db27bca2ce99"
+    network: ws
+    udp: true
+    tls: true
+    servername: "bastani.purplrose.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "bastani.purplrose.ir"
+  - name: "[OpenRay] 🇨🇦 CA-18423"
+    type: vless
+    server: "104.16.174.39"
+    port: 443
+    uuid: "1c4046d3-333f-4e8d-b9cc-333e7ec3143b"
+    network: ws
+    udp: true
+    tls: true
+    servername: "Drping.nscl.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/DrPing_channel"
+      headers:
+        Host: "Drping.nscl.ir"
+  - name: "[OpenRay] 🇨🇦 CA-18861"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "mitivpn"
+    network: ws
+    udp: true
+    tls: true
+    servername: "mitivpn.sdde.ssdl.globdal.fastdly.net.mitivpn.site"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "https://chatgpt.com"
+      headers:
+        Host: "mitivpn.de.ssl.global.fastly.co.mitivpn.site"
+  - name: "[OpenRay] 🇨🇦 CA-18862"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "mitivpn"
+    network: ws
+    udp: true
+    tls: true
+    servername: "mitivpn.sddde.ssddl.globddal.fassdtdly.cow.mitivpn.site"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "https://chatgpt.com"
+      headers:
+        Host: "mitivpn.nl.sdsl.globdal.fastldy.com.mitivpn.site"
+  - name: "[OpenRay] 🇨🇦 CA-18876"
+    type: vless
+    server: "104.253.43.225"
+    port: 443
+    uuid: "5f57df48-45c4-4e1d-aa13-dd539ecb257d"
     network: tcp
     udp: true
     tls: true
-    servername: "store.steampowered.com"
+    servername: "104.253.43.225"
     client-fingerprint: chrome
-    reality-opts:
-      public-key: "w0XepGv1Hk0gBh1Apiw-nvn8SfzjWcDuxdxN1mpaF3g"
-      short-id: "6ced01fc4aa417"
-  - name: "@internet_azad_2026"
-    type: trojan
-    server: "37.156.45.168"
+  - name: "[OpenRay] 🇨🇦 CA-18879"
+    type: vless
+    server: "104.253.43.225"
     port: 443
-    uuid: "Masir_Sefid"
+    uuid: "5f57df48-45c4-4e1d-aa13-dd539ecb257d"
     network: tcp
     udp: true
     tls: true
-    servername: "store.steampowered.com"
+    servername: "104.253.43.225"
     client-fingerprint: chrome
-    reality-opts:
-      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
-      short-id: "d67d2e36"
-  - name: "🇨🇳@FreakConfig"
+  - name: "[OpenRay] 🇨🇦 CA-18880"
     type: trojan
-    server: "37.156.45.168"
+    server: "188.114.97.6"
     port: 443
-    uuid: "Masir_Sefid"
-    network: tcp
+    uuid: "mitivpn"
+    network: ws
     udp: true
     tls: true
-    servername: "store.steampowered.com"
+    servername: "mitivpn.sddde.ssddl.globddal.fassdtdly.cow.mitivpn.site"
     client-fingerprint: chrome
-    reality-opts:
-      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
-      short-id: "d67d2e36"
-  - name: "🔰@V2ray_official"
+    ws-opts:
+      path: "https://chatgpt.com"
+      headers:
+        Host: "mitivpn.nl.sdsl.globdal.fastldy.com.mitivpn.site"
+  - name: "[OpenRay] 🇨🇦 CA-17900"
     type: trojan
-    server: "37.156.45.168"
+    server: "104.20.26.246"
     port: 443
-    uuid: "Masir_Sefid"
-    network: tcp
+    uuid: "humanity"
+    network: ws
     udp: true
     tls: true
-    servername: "store.steampowered.com"
+    servername: "www.creationlong.org"
     client-fingerprint: chrome
-    reality-opts:
-      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
-      short-id: "d67d2e36"
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "[OpenRay] 🇨🇦 CA-12178"
+    type: trojan
+    server: "188.114.96.3"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-17305"
+    type: trojan
+    server: "104.20.6.134"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-16710"
+    type: trojan
+    server: "188.114.98.0"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-17736"
+    type: trojan
+    server: "104.16.7.70"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-18504"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-18899"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "94498f1a-26c1-4d86-a38c-fb33e0eb1ded"
+    network: ws
+    udp: true
+    tls: true
+    servername: "cloud.yas-nowin.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/cloud-vps"
+      headers:
+        Host: "188.114.97.6"
+  - name: "[OpenRay] 🇨🇦 CA-18903"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "9Is9oX3k3H"
+    network: ws
+    udp: true
+    tls: true
+    servername: "dd.aananas.ir."
+    client-fingerprint: firefox
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "dd.aananas.ir."
+  - name: "[OpenRay] 🇨🇦 CA-18800"
+    type: vless
+    server: "104.17.111.27"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    network: ws
+    udp: true
+    tls: true
+    servername: "round-art-52ee.eadfgv.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "round-art-52ee.eadfgv.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16780"
+    type: vless
+    server: "104.17.148.22"
+    port: 443
+    uuid: "0836463b-214f-4af6-aa85-85a56a62388e"
+    network: ws
+    udp: true
+    tls: true
+    servername: "d2127A49-flAT-wooD-C4B5.mILia-AkbARpOor.WorkERs.dEV"
+    client-fingerprint: randomized
+    ws-opts:
+      path: "/8eaZJhRwB5zzDy81?ed=2560"
+      headers:
+        Host: "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16070"
+    type: vless
+    server: "104.19.151.106"
+    port: 80
+    uuid: "73d17f62-d0c0-4c90-903c-a2b3f3806cca"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "fragrant-tooth-a5b7.cajeba6448.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16219"
+    type: vless
+    server: "104.17.25.132"
+    port: 80
+    uuid: "73d17f62-d0c0-4c90-903c-a2b3f3806cca"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "fragrant-tooth-a5b7.cajeba6448.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16542"
+    type: vless
+    server: "104.18.14.19"
+    port: 80
+    uuid: "a2af6e7c-a792-4e51-9460-fff4bd74fbfc"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vahidqaz-ft33vt-1.vahidqaz.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16639"
+    type: vless
+    server: "104.18.15.19"
+    port: 80
+    uuid: "a2af6e7c-a792-4e51-9460-fff4bd74fbfc"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vahidqaz-ft33vt-1.vahidqaz.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-17165"
+    type: vless
+    server: "104.17.72.206"
+    port: 80
+    uuid: "1de37726-744b-46e1-9101-c926b3402e82"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "v2.v2configlab.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18522"
+    type: vless
+    server: "188.114.96.3"
+    port: 2086
+    uuid: "bba14c1d-f08c-4c9a-ac87-cf85d38d8aff"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/eyJqdW5rIjoiSjZsY01ZdmlLM1ciLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0=?ed=2560"
+      headers:
+        Host: "tight-thunder-ce8e.hamid-r-aliakbari1379-0f0.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18523"
+    type: vless
+    server: "188.114.97.3"
+    port: 2086
+    uuid: "bba14c1d-f08c-4c9a-ac87-cf85d38d8aff"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/eyJqdW5rIjoiSzhjREpaaGVoVXpCN2NvNiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ==?ed=2560"
+      headers:
+        Host: "tight-thunder-ce8e.hamid-r-aliakbari1379-0f0.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18182"
+    type: vless
+    server: "104.21.8.189"
+    port: 80
+    uuid: "8850643f-605c-498a-8b0a-674448eee39a"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "v2configlab.v2configlab18.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18183"
+    type: vless
+    server: "172.67.130.152"
+    port: 80
+    uuid: "8850643f-605c-498a-8b0a-674448eee39a"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "v2configlab.v2configlab18.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-16778"
+    type: vless
+    server: "104.17.147.22"
+    port: 443
+    uuid: "0836463b-214f-4af6-aa85-85a56a62388e"
+    network: ws
+    udp: true
+    tls: true
+    servername: "d2127A49-flAT-wooD-C4B5.mILia-AkbARpOor.WorkERs.dEV"
+    client-fingerprint: randomized
+    ws-opts:
+      path: "/8eaZJhRwB5zzDy81?ed=2560"
+      headers:
+        Host: "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18818"
+    type: vless
+    server: "188.114.97.3"
+    port: 2086
+    uuid: "bba14c1d-f08c-4c9a-ac87-cf85d38d8aff"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/eyJqdW5rIjoiSzhjREpaaGVoVXpCN2NvNiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ"
+      headers:
+        Host: "tight-thunder-ce8e.hamid-r-aliakbari1379-0f0.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18778"
+    type: trojan
+    server: "104.16.79.73"
+    port: 443
+    uuid: "09548571-364e-4876-8e92-98f423e73913"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aaa.r-o-o-t2.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/I1P2U8JP51av1yhmNbaBgIw8"
+      headers:
+        Host: "aaa.r-o-o-t2.ir"
+  - name: "[OpenRay] 🇨🇦 CA-18779"
+    type: trojan
+    server: "104.16.80.73"
+    port: 443
+    uuid: "09548571-364e-4876-8e92-98f423e73913"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aaa.r-o-o-t2.ir"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/I1P2U8JP51av1yhmNbaBgIw8"
+      headers:
+        Host: "aaa.r-o-o-t2.ir"
+  - name: "[OpenRay] 🇨🇦 CA-18258"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "ed748c87-4201-4210-872e-f77265c27fde"
+    network: ws
+    udp: true
+    tls: true
+    servername: "SoftNetConnectcdn.sep-vpn.site"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "SoftNetConnectcdn.sep-vpn.site"
+  - name: "[OpenRay] 🇨🇦 CA-18642"
+    type: vless
+    server: "172.66.136.20"
+    port: 443
+    uuid: "88290f6d-28d2-402f-9dd6-06d369d15a01"
+    network: ws
+    udp: true
+    tls: true
+    servername: "1016.BAGsElL-1016.WORkErS.DEV"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoiVlVsc1I0cVozblZsZyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560"
+      headers:
+        Host: "1016.bagsell-1016.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18643"
+    type: vless
+    server: "172.66.136.20"
+    port: 443
+    uuid: "88290f6d-28d2-402f-9dd6-06d369d15a01"
+    network: ws
+    udp: true
+    tls: true
+    servername: "1016.BaGSeLL-1016.WorKeRS.DEv"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoiN1k5U09ORjVkRHUiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119?ed=2560"
+      headers:
+        Host: "1016.bagsell-1016.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18874"
+    type: vless
+    server: "188.114.97.116"
+    port: 443
+    uuid: "20d3fe0d-bbe1-4a74-9a85-9b9ba548f7f0"
+    network: ws
+    udp: true
+    tls: true
+    servername: "long-sky-3151.sue100.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "long-sky-3151.sue100.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18877"
+    type: vless
+    server: "188.114.97.6"
+    port: 443
+    uuid: "c466ef48-fb57-40c6-808d-ee48d537844d"
+    network: ws
+    udp: true
+    tls: true
+    servername: "illbefine.kakoolnewsgg.workers.dev"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "illbefine.kakoolnewsgg.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18878"
+    type: vless
+    server: "104.26.5.139"
+    port: 2095
+    uuid: "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/fp=randomized"
+      headers:
+        Host: "cnmfangbinxing.cnmfangbinxing-k.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-18493"
+    type: vless
+    server: "104.21.11.152"
+    port: 8080
+    uuid: "d7a8ae86-9904-4f71-8fe4-d754ded610d7"
+    network: ws
+    udp: true
+    ws-opts:
+      path: "/eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560"
+      headers:
+        Host: "server6.diwir81236.workers.dev"
+  - name: "[OpenRay] 🇨🇦 CA-14307"
+    type: vmess
+    server: "104.17.77.77"
+    port: 8443
+    uuid: "60441548-b68e-43b2-8191-e3b884be4b3c"
+    alterId: 0
+    cipher: auto
+    network: ws
+    udp: true
+    tls: true
+    servername: "v2ray1.dozapp.xyz"
+    ws-opts:
+      path: "/lMnsZUN4/"
+      headers:
+        Host: ""
+  - name: "[OpenRay] 🇨🇦 CA-18413"
+    type: trojan
+    server: "104.16.122.175"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmlunch.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "[OpenRay] 🇨🇦 CA-18065"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.creationlong.org"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "[OpenRay] 🇨🇦 CA-17672"
+    type: trojan
+    server: "104.20.6.134"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmloud.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "%2Fassignment"
+      headers:
+        Host: "104.20.6.134"
+  - name: "[OpenRay] 🇨🇦 CA-17719"
+    type: trojan
+    server: "188.114.96.4"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmloud.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmloud.com"
+  - name: "[OpenRay] 🇨🇦 CA-18073"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "humanity"
+    network: ws
+    udp: true
+    tls: true
+    servername: "www.calmloud.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmloud.com"
