@@ -1,10 +1,10 @@
 vmess://eyJhZGQiOiI5MS4xMzQuOC4xMDEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZhcGVuZy5vcmciLCJpZCI6IjAzZmNjNjE4LWI5M2QtNjc5Ni02YWVkLThhMzhjOTc1ZDU4MSIsIm5ldCI6IndzIiwicGF0aCI6Imxpbmt2d3MiLCJwb3J0IjoiNDQzIiwicHMiOiIgRlItVk1FU1MtNjIiLCJzY3kiOiJhdXRvIiwic25pIjoiZmFwZW5nLm9yZyIsInRscyI6InRscyIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
 vmess://eyJhZGQiOiI1Ny4xMjguMTg5LjIxMSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoieWljaHVlbmcub3JnIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiJsaW5rdndzIiwicG9ydCI6IjQ0MyIsInBzIjoiIE5MLVZNRVNTLTc2Iiwic2N5IjoiYXV0byIsInNuaSI6InlpY2h1ZW5nLm9yZyIsInRscyI6InRscyIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
+vmess://eyJhZGQiOiI0Ny4yNDQuMTIwLjE5NyIsImFpZCI6MCwiaG9zdCI6IiIsImlkIjoiNDViODM1MTktOWM0Zi00MDUyLWExMWItMDJlMDE3YjYzNmQ0IiwibmV0Ijoid3MiLCJwYXRoIjoiXC9hcmtpP2VkPTIwNDgiLCJwb3J0IjozNjcwMywicHMiOiIgVVMtVk1FU1MtODgiLCJ0bHMiOiIiLCJ0eXBlIjoiYXV0byIsInNlY3VyaXR5IjoiYXV0byIsInNraXAtY2VydC12ZXJpZnkiOnRydWUsInNuaSI6IiJ9
 vless://e704d1f1-cbe6-417e-8b93-5b2d8635c4a1@109.69.218.165:443?flow=xtls-rprx-vision&fp=firefox&pbk=6rnKHCkFuVeaJjiXLnJhfzQpQRSlPt-i6USvnRFiUBg&security=reality&sid=223d6eafc6c6e894&sni=lerua.xyz&type=tcp#BLACKFULL[261]
 vless://fc625795-792d-4d9d-9d38-bffe59467d2d@104.18.3.108:8443?fp=firefox&host=daluan.eu.org&path=%2F&security=tls&sni=daluan.eu.org&type=ws#BLACKFULL[262]
+vless://d78c12c4-6927-40b8-8550-ed9be00334da@cxcczechia1.chickenkiller.com:443?type=tcp&headerType=none&security=reality&encryption=none&sni=cxcczechia1.chickenkiller.com&fp=qq&pbk=K7no4vVZPV-eW6uFsq2xP3m5bwuau4bSvRU1bnFs80k&sid=fcfb56dcc1d63834&flow=xtls-rprx-vision#BLACKFULL[621]
 vless://5cdf99d3-a51b-570e-8245-f87d674dc652@151.101.129.57:80?mode=auto&path=%2F&encryption=none&host=InternetAzadRobot07gt745.global.ssl.fastly.net&type=xhttp&fp=edge#BLACKFULL[1318]
 vmess://eyJhZGQiOiIyMTYuMTA2LjE4NS4xNDEiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjIyMzI0IiwicHMiOiLwn4e68J+HuCBVUyAxMyIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
 trojan://humanity@172.67.180.92:443?sni=www.multiplydose.com&type=ws#%F0%9F%87%BA%F0%9F%87%B8+65+-+US+-+Trojan%2FWS%2FTLS+-+443
 trojan://humanity@188.114.98.0:443?sni=www.calmlunch.com&type=ws#%E6%9C%AA%E7%9F%A538
-trojan://humanity@104.18.12.149:443?sni=www.multiplydose.com&type=ws#%F0%9F%94%A5%40bubuv2raybot
-vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=%2Fvless%2F&encryption=none&type=ws&fp=firefox#BLACKFULL[1549]
