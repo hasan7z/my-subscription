@@ -40,28 +40,32 @@ def download_sources():
     raw = {}
     
     for url in urls:
-        try:
-            response = requests.get(url, timeout=30)
-            if response.status_code == 200:
-                # ۱. ساخت اثر انگشت (Fingerprint) از محتوا برای کش هوشمند
-                content_hash = hashlib.sha256(response.text.encode('utf-8')).hexdigest()
-                
-                # ۲. بررسی کش: اگر تغییر نکرده، دانلود نکن
-                if url in cache and cache[url] == content_hash:
-                    log(f"⏭️ Skipped (Unchanged): {url}")
-                    raw[url] = "" 
-                    continue
-                
-                # اگر جدید است یا تغییر کرده
-                cache[url] = content_hash
-                raw[url] = response.text
-                log(f"✅ Downloaded (New/Updated): {url}")
-            else:
-                log(f"❌ Failed ({response.status_code}): {url}")
-                raw[url] = ""
-        except Exception as e:
-            log(f"❌ Error downloading {url}: {e}")
-            raw[url] = ""
+        # ✅ حلقه تلاش مجدد (Retry Logic)
+        for attempt in range(3):
+            try:
+                response = requests.get(url, timeout=30)
+                if response.status_code == 200:
+                    content_hash = hashlib.sha256(response.text.encode('utf-8')).hexdigest()
+                    
+                    if url in cache and cache[url] == content_hash:
+                        log(f"⏭️ Skipped (Unchanged): {url}")
+                        raw[url] = "" 
+                    else:
+                        cache[url] = content_hash
+                        raw[url] = response.text
+                        log(f"✅ Downloaded (New/Updated): {url}")
+                    break # اگر موفق شد، از حلقه خارج شو
+                else:
+                    log(f"❌ Failed ({response.status_code}): {url}")
+                    raw[url] = ""
+                    break
+            except Exception as e:
+                if attempt < 2:
+                    log(f"⚠️ Retry {attempt + 1}/2 for {url} due to: {e}")
+                    time.sleep(2) # ۲ ثانیه صبر کن و دوباره تلاش کن
+                else:
+                    log(f"❌ Final Error downloading {url}: {e}")
+                    raw[url] = ""
             
     save_cache(cache)
     return raw
