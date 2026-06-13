@@ -1,0 +1,175 @@
+name: Repository Cleanup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run Cleanup Script
+        run: |
+          python3 << 'EOF'
+          import os
+          import shutil
+          from pathlib import Path
+
+          # آمار حذف‌ها
+          removed_files = []
+          removed_dirs = []
+          kept_files = []
+
+          # ============================================
+          # ۱. حذف پوشه‌های تکراری (حروف بزرگ)
+          # ============================================
+          duplicate_dirs = [
+              'Database',  # اگر database (کوچک) وجود دارد
+              'Stats',     # اگر stats (کوچک) وجود دارد
+          ]
+
+          for d in duplicate_dirs:
+              if os.path.exists(d) and os.path.isdir(d):
+                  # چک کنیم نسخه کوچک هم هست
+                  if os.path.exists(d.lower()):
+                      shutil.rmtree(d)
+                      removed_dirs.append(d)
+                      print(f"🗑️  Removed duplicate folder: {d}/")
+
+          # ============================================
+          # ۲. حذف فایل‌های اضافی در ریشه
+          # ============================================
+          root_files_to_remove = [
+              'my-subscription-main-fixed.zip',
+              'sources.txt',      # در ریشه (Sources/sources.txt باید بماند)
+              'repos.txt',
+              'all.txt',
+              'sub.txt',
+              'merged.txt',
+          ]
+
+          for f in root_files_to_remove:
+              if os.path.exists(f) and os.path.isfile(f):
+                  os.remove(f)
+                  removed_files.append(f)
+                  print(f"🗑️  Removed root file: {f}")
+
+          # ============================================
+          # ۳. حذف فایل‌های اضافی در Core
+          # ============================================
+          # فایل‌هایی که باید نگه داشته شوند (لیست سفید)
+          core_whitelist = {
+              '__init__.py',
+              'logger.py',
+              'database.py',
+              'downloader.py',
+              'parser.py',
+              'validator.py',
+              'normalizer.py',
+              'deduplicator.py',
+              'engine.py',
+              'exporter.py',
+              'best_manager.py',
+              'health_manager.py',
+              'auto_source_manager.py',
+              'source_cleaner.py',
+              'source_merger.py',
+              'source_guardian.py',
+              'final_stats.py',
+              'smart_best.py',
+              'health_checker.py',
+              'test_configs.py',
+          }
+
+          if os.path.exists('Core'):
+              for item in os.listdir('Core'):
+                  item_path = os.path.join('Core', item)
+                  
+                  # حذف __pycache__
+                  if item == '__pycache__':
+                      shutil.rmtree(item_path)
+                      removed_dirs.append(f'Core/{item}')
+                      print(f"🗑️  Removed: Core/{item}/")
+                      continue
+                  
+                  # اگر فایل است
+                  if os.path.isfile(item_path):
+                      if item not in core_whitelist:
+                          os.remove(item_path)
+                          removed_files.append(f'Core/{item}')
+                          print(f"🗑️  Removed: Core/{item}")
+                      else:
+                          kept_files.append(f'Core/{item}')
+
+          # ============================================
+          # ۴. حذف پوشه‌های اضافی دیگر
+          # ============================================
+          extra_dirs = [
+              'best_manager',  # اگر پوشه است نه فایل
+              'backup',
+              'temp',
+              'tmp',
+              'logs',
+              '.pytest_cache',
+          ]
+
+          for d in extra_dirs:
+              if os.path.exists(d) and os.path.isdir(d):
+                  shutil.rmtree(d)
+                  removed_dirs.append(d)
+                  print(f"🗑️  Removed folder: {d}/")
+
+          # ============================================
+          # گزارش نهایی
+          # ============================================
+          print("\n" + "="*60)
+          print("📊 CLEANUP REPORT")
+          print("="*60)
+          print(f"✅ Files removed: {len(removed_files)}")
+          print(f"✅ Directories removed: {len(removed_dirs)}")
+          print(f"✅ Core files kept: {len(kept_files)}")
+          print("="*60)
+
+          # ذخیره گزارش در فایل
+          with open('cleanup_report.txt', 'w', encoding='utf-8') as f:
+              f.write(f"Cleanup Report - {len(removed_files)} files, {len(removed_dirs)} dirs removed\n\n")
+              f.write("Removed Files:\n")
+              for rf in removed_files:
+                  f.write(f"  - {rf}\n")
+              f.write("\nRemoved Directories:\n")
+              for rd in removed_dirs:
+                  f.write(f"  - {rd}/\n")
+              f.write("\nKept Core Files:\n")
+              for kf in kept_files:
+                  f.write(f"  - {kf}\n")
+
+          print("\n✅ Cleanup completed! Report saved to cleanup_report.txt")
+          EOF
+
+      - name: Verify Cleanup
+        run: |
+          echo "========================================="
+          echo "🔍 VERIFICATION"
+          echo "========================================="
+          echo "📁 Core directory contents:"
+          ls -1 Core/ || echo "Core not found"
+          echo "========================================="
+          echo "📁 Root directory contents:"
+          ls -1 | grep -v "^\." || echo "Empty"
+          echo "========================================="
+          echo "📊 File counts:"
+          echo "  Core files: $(ls Core/*.py 2>/dev/null | wc -l)"
+          echo "  Root files: $(ls -1 | wc -l)"
+          echo "========================================="
+          cat cleanup_report.txt
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "🧹 Repository Cleanup: Removed duplicate files and folders" || echo "No changes to commit"
+          git push
