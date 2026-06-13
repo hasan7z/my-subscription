@@ -115,13 +115,12 @@ def main():
             for c in cloudflare_configs: f.write(c + "\n")
         log(f"✅ Wrote {len(cloudflare_configs)} CLOUDFLARE optimized configs")
 
-    # ۴. خروجی Base64
-    all_str = "\n".join([cfg.get("config", "") for cfg in unique_configs])
+    # ۴. خروجی Base64 (فقط ۱۰۰۰ کانفیگ برتر برای جلوگیری از حجم بالا)
+    top_1000 = unique_configs[:1000]
+    base64_str = "\n".join([cfg.get("config", "") for cfg in top_1000])
     with open("output/subscription_base64.txt", "w", encoding="utf-8") as f:
-        f.write(base64.b64encode(all_str.encode('utf-8')).decode('utf-8'))
-    log("✅ Generated subscription_base64.txt")
-    
-    log("✅ ALL advanced features generated successfully!")
+        f.write(base64.b64encode(base64_str.encode('utf-8')).decode('utf-8'))
+    log(f"✅ Generated subscription_base64.txt (Top 1000 configs)")
 
 if __name__ == "__main__":
     import hashlib # اضافه شده برای اثر انگشت
