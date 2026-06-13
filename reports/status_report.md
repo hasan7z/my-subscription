@@ -1,11 +1,5 @@
-# 📊 Status Report - 2026-06-13 12:33:45
+# 📊 Status - 2026-06-13 13:21
+- کل: `190658` | فعال: `0` | سلامت: `0.0%`
+- منابع: `19` | جدید: `190658`
 
-## 📈 Statistics
-- **Total Configs:** `190589`
-- **Active Configs:** `0`
-- **Health Rate:** `0.0%`
-- **Sources Count:** `20`
-- **New Configs Added:** `190589`
-
-## ⚠️ Issues Detected
-- ⚠️ Low health rate: 0.0%
+⚠️ نرخ سلامت پایین: 0.0%
