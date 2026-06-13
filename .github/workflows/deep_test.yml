@@ -1,0 +1,120 @@
+name: Deep Nightly API Test
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # هر روز ساعت 3 بامداد UTC
+  workflow_dispatch:
+
+jobs:
+  deep_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Run Deep Multi-Region Test on Top 100
+        run: |
+          python3 << 'EOF'
+          import json, os, time, requests, socket, base64
+          from urllib.parse import urlparse
+          from datetime import datetime
+
+          DB_FILE = "database/database.json"
+          BEST_I_FILE = "output/best_i.txt"
+
+          def extract_addr_port(cfg):
+              try:
+                  if cfg.startswith("vmess://"):
+                      b64 = cfg[8:] + "=" * ((4 - len(cfg[8:]) % 4) % 4)
+                      data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
+                      return str(data.get("add") or data.get("address")), str(data.get("port"))
+                  if "://" in cfg:
+                      p = urlparse(cfg)
+                      addr, port = p.hostname, p.port
+                      if not addr and "@" in p.netloc:
+                          parts = p.netloc.split("@")[-1].split(":")
+                          if len(parts) == 2: addr, port = parts[0], parts[1]
+                      if addr and port: return str(addr), str(port)
+              except: pass
+              return None, None
+
+          def check_api_ping(addr, port):
+              try:
+                  time.sleep(0.3)
+                  payload = {"targets": [addr], "type": "ping", "locations": [{"country": "ae"}, {"country": "tr"}, {"country": "de"}], "limit": 3}
+                  res = requests.post("https://api.globalping.io/v1/measurements", json=payload, timeout=10)
+                  if res.status_code == 429:
+                      time.sleep(5)
+                      return check_api_ping(addr, port)
+                  if res.status_code != 201: return False, 0
+                  
+                  mid = res.json()["id"]
+                  for _ in range(10):
+                      time.sleep(1)
+                      data = requests.get(f"https://api.globalping.io/v1/measurements/{mid}", timeout=5).json()
+                      if data.get("status") == "finished":
+                          pings = [r["result"]["stats"]["avg"] for r in data.get("results", []) if r.get("result", {}).get("status") == "finished" and r["result"]["stats"].get("loss") == 0 and r["result"]["stats"].get("avg")]
+                          if pings: return True, sum(pings) / len(pings)
+                          return False, 0
+                  return False, 0
+              except Exception:
+                  try:
+                      t0 = time.time()
+                      sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                      sock.settimeout(3)
+                      sock.connect((addr, int(port)))
+                      sock.close()
+                      return True, (time.time() - t0) * 1000
+                  except:
+                      return False, 0
+
+          if not os.path.exists(DB_FILE) or not os.path.exists(BEST_I_FILE):
+              print("DB or best_i.txt not found. Skipping.")
+              exit(0)
+
+          with open(DB_FILE, "r", encoding="utf-8") as f: db = json.load(f)
+          with open(BEST_I_FILE, "r", encoding="utf-8") as f: best_i_configs = [line.strip() for line in f if line.strip()]
+
+          print(f"🌍 Starting Deep Multi-Region Test on {len(best_i_configs)} configs...")
+          
+          ok_cnt = 0
+          for cfg in best_i_configs:
+              # پیدا کردن هش کانفیگ در دیتابیس
+              import hashlib
+              cfg_hash = hashlib.md5(cfg.encode()).hexdigest()
+              if cfg_hash not in db: continue
+              
+              addr, port = extract_addr_port(cfg)
+              if not addr or not port: continue
+              
+              ok, ms = check_api_ping(addr, port)
+              hist = db[cfg_hash].get("history", [])
+              
+              if ok:
+                  ok_cnt += 1
+                  db[cfg_hash]["success"] = db[cfg_hash].get("success", 0) + 1
+                  hist.append(ms)
+              else:
+                  db[cfg_hash]["fail"] = db[cfg_hash].get("fail", 0) + 1
+                  hist.append(9999)
+                  
+              if len(hist) > 30: hist = hist[-30:]
+              db[cfg_hash]["history"] = hist
+              db[cfg_hash]["last_test"] = datetime.now().isoformat()
+
+          with open(DB_FILE, "w", encoding="utf-8") as f:
+              json.dump(db, f, indent=2, ensure_ascii=False)
+              
+          print(f"✅ Deep Test Done: {ok_cnt} OK, {len(best_i_configs) - ok_cnt} FAIL. DB Updated.")
+          EOF
+
+      - name: Commit and Push Updated Scores
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "🌙 Nightly Deep Test: Updated API scores for best_i.txt" || echo "No changes"
+          git pull --rebase origin main
+          git push
