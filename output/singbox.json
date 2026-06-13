@@ -1,0 +1,1575 @@
+{
+  "outbounds": [
+    {
+      "tag": "英國_4",
+      "type": "vmess",
+      "server": "82.198.246.214",
+      "server_port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "udp": true,
+      "security": "auto",
+      "alter_id": 0
+    },
+    {
+      "tag": "美国4|@ripaojiedian",
+      "type": "vmess",
+      "server": "82.198.246.250",
+      "server_port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "udp": true,
+      "security": "auto",
+      "alter_id": 0
+    },
+    {
+      "tag": "🇭🇰 香港|@ripaojiedian",
+      "type": "vmess",
+      "server": "v10.hdacd.com",
+      "server_port": 30807,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
+      "udp": true,
+      "security": "auto",
+      "alter_id": 2
+    },
+    {
+      "tag": "🇺🇸 美国4|@ripaojiedian",
+      "type": "vmess",
+      "server": "82.198.246.250",
+      "server_port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "udp": true,
+      "security": "auto",
+      "alter_id": 0
+    },
+    {
+      "tag": "@KAFING_2",
+      "type": "trojan",
+      "server": "172.64.152.23",
+      "server_port": 443,
+      "uuid": "20ba0c60-0133-11f1-95ef-1239d0255272",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "uk1.test3.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/howdy",
+        "headers": {
+          "Host": "uk1.test3.net"
+        }
+      }
+    },
+    {
+      "tag": "🇽🇽 XX | TROJAN | @teamvpnpro #1",
+      "type": "trojan",
+      "server": "chatbuzzteambhm.chatbuzzt7150.workers.dev",
+      "server_port": 443,
+      "uuid": "22f86840-bcac-11ee-abea-1239d0255272",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "chatbuzzteambhm.chatbuzzt7150.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "@ho3ino00🤣+آخوندی+در+جزایر+اسکاندیناوی",
+      "type": "trojan",
+      "server": "188.114.97.82",
+      "server_port": 443,
+      "uuid": "2f211aae-3678-47a6-b231-46304443772f",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "cdir-0203.wlfvip.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/trojanws?ed=2048",
+        "headers": {
+          "Host": "cdir-0203.wlfvip.com"
+        }
+      }
+    },
+    {
+      "tag": "@ho3ino00🤣+آخوندی+در+%D…",
+      "type": "trojan",
+      "server": "188.114.97.82",
+      "server_port": 443,
+      "uuid": "2f211aae-3678-47a6-b231-46304443772f",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "cdir-0203.wlfvip.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/trojanws?ed=2048",
+        "headers": {
+          "Host": "cdir-0203.wlfvip.com"
+        }
+      }
+    },
+    {
+      "tag": "چنلعضوشو@v2ra_config",
+      "type": "trojan",
+      "server": "188.114.97.6",
+      "server_port": 443,
+      "uuid": "2t5hATPZBk",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "dd.aananas.ir.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048",
+        "headers": {
+          "Host": "188.114.97.6"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸 US | TROJAN | @vpn_ioss #1",
+      "type": "trojan",
+      "server": "208.103.161.170",
+      "server_port": 443,
+      "uuid": "386bd471-4e29-4e79-9a3c-6bc6076ce4b6",
+      "udp": true
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "103.177.136.43",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "103.177.136.44",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "103.177.136.45",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.3",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.3",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.84",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.84",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.84",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.85",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.85",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.85",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.89",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.89",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.89",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.89",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.90",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.90",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "155.117.198.90",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.90",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.92",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.92",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.93",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.93",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.93",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.93",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.93",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.94",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.94",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.94",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.94",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.96",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.96",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.96",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.96",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.96",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.98",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.98",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.98",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.99",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.99",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.99",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "188.253.12.99",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇨🇦_CA_加拿大->🇦🇿_AZ_阿塞拜疆",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "az.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇦🇿AZ阿塞拜疆",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 41943,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "🇺🇸_US_美国->🇨🇭_CH_瑞士",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "香港",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "ch.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇨🇭CH瑞士",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 45553,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "法国",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 45619,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸_US_美国->🇩🇪_DE_德国",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 46424,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "de.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸_US_美国->🇮🇸_IS_冰岛",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "香港",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "is.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇮🇸IS冰岛",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 47909,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true
+    },
+    {
+      "tag": "美国",
+      "type": "trojan",
+      "server": "90081bb25c.node.tro.cac.cab",
+      "server_port": 48697,
+      "uuid": "4f4d1167-ef14-4304-9bce-0740472503ef",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gh.01.naiun.bilibili.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "🇽🇽 XX | TROJAN | @vpnv2raytop #1",
+      "type": "trojan",
+      "server": "persiancdn.top",
+      "server_port": 443,
+      "uuid": "51410d3cb2931a01b366bb5c868264bf",
+      "udp": true
+    },
+    {
+      "tag": "🩵+@Azarakhsh_Proxy+🩷",
+      "type": "trojan",
+      "server": "104.16.159.6",
+      "server_port": 443,
+      "uuid": "669d0ac7b5b64ebbb1abb75d5d540a5c",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "bangladeshipatri.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "bangladeshipatri.com"
+        }
+      }
+    },
+    {
+      "tag": "香港節點丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "adak.sonofthewinds.com",
+      "server_port": 34436,
+      "uuid": "825929f4-c702-35ce-9124-00d3f95b8c32",
+      "udp": true
+    },
+    {
+      "tag": "臺灣節點丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "adak.sonofthewinds.com",
+      "server_port": 34450,
+      "uuid": "825929f4-c702-35ce-9124-00d3f95b8c32",
+      "udp": true
+    },
+    {
+      "tag": "日本節點丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "adak.sonofthewinds.com",
+      "server_port": 34470,
+      "uuid": "825929f4-c702-35ce-9124-00d3f95b8c32",
+      "udp": true
+    },
+    {
+      "tag": "🇽🇽 XX | TROJAN | @spikevpn #1",
+      "type": "trojan",
+      "server": "104.16.7.70",
+      "server_port": 443,
+      "uuid": "8r%3C%5B9%27l6hAO%238ZQi",
+      "udp": true
+    },
+    {
+      "tag": "🇽🇽 XX | TROJAN | @spikevpn #2",
+      "type": "trojan",
+      "server": "104.18.109.147",
+      "server_port": 443,
+      "uuid": "8r%3C%5B9%27l6hAO%238ZQi",
+      "udp": true
+    },
+    {
+      "tag": "意大利節點🇮🇹IT丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "151.241.215.148",
+      "server_port": 443,
+      "uuid": "8r%3C%5B9%27l6hAO%238ZQi",
+      "udp": true
+    },
+    {
+      "tag": "荷蘭節點丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "152.53.200.89",
+      "server_port": 8443,
+      "uuid": "8r%3C%5B9%27l6hAO%238ZQi",
+      "udp": true
+    },
+    {
+      "tag": "🇳🇱NL荷蘭丨yoyapai.com\\r",
+      "type": "trojan",
+      "server": "91.221.190.80",
+      "server_port": 443,
+      "uuid": "8r%3C%5B9%27l6hAO%238ZQi",
+      "udp": true
+    },
+    {
+      "tag": "@Arvand_soul@Arvand_soul❤️🧑‍💻کانفیگملیدر",
+      "type": "trojan",
+      "server": "www.speedtest.net",
+      "server_port": 443,
+      "uuid": "A4u^p(_UR*F6",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "027.ELeCTroCelLco-CF-027.wORkERS.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/eyJqdW5rIjoidlhnMXN5OXFUSiIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560",
+        "headers": {
+          "Host": "027.electrocellco-cf-027.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "برایاتصالدائمیجوینشو🌐TelegramID⌲Express_freevpn🪩",
+      "type": "trojan",
+      "server": "185.126.236.44",
+      "server_port": 443,
+      "uuid": "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.mesaly.click",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "برایاتصالدائمیجوینشو🎏TelegramID⌲Express_freevpn🪩",
+      "type": "trojan",
+      "server": "185.126.236.44",
+      "server_port": 443,
+      "uuid": "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.mesaly.click",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "@Net2rayServer🔥3",
+      "type": "trojan",
+      "server": "104.16.75.127",
+      "server_port": 443,
+      "uuid": "Config0plus",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "api24-normal.tiktokv.com.cyylr.eu.cc",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/id-tksi",
+        "headers": {
+          "Host": "api24-normal.tiktokv.com.cyylr.eu.cc"
+        }
+      }
+    },
+    {
+      "tag": "@V2raySup0|🚀",
+      "type": "trojan",
+      "server": "45.130.125.160",
+      "server_port": 443,
+      "uuid": "Config0plus",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "api24-normal.tiktokv.com.cyylr.eu.cc",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/id-tksi",
+        "headers": {
+          "Host": "api24-normal.tiktokv.com.cyylr.eu.cc"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵 JP | TROJAN | @free4allvpn #1",
+      "type": "trojan",
+      "server": "kuame.missionsec.us",
+      "server_port": 443,
+      "uuid": "FDIypSwe64a3DA7un2R8DFjYXZO3NS05gKZTTOC8SxO0Fy3cqYg3EaFDA3ABaEYKNx39D",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "kuame.missionsec.us",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "韩国+KT电信\\r",
+      "type": "trojan",
+      "server": "121.178.83.161",
+      "server_port": 26214,
+      "uuid": "GKHWMe2R4qwNcNxu6l3KMkdd",
+      "udp": true
+    },
+    {
+      "tag": "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "45.85.119.179",
+      "server_port": 2087,
+      "uuid": "Go5e2nJM8U",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "@v2rayNG_VPNN",
+        "headers": {
+          "Host": "ee.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "🇫🇮🇫🇮🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "188.42.88.252",
+      "server_port": 2083,
+      "uuid": "Go5e2nKM8P",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "45.95.241.101",
+      "server_port": 2083,
+      "uuid": "Go5e2nKM8P",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "@v2rayNG_VPNN[همراهاول]",
+      "type": "trojan",
+      "server": "188.42.88.144",
+      "server_port": 2053,
+      "uuid": "Go5e2nKM8T",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "@v2rayNG_VPNN⚙ایرانسل",
+      "type": "trojan",
+      "server": "45.85.119.0",
+      "server_port": 2053,
+      "uuid": "Go5e2nKM8U-v2rayNG_VPNN",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "🇩🇪🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "188.42.88.252",
+      "server_port": 2087,
+      "uuid": "Go5e2nKM9U",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "JoinUs@v2rayNG_VPNN",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "🇫🇷🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "188.42.88.252",
+      "server_port": 2087,
+      "uuid": "Go5e2nKM9U",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "JoinUs@v2rayNG_VPNN",
+        "headers": {
+          "Host": "aa.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar",
+      "type": "trojan",
+      "server": "45.85.119.179",
+      "server_port": 8443,
+      "uuid": "Go5e2nKO8U",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "aa.v2jey.fun",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "JoinUs@v2rayNG_VPNN",
+        "headers": {
+          "Host": "cc.v2jey.fun"
+        }
+      }
+    },
+    {
+      "tag": "⚡@V2ray_official",
+      "type": "trojan",
+      "server": "188.114.97.6",
+      "server_port": 443,
+      "uuid": "KaQKzYh6dd",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "dd.aananas.ir.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048",
+        "headers": {
+          "Host": "188.114.97.6"
+        }
+      }
+    },
+    {
+      "tag": "@internet_azad_2026",
+      "type": "trojan",
+      "server": "195.15.253.72",
+      "server_port": 443,
+      "uuid": "Masir_Sefid",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "store.steampowered.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "w0XepGv1Hk0gBh1Apiw-nvn8SfzjWcDuxdxN1mpaF3g",
+          "short_id": "6ced01fc4aa417"
+        }
+      }
+    },
+    {
+      "tag": "@internet_azad_2026",
+      "type": "trojan",
+      "server": "37.156.45.168",
+      "server_port": 443,
+      "uuid": "Masir_Sefid",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "store.steampowered.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ",
+          "short_id": "d67d2e36"
+        }
+      }
+    },
+    {
+      "tag": "🇨🇳@FreakConfig",
+      "type": "trojan",
+      "server": "37.156.45.168",
+      "server_port": 443,
+      "uuid": "Masir_Sefid",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "store.steampowered.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ",
+          "short_id": "d67d2e36"
+        }
+      }
+    },
+    {
+      "tag": "🔰@V2ray_official",
+      "type": "trojan",
+      "server": "37.156.45.168",
+      "server_port": 443,
+      "uuid": "Masir_Sefid",
+      "udp": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "store.steampowered.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ",
+          "short_id": "d67d2e36"
+        }
+      }
+    }
+  ]
+}

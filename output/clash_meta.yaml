@@ -1,0 +1,1024 @@
+# Clash Meta / Mihomo Configuration
+proxies:
+  - name: "英國_4"
+    type: vmess
+    server: "82.198.246.214"
+    port: 180
+    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+  - name: "美国4|@ripaojiedian"
+    type: vmess
+    server: "82.198.246.250"
+    port: 180
+    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+  - name: "🇭🇰 香港|@ripaojiedian"
+    type: vmess
+    server: "v10.hdacd.com"
+    port: 30807
+    uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    alterId: 2
+    cipher: auto
+    network: tcp
+    udp: true
+  - name: "🇺🇸 美国4|@ripaojiedian"
+    type: vmess
+    server: "82.198.246.250"
+    port: 180
+    uuid: "d13fc2f5-3e05-4795-81eb-44143a09e552"
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+  - name: "@KAFING_2"
+    type: trojan
+    server: "172.64.152.23"
+    port: 443
+    uuid: "20ba0c60-0133-11f1-95ef-1239d0255272"
+    network: ws
+    udp: true
+    tls: true
+    servername: "uk1.test3.net"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: "uk1.test3.net"
+  - name: "🇽🇽 XX | TROJAN | @teamvpnpro #1"
+    type: trojan
+    server: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
+    port: 443
+    uuid: "22f86840-bcac-11ee-abea-1239d0255272"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
+    client-fingerprint: chrome
+  - name: "@ho3ino00🤣+آخوندی+در+جزایر+اسکاندیناوی"
+    type: trojan
+    server: "188.114.97.82"
+    port: 443
+    uuid: "2f211aae-3678-47a6-b231-46304443772f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "cdir-0203.wlfvip.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/trojanws?ed=2048"
+      headers:
+        Host: "cdir-0203.wlfvip.com"
+  - name: "@ho3ino00🤣+آخوندی+در+%D…"
+    type: trojan
+    server: "188.114.97.82"
+    port: 443
+    uuid: "2f211aae-3678-47a6-b231-46304443772f"
+    network: ws
+    udp: true
+    tls: true
+    servername: "cdir-0203.wlfvip.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/trojanws?ed=2048"
+      headers:
+        Host: "cdir-0203.wlfvip.com"
+  - name: "چنلعضوشو@v2ra_config"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "2t5hATPZBk"
+    network: ws
+    udp: true
+    tls: true
+    servername: "dd.aananas.ir."
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "188.114.97.6"
+  - name: "🇺🇸 US | TROJAN | @vpn_ioss #1"
+    type: trojan
+    server: "208.103.161.170"
+    port: 443
+    uuid: "386bd471-4e29-4e79-9a3c-6bc6076ce4b6"
+    network: tcp
+    udp: true
+  - name: "美国"
+    type: trojan
+    server: "103.177.136.43"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "103.177.136.44"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "103.177.136.45"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.3"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.3"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.84"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.84"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.84"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.85"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.85"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.85"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.89"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.89"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.89"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.89"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.90"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.90"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "155.117.198.90"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.90"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.92"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.92"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.93"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.93"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.93"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.93"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.93"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.94"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.94"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.94"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.94"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.96"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.96"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.96"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.96"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.96"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.98"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.98"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.98"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.99"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.99"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.99"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "美国"
+    type: trojan
+    server: "188.253.12.99"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇨🇦_CA_加拿大->🇦🇿_AZ_阿塞拜疆"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "美国"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "az.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇦🇿AZ阿塞拜疆"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 41943
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "🇺🇸_US_美国->🇨🇭_CH_瑞士"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "香港"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "ch.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇨🇭CH瑞士"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 45553
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "法国"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 45619
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "fr.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇺🇸_US_美国->🇩🇪_DE_德国"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "美国"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 46424
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "de.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇺🇸_US_美国->🇮🇸_IS_冰岛"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "香港"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "is.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇮🇸IS冰岛"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 47909
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+  - name: "美国"
+    type: trojan
+    server: "90081bb25c.node.tro.cac.cab"
+    port: 48697
+    uuid: "4f4d1167-ef14-4304-9bce-0740472503ef"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "gh.01.naiun.bilibili.com"
+    client-fingerprint: chrome
+  - name: "🇽🇽 XX | TROJAN | @vpnv2raytop #1"
+    type: trojan
+    server: "persiancdn.top"
+    port: 443
+    uuid: "51410d3cb2931a01b366bb5c868264bf"
+    network: tcp
+    udp: true
+  - name: "🩵+@Azarakhsh_Proxy+🩷"
+    type: trojan
+    server: "104.16.159.6"
+    port: 443
+    uuid: "669d0ac7b5b64ebbb1abb75d5d540a5c"
+    network: ws
+    udp: true
+    tls: true
+    servername: "bangladeshipatri.com"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/6b777a91"
+      headers:
+        Host: "bangladeshipatri.com"
+  - name: "香港節點丨yoyapai.com\r"
+    type: trojan
+    server: "adak.sonofthewinds.com"
+    port: 34436
+    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
+    network: tcp
+    udp: true
+  - name: "臺灣節點丨yoyapai.com\r"
+    type: trojan
+    server: "adak.sonofthewinds.com"
+    port: 34450
+    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
+    network: tcp
+    udp: true
+  - name: "日本節點丨yoyapai.com\r"
+    type: trojan
+    server: "adak.sonofthewinds.com"
+    port: 34470
+    uuid: "825929f4-c702-35ce-9124-00d3f95b8c32"
+    network: tcp
+    udp: true
+  - name: "🇽🇽 XX | TROJAN | @spikevpn #1"
+    type: trojan
+    server: "104.16.7.70"
+    port: 443
+    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
+    network: tcp
+    udp: true
+  - name: "🇽🇽 XX | TROJAN | @spikevpn #2"
+    type: trojan
+    server: "104.18.109.147"
+    port: 443
+    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
+    network: tcp
+    udp: true
+  - name: "意大利節點🇮🇹IT丨yoyapai.com\r"
+    type: trojan
+    server: "151.241.215.148"
+    port: 443
+    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
+    network: tcp
+    udp: true
+  - name: "荷蘭節點丨yoyapai.com\r"
+    type: trojan
+    server: "152.53.200.89"
+    port: 8443
+    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
+    network: tcp
+    udp: true
+  - name: "🇳🇱NL荷蘭丨yoyapai.com\r"
+    type: trojan
+    server: "91.221.190.80"
+    port: 443
+    uuid: "8r%3C%5B9%27l6hAO%238ZQi"
+    network: tcp
+    udp: true
+  - name: "@Arvand_soul@Arvand_soul❤️🧑‍💻کانفیگملیدر"
+    type: trojan
+    server: "www.speedtest.net"
+    port: 443
+    uuid: "A4u^p(_UR*F6"
+    network: ws
+    udp: true
+    tls: true
+    servername: "027.ELeCTroCelLco-CF-027.wORkERS.dEv"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/eyJqdW5rIjoidlhnMXN5OXFUSiIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560"
+      headers:
+        Host: "027.electrocellco-cf-027.workers.dev"
+  - name: "برایاتصالدائمیجوینشو🌐TelegramID⌲Express_freevpn🪩"
+    type: trojan
+    server: "185.126.236.44"
+    port: 443
+    uuid: "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "www.mesaly.click"
+    client-fingerprint: chrome
+  - name: "برایاتصالدائمیجوینشو🎏TelegramID⌲Express_freevpn🪩"
+    type: trojan
+    server: "185.126.236.44"
+    port: 443
+    uuid: "BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "www.mesaly.click"
+    client-fingerprint: chrome
+  - name: "@Net2rayServer🔥3"
+    type: trojan
+    server: "104.16.75.127"
+    port: 443
+    uuid: "Config0plus"
+    network: ws
+    udp: true
+    tls: true
+    servername: "api24-normal.tiktokv.com.cyylr.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/id-tksi"
+      headers:
+        Host: "api24-normal.tiktokv.com.cyylr.eu.cc"
+  - name: "@V2raySup0|🚀"
+    type: trojan
+    server: "45.130.125.160"
+    port: 443
+    uuid: "Config0plus"
+    network: ws
+    udp: true
+    tls: true
+    servername: "api24-normal.tiktokv.com.cyylr.eu.cc"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/id-tksi"
+      headers:
+        Host: "api24-normal.tiktokv.com.cyylr.eu.cc"
+  - name: "🇯🇵 JP | TROJAN | @free4allvpn #1"
+    type: trojan
+    server: "kuame.missionsec.us"
+    port: 443
+    uuid: "FDIypSwe64a3DA7un2R8DFjYXZO3NS05gKZTTOC8SxO0Fy3cqYg3EaFDA3ABaEYKNx39D"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "kuame.missionsec.us"
+    client-fingerprint: chrome
+  - name: "韩国+KT电信\r"
+    type: trojan
+    server: "121.178.83.161"
+    port: 26214
+    uuid: "GKHWMe2R4qwNcNxu6l3KMkdd"
+    network: tcp
+    udp: true
+  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "45.85.119.179"
+    port: 2087
+    uuid: "Go5e2nJM8U"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "@v2rayNG_VPNN"
+      headers:
+        Host: "ee.v2jey.fun"
+  - name: "🇫🇮🇫🇮🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "188.42.88.252"
+    port: 2083
+    uuid: "Go5e2nKM8P"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "45.95.241.101"
+    port: 2083
+    uuid: "Go5e2nKM8P"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "@v2rayNG_VPNN[همراهاول]"
+    type: trojan
+    server: "188.42.88.144"
+    port: 2053
+    uuid: "Go5e2nKM8T"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "@v2rayNG_VPNN⚙ایرانسل"
+    type: trojan
+    server: "45.85.119.0"
+    port: 2053
+    uuid: "Go5e2nKM8U-v2rayNG_VPNN"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "🇩🇪🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "188.42.88.252"
+    port: 2087
+    uuid: "Go5e2nKM9U"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "JoinUs@v2rayNG_VPNN"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "🇫🇷🌏+@v2ray_ar+کانفیگ+های+بیشتر+عضو+شووصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "188.42.88.252"
+    port: 2087
+    uuid: "Go5e2nKM9U"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "JoinUs@v2rayNG_VPNN"
+      headers:
+        Host: "aa.v2jey.fun"
+  - name: "@v2ray_arوصلشدیدحمایتیادتوننره♥️سروررایگان👇👇@v2ray_arسرورفروشی👇👇@oorg_ar"
+    type: trojan
+    server: "45.85.119.179"
+    port: 8443
+    uuid: "Go5e2nKO8U"
+    network: ws
+    udp: true
+    tls: true
+    servername: "aa.v2jey.fun"
+    client-fingerprint: chrome
+    ws-opts:
+      path: "JoinUs@v2rayNG_VPNN"
+      headers:
+        Host: "cc.v2jey.fun"
+  - name: "⚡@V2ray_official"
+    type: trojan
+    server: "188.114.97.6"
+    port: 443
+    uuid: "KaQKzYh6dd"
+    network: ws
+    udp: true
+    tls: true
+    servername: "dd.aananas.ir."
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "188.114.97.6"
+  - name: "@internet_azad_2026"
+    type: trojan
+    server: "195.15.253.72"
+    port: 443
+    uuid: "Masir_Sefid"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "store.steampowered.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "w0XepGv1Hk0gBh1Apiw-nvn8SfzjWcDuxdxN1mpaF3g"
+      short-id: "6ced01fc4aa417"
+  - name: "@internet_azad_2026"
+    type: trojan
+    server: "37.156.45.168"
+    port: 443
+    uuid: "Masir_Sefid"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "store.steampowered.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
+      short-id: "d67d2e36"
+  - name: "🇨🇳@FreakConfig"
+    type: trojan
+    server: "37.156.45.168"
+    port: 443
+    uuid: "Masir_Sefid"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "store.steampowered.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
+      short-id: "d67d2e36"
+  - name: "🔰@V2ray_official"
+    type: trojan
+    server: "37.156.45.168"
+    port: 443
+    uuid: "Masir_Sefid"
+    network: tcp
+    udp: true
+    tls: true
+    servername: "store.steampowered.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "03be_-tMiVFxrLwXO7TMr4HTN4o68ai5Vd5Y2HeIgBQ"
+      short-id: "d67d2e36"

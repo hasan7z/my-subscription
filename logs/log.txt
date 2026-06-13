@@ -213,3 +213,36 @@
 [2026-06-13T10:29:54.663141] ✅ Wrote 25506 CLOUDFLARE optimized configs
 [2026-06-13T10:29:54.836009] ✅ Generated subscription_base64.txt
 [2026-06-13T10:29:54.836097] ✅ ALL advanced features generated successfully!
+[2026-06-13T10:40:30.828285] ===== RUN START =====
+[2026-06-13T10:40:30.829731] 🧹 Sources cleaned: 3 -> 3 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:40:30.829795] Downloading sources (with Smart Cache)...
+[2026-06-13T10:40:31.141194] ⏭️ Skipped (Unchanged): https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt
+[2026-06-13T10:40:31.423335] ⏭️ Skipped (Unchanged): https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
+[2026-06-13T10:40:31.504187] ⏭️ Skipped (Unchanged): https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt
+[2026-06-13T10:40:31.505781] 🧹 Sources cleaned: 3 -> 3 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:40:31.505849] Parsing configs...
+[2026-06-13T10:40:31.505887] [PARSE DONE] 0
+[2026-06-13T10:40:31.505919] [DEDUP] 0 unique configs (Fingerprint verified)
+[2026-06-13T10:40:31.505974] Updating database...
+[2026-06-13T10:40:33.789880] [DB] total=196706 new=0
+[2026-06-13T10:40:33.790357] [EXPORT] 0 configs
+[2026-06-13T10:40:33.793426] ✅ Source Guardian: 0 sources blacklisted.
+[2026-06-13T10:40:33.794359] 🧹 Sources cleaned: 3 -> 3 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:40:33.794420] [FINAL] 0
+[2026-06-13T10:40:33.794480] ===== RUN END =====
+[2026-06-13T10:40:33.893239] Loading DB...
+[2026-06-13T10:40:34.579971] Calculating Country-Boosted scores...
+[2026-06-13T10:40:35.859045] Total unique configs (Fingerprint verified): 194614
+[2026-06-13T10:40:36.664017] ✅ Wrote 96722 VLESS configs
+[2026-06-13T10:40:36.672888] ✅ Wrote 11770 VMESS configs
+[2026-06-13T10:40:36.677759] ✅ Wrote 10850 TROJAN configs
+[2026-06-13T10:40:36.704457] ✅ Wrote 53966 REALITY configs
+[2026-06-13T10:40:36.712237] ✅ Wrote 21281 SHADOWSOCKS configs
+[2026-06-13T10:40:36.724877] ✅ Wrote 25506 CLOUDFLARE optimized configs
+[2026-06-13T10:40:36.898583] ✅ Generated subscription_base64.txt
+[2026-06-13T10:40:36.898650] ✅ ALL advanced features generated successfully!
+[2026-06-13T10:40:37.018594] Starting Modern Format Conversion...
+[2026-06-13T10:40:37.021681] ✅ Successfully parsed 100 configs for modern formats.
+[2026-06-13T10:40:37.022054] ✅ Generated output/clash_meta.yaml
+[2026-06-13T10:40:37.023555] ✅ Generated output/singbox.json
+[2026-06-13T10:40:37.023599] ✅ Modern Format Conversion completed successfully!

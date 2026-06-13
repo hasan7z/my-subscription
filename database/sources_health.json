@@ -1,14 +1,14 @@
 {
   "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt": {
-    "success": 27,
-    "fail": 0,
-    "last_check": "2026-06-13T10:29:51.730354",
+    "success": 0,
+    "fail": 1,
+    "last_check": "2026-06-13T10:40:33.790888",
     "total_valid": 99677
   },
   "https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt": {
-    "success": 27,
-    "fail": 0,
-    "last_check": "2026-06-13T10:29:51.730354",
+    "success": 0,
+    "fail": 1,
+    "last_check": "2026-06-13T10:40:33.790888",
     "total_valid": 158951
   },
   "https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/WHITE_FULL.txt": {
@@ -108,9 +108,9 @@
     "total_valid": 3776
   },
   "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/vmess.txt": {
-    "success": 24,
-    "fail": 0,
-    "last_check": "2026-06-13T10:29:51.730354",
+    "success": 0,
+    "fail": 1,
+    "last_check": "2026-06-13T10:40:33.790888",
     "total_valid": 47712
   },
   "https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt": {
