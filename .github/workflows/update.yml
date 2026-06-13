@@ -10,40 +10,74 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
       
     steps:
       - uses: actions/checkout@v3
 
-      - name: 1. Run Core Engine (Smart Cache + Fingerprint Dedup)
+      - name: Install Requests
+        run: pip install requests
+
+      - name: 1. Run Core Engine
         run: python merge.py
 
-      - name: 2. Rotate 500 Good Configs from best_iran.txt
+      - name: 2. Rotate 500 Configs
         run: python -m Core.rotation_manager
 
-      - name: 3. Run Advanced Smart Best Generator
+      - name: 3. Run Smart Best Generator
         run: python -m Core.smart_best
 
-      - name: 4. Convert to Modern Formats (Clash Meta / Sing-Box)
+      - name: 4. Convert to Modern Formats
         run: python -m Core.format_converter
 
-      - name: 5. PROOF & STATS
+      - name: 5. Send Telegram Notification with Raw Links
+        run: |
+          python3 << 'EOF'
+          import json, os
+          from Core import notifier
+          
+          DB_FILE = "database/database.json"
+          SOURCES_FILE = "Sources/sources.txt"
+          
+          db = {}
+          if os.path.exists(DB_FILE):
+              with open(DB_FILE, "r", encoding="utf-8") as f:
+                  db = json.load(f)
+          
+          sources_count = 0
+          if os.path.exists(SOURCES_FILE):
+              with open(SOURCES_FILE, "r", encoding="utf-8") as f:
+                  sources_count = len([l for l in f if l.strip() and not l.startswith('#')])
+          
+          # تعداد کانفیگ‌های جدید را از rotation_index حدس بزنیم
+          new_count = len(db)
+          
+          notifier.check_health(db, sources_count, new_count)
+          EOF
+
+      - name: 6. PROOF & STATS
         run: |
           echo "========================================="
           echo "🔄 Rotation File:"
           wc -l output/rotation_500.txt || echo "Not found"
           echo "========================================="
-          echo "📊 Generated Text Files:"
-          wc -l output/Best*.txt output/best_*.txt output/best_i.txt output/subscription_base64.txt || echo "No txt files"
+          echo "📊 Generated Files:"
+          wc -l output/Best*.txt output/best_*.txt output/best_i.txt output/subscription_base64.txt 2>/dev/null || echo "No txt files"
           echo "========================================="
-          echo "📱 Generated Modern Formats:"
-          ls -lh output/clash_meta.yaml output/singbox.json || echo "No modern formats"
+          echo "📱 Modern Formats:"
+          ls -lh output/clash_meta.yaml output/singbox.json 2>/dev/null || echo "No modern formats"
+          echo "========================================="
+          echo "📨 Telegram Report:"
+          cat reports/status_report.md 2>/dev/null || echo "No report"
           echo "========================================="
 
-      - name: 6. Commit and Push
+      - name: 7. Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "🔄 Update: Rotated 500 configs + Standard Update $(date +%H:%M:%S)" || echo "No changes"
+          git commit -m "🔄 Update: Rotation + Modern Formats $(date +%H:%M:%S)" || echo "No changes"
           git pull --rebase origin main
           git push
