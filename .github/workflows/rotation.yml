@@ -2,7 +2,7 @@ name: Config Rotation (Every 3 Hours)
 
 on:
   schedule:
-    - cron: "30 */3 * * *"  # هر ۳ ساعت در دقیقه ۳۰ (مثلاً ۳:۳۰، ۶:۳۰، ۹:۳۰)
+    - cron: "30 */3 * * *"  # هر 3 ساعت، نیم ساعت
   workflow_dispatch:
 
 jobs:
