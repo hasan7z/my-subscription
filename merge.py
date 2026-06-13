@@ -13,14 +13,25 @@ def download_sources():
     """دانلود منابع از sources.txt"""
     import requests
     
+    # اطمینان از وجود پوشه Sources
+    os.makedirs(os.path.dirname(SOURCES_FILE), exist_ok=True)
+    
     if not os.path.exists(SOURCES_FILE):
-        log("❌ sources.txt not found")
+        log(f"⚠️ {SOURCES_FILE} not found. Creating an empty one. Please add URLs to it!")
+        with open(SOURCES_FILE, 'w', encoding='utf-8') as f:
+            f.write("# Add your source URLs here, one per line\n")
         return {}
     
     with open(SOURCES_FILE, 'r', encoding='utf-8') as f:
-        urls = [line.strip() for line in f if line.strip()]
+        # فقط خطوطی را بخوان که با # شروع نمی‌شوند (کامنت نیستند)
+        urls = [line.strip() for line in f if line.strip() and not line.strip().startswith('#')]
+    
+    if not urls:
+        log("⚠️ sources.txt is empty or contains only comments.")
+        return {}
     
     raw = {}
+   
     for url in urls:
         try:
             response = requests.get(url, timeout=30)
@@ -35,7 +46,6 @@ def download_sources():
             raw[url] = ""
     
     return raw
-
 def parse_configs(content):
     """پارس کانفیگ‌ها از محتوا"""
     if not content:
