@@ -827,10 +827,12 @@ trojan://8dbc65c4-04a9-4e47-b880-d7ed358e7cef@tiananmen.19890604.day:10803?type=
 trojan://8dbc65c4-04a9-4e47-b880-d7ed358e7cef@tank.19890604.day:10827?type=tcp&amp;security=tls&amp;sni=cloudflare.node-ssl.cdn-alibaba.com&amp;allowInsecure=1#TG:@dns68Êñ∞Âä†Âù°01
 trojan://8dbc65c4-04a9-4e47-b880-d7ed358e7cef@tank.19890604.day:10828?type=tcp&amp;security=tls&amp;sni=cloudflare.node-ssl.cdn-alibaba.com&amp;allowInsecure=1#TG:@dns68Êñ∞Âä†Âù°02
 trojan://8dbc65c4-04a9-4e47-b880-d7ed358e7cef@tank.19890604.day:10829?type=tcp&amp;security=tls&amp;sni=cloudflare.node-ssl.cdn-alibaba.com&amp;allowInsecure=1#Êñ∞TG:@dns68Âä†Âù°03
-trojan://6953ed5d9cff4c32895fecf21b1dfdc9@91.193.58.8:2087?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=nab.velizor.ir&fp=chrome&type=xhttp&allowInsecure=0&sni=nab.velizor.ir#🌐سرور 19 | Kho-23| MTSRVRS
-trojan://6953ed5d9cff4c32895fecf21b1dfdc9@91.193.58.8:2087?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=nab.velizor.ir&fp=chrome&type=xhttp&allowInsecure=0&sni=nab.velizor.ir#🌐سرور 20 | Kho-23| MTSRVRS
-trojan://mitivpn@188.114.97.6:443?path=%2Fed%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&fp=chrome&type=ws&allowInsecure=0&sni=www.ssl.global.digi.my.mitivpn.xyz#🌐سرور 21 | Kho-23| MTSRVRS
-trojan://mitivpn@188.114.97.6:443?path=%2Fed%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&fp=chrome&type=ws&allowInsecure=0&sni=www.ssl.global.digi.my.mitivpn.xyz#🌐سرور 22 | Kho-23| MTSRVRS
+trojan://mitivpn@eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz:443?security=tls&sni=www.ssl.global.digi.my.mitivpn.xyz&fp=chrome&allowInsecure=0&alpn=http/1.1&type=ws&path=/ed%3Dmitivpn#🌐سرور 4 | Kho-23| MTSRVRS
+trojan://mitivpn@eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz:443?security=tls&sni=www.ssl.global.digi.my.mitivpn.xyz&fp=chrome&allowInsecure=0&alpn=http/1.1&type=ws&path=/ed%3Dmitivpn#🌐سرور 5 | Kho-23| MTSRVRS
+trojan://mitivpn@188.114.97.6:443?path=%2Fed%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&fp=chrome&type=ws&allowInsecure=0&sni=www.ssl.global.digi.my.mitivpn.xyz#🌐سرور 25 | Kho-23| MTSRVRS
+trojan://mitivpn@188.114.97.6:443?path=%2Fed%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&fp=chrome&type=ws&allowInsecure=0&sni=www.ssl.global.digi.my.mitivpn.xyz#🌐سرور 26 | Kho-23| MTSRVRS
+trojan://humanity@srv1.khatibirepair.ir:443?path=%2Fassignment&security=tls&insecure=1&fp=chrome&type=ws&allowInsecure=1&sni=www.calmlunch.com#🌐سرور 33 | Kho-23| MTSRVRS
+trojan://humanity@srv1.khatibirepair.ir:443?path=%2Fassignment&security=tls&insecure=1&fp=chrome&type=ws&allowInsecure=1&sni=www.calmlunch.com#🌐سرور 34 | Kho-23| MTSRVRS
 trojan://4f4d1167-ef14-4304-9bce-0740472503ef@103.177.136.44:41943?security=tls&sni=az.01.naiun.bilibili.com#🇦🇿[openproxylist.com] trojan-AZ
 trojan://telegram-id-privatevpns@35.181.194.45:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#🇫🇷[openproxylist.com] trojan-FR
 trojan://telegram-id-privatevpns@35.181.198.31:22222?security=tls&amp;alpn=http/1.1&amp;headerType=none&amp;type=tcp&amp;sni=trojan.burgerip.co.uk#🇫🇷[openproxylist.com] trojan-FR
@@ -2360,6 +2362,8 @@ trojan://rpb9CaeQ6j@188.114.97.6:443?type=ws&host=Di.AanAnas.Ir.&path=%2Fde&secu
 trojan://hF7uSJfeBPtSNXKtuYvTRNaBdGkkXHpKJfLRfbpaDWovomSL@3.8.238.251:443?type=ws&host=uk1.bw8848.org&path=%2Fuk1-uk1-gcjtze&security=tls&sni=uk1.bw8848.org#[🇬🇧] [tr-tl-ws] [260613-131458.196]
 trojan://5JKj82yC2BNxy8LAZha8Gsj2BAexJJU7ttTfeFcuHzmLjAiZ@46.137.202.140:443?type=ws&host=node1.bw8848.org&path=%2Fnode1-node1-5sczzi&security=tls&sni=node1.bw8848.org#[🇸🇬] [tr-tl-ws] [260613-131452.618]
 trojan://Nova-Proxy@8.39.125.191:2083?type=ws&host=spring-queen-a95f.cewon19053.workers.dev&path=%2F&security=tls&sni=spring-queen-a95f.cewon19053.workers.dev#[🇺🇸] [tr-tl-ws] [260613-131455.232]
+trojan://humanity@45.80.111.7:443?security=tls&sni=www.calmlunch.com&fp=chrome&insecure=0&allowInsecure=0&type=ws&path=%2Fassignment#[🇩🇪]t.me/ConfigsHub
+trojan://humanity@104.18.152.246:443?path=%2Fassignment&security=tls&alpn=http%2F1.1&insecure=0&host=www.calmloud.com&fp=chrome&type=ws&allowInsecure=0&sni=www.calmloud.com#[🇨🇦]t.me/ConfigsHub
 trojan://humanity@srv1.khatibirepair.ir:443?path=%2Fassignment&security=tls&insecure=1&fp=chrome&type=ws&allowInsecure=1&sni=www.calmlunch.com#[🇩🇪]t.me/ConfigsHub
 trojan://mitivpn@188.114.97.6:443?security=tls&sni=2.1.mitivpn.dee.srfsl.gleobal.fastl3y.n3et.mitivpn.site&fp=chrome&alpn=http%2F1.1&insecure=0&allowInsecure=0&type=ws&host=mitivpn.de.ssl.global.fastly.net.mitivpn.site&path=%2Fhttps%3A%2F%2Fchatgpt.com#[🇨🇦]t.me/ConfigsHub
 trojan://mitivpn@188.114.97.6:443?path=%2Fed%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&fp=chrome&type=ws&allowInsecure=0&sni=www.ssl.global.digi.my.mitivpn.xyz#[🇨🇦]t.me/ConfigsHub
@@ -2374,8 +2378,3 @@ trojan://trojan@ip.sb:8443?path=/&security=tlhhs&host=fofang.pages.dev&type=ws&s
 trojan://ignHF1x8Gp@tunel.amirspacee.top:443?sni=tunel.amirspacee.top&alpn=h2,http/1.1&fp=chrobbme&type=ws&path=/mfvmfdvnfjvfkdmv#[🇨🇦]t.me/ConfigsHub
 trojan://e86364fb-a5e3-42c3-b7fa-6ce8097fe19f@bisque.qzz.io:443?security=tls&sni=bisque.qzz.io&type=ws&pbvath=/66.135.4.222:8443&Host=bisque.qzz.io#[🇨🇦]t.me/ConfigsHub
 trojan://mitivpn@188.114.97.6:443?security=tls&sni=www.ssl.global.digi.my.mitivpn.xyz&fp=chrome&alpn=http%2F1.1&insecure=0&allowInsecure=0&type=ws&host=eee.we.wwww.swsl.glowbal.diwgi.mwy.mitivpn.xyz&path=%2Fed%3Dmitivpn#[🇨🇦]t.me/ConfigsHub
-trojan://humanity@45.130.125.96:443?path=%2Fassignment&security=tls&alpn=http/1.1&host=www.calmloud.com&fp=chrome&type=ws&sni=www.calmloud.com#[🇸🇨]t.me/ConfigsHub
-trojan://trojan@ip.sb:8443?path=/&security=tls&host=fofang.pages.dev&type=ws&sni=fofang.pages.dev#[🇨🇦]t.me/ConfigsHub
-trojan://ignHF1x8Gp@tunel.amirspacee.top:443?sni=tunel.amirspacee.top&alpn=h2,http/1.1&fp=chrome&type=ws&path=/mfvmfdvnfjvfkdmv#[🇨🇦]t.me/ConfigsHub
-trojan://e86364fb-a5e3-42c3-b7fa-6ce8097fe19f@bisque.qzz.io:443?security=tls&sni=bisque.qzz.io&type=ws&path=/66.135.4.222:8443&Host=bisque.qzz.io#[🇨🇦]t.me/ConfigsHub
-trojan://iW3T_,2o&eJrL(%7CQ@:2053?security=tls&sni=wIld-sUnSET-03a1.deHgHaNPooYa42.WOrkeRS.dev&fp=chrome&allowInsecure=0&alpn=http/1.1&type=ws&path=/eyJqdW5rIjoiOVJSd0xQWnd0RTBDWHpNaSIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOltdfQ%3D%3D?ed%3D2560#[🇩🇪]t.me/ConfigsHub
