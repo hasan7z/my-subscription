@@ -53,48 +53,41 @@ def main():
     log("Sorting ALL configs by score (descending)...")
     sorted_cfgs = sorted(db.values(), key=lambda x: x.get("score", -1000), reverse=True)
     
-    # ✅ مرحله حیاتی ۱: حذف جهانی تکراری‌ها (Global Deduplication)
-    # این تضمین می‌کند که یک رشته کانفیگ، در کل پوشه output فقط یک بار ظاهر شود
+    # ✅ مرحله ۱: حذف جهانی تکراری‌ها (فقط یک بار انجام می‌شود)
     unique_sorted_cfgs = []
     seen_configs = set()
     
     for cfg in sorted_cfgs:
         config_str = cfg.get("config", "").strip()
+        # فقط کانفیگ‌هایی که امتیاز مثبت دارند و تکراری نیستند
         if config_str and config_str not in seen_configs and cfg.get("score", -1000) > 0:
             seen_configs.add(config_str)
             unique_sorted_cfgs.append(cfg)
             
-    log(f"Total UNIQUE valid configs after deduplication: {len(unique_sorted_cfgs)}")
+    total_unique = len(unique_sorted_cfgs)
+    log(f"Total UNIQUE valid configs available: {total_unique}")
     
     os.makedirs("output", exist_ok=True)
     
-    # ✅ مرحله حیاتی ۲: تقسیم‌بندی طبقاتی بدون همپوشانی (Tiered Slicing)
-    # هر فایل فقط بازه خاص خود را می‌گیرد و هیچ تکراری با فایل‌های دیگر نخواهد داشت
-    ranges = {
-        10: (0, 10),          # رتبه ۱ تا ۱۰
-        20: (10, 20),         # رتبه ۱۱ تا ۲۰
-        50: (20, 50),         # رتبه ۲۱ تا ۵۰
-        100: (50, 100),       # رتبه ۵۱ تا ۱۰۰
-        500: (100, 500),      # رتبه ۱۰۱ تا ۵۰۰
-        1000: (500, 1000),    # رتبه ۵۰۱ تا ۱۰۰۰
-        2500: (1000, 2500),   # رتبه ۱۰۰۱ تا ۲۵۰۰
-        5000: (2500, 5000)    # رتبه ۲۵۰۱ تا ۵۰۰۰
-    }
+    # ✅ مرحله ۲: برش تجمعی (Cumulative Slicing)
+    # فایل Best50 دقیقاً ۵۰ تای اول را می‌گیرد، Best100 دقیقاً ۱۰۰ تای اول را، و الی آخر
+    limits = [10, 20, 50, 100, 500, 1000, 2500, 5000]
     
-    for limit, (start, end) in ranges.items():
+    for limit in limits:
         path = f"output/Best{limit}.txt"
         
-        # برش دقیق آرایه یکتا
-        selected = unique_sorted_cfgs[start:end]
+        # برش از اول لیست تا 'limit'
+        # اگر تعداد کانفیگ‌های سالم کمتر از limit باشد، تا همان تعداد پر می‌شود (خطا نمی‌دهد)
+        selected = unique_sorted_cfgs[:limit]
         
         with open(path, "w", encoding="utf-8") as f:
             for cfg in selected:
                 f.write(cfg.get("config", "") + "\n")
         
-        min_score = selected[-1].get("score", -1000) if selected else -1000
-        log(f"✅ Wrote {path} ({len(selected)} UNIQUE configs, Rank {start+1} to {end}. Min score: {min_score})")
+        min_score = selected[-1].get("score", 0) if selected else 0
+        log(f"✅ Wrote {path} ({len(selected)} configs filled. Min score: {min_score})")
     
-    log("✅ ALL Best files generated: ZERO duplicates across ALL files, Tiered perfectly!")
+    log("✅ ALL Best files generated: Cumulative, Fully Populated, ZERO duplicates!")
 
 if __name__ == "__main__":
     main()
