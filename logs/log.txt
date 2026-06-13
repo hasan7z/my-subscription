@@ -287,3 +287,39 @@
 [2026-06-13T10:49:59.305475] ✅ Generated output/clash_meta.yaml
 [2026-06-13T10:49:59.306973] ✅ Generated output/singbox.json
 [2026-06-13T10:49:59.307015] ✅ Modern Format Conversion completed successfully!
+[2026-06-13T10:58:28.729442] ===== RUN START =====
+[2026-06-13T10:58:28.730738] 🧹 Sources cleaned: 5 -> 5 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:58:28.730812] Downloading sources (with Smart Cache)...
+[2026-06-13T10:58:28.878340] ❌ Failed (404): https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/sub/base64
+[2026-06-13T10:58:28.939957] ❌ Failed (404): https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub.txt
+[2026-06-13T10:58:29.000547] ❌ Failed (404): https://raw.githubusercontent.com/MiSaturo/V2ray-Configs/main/Sub.txt
+[2026-06-13T10:58:29.065500] ❌ Failed (404): https://raw.githubusercontent.com/peyman3073/V2ray/main/v2ray.txt
+[2026-06-13T10:58:29.135812] ❌ Failed (404): https://raw.githubusercontent.com/azadi_az_inja_migzare/azadi_az_inja_migzare/main/Sub.txt
+[2026-06-13T10:58:29.138361] 🧹 Sources cleaned: 5 -> 5 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:58:29.139413] 🔍 Searching GitHub for new v2ray repositories...
+[2026-06-13T10:58:41.852024] Parsing configs...
+[2026-06-13T10:58:41.852437] [PARSE DONE] 0
+[2026-06-13T10:58:41.852500] [DEDUP] 0 unique configs (Fingerprint verified)
+[2026-06-13T10:58:41.852535] Updating database...
+[2026-06-13T10:58:44.143970] [DB] total=196706 new=0
+[2026-06-13T10:58:44.144093] [EXPORT] 0 configs
+[2026-06-13T10:58:44.146785] ✅ Source Guardian: 0 sources blacklisted.
+[2026-06-13T10:58:44.147430] 🧹 Sources cleaned: 5 -> 5 (Removed 0 invalid, limit: 50)
+[2026-06-13T10:58:44.147491] [FINAL] 0
+[2026-06-13T10:58:44.147524] ===== RUN END =====
+[2026-06-13T10:58:44.251264] Loading DB...
+[2026-06-13T10:58:44.946513] Calculating Country-Boosted scores...
+[2026-06-13T10:58:46.195384] Total unique configs (Fingerprint verified): 194614
+[2026-06-13T10:58:47.005554] ✅ Wrote 96722 VLESS configs
+[2026-06-13T10:58:47.014792] ✅ Wrote 11770 VMESS configs
+[2026-06-13T10:58:47.019666] ✅ Wrote 10850 TROJAN configs
+[2026-06-13T10:58:47.044700] ✅ Wrote 53966 REALITY configs
+[2026-06-13T10:58:47.052569] ✅ Wrote 21281 SHADOWSOCKS configs
+[2026-06-13T10:58:47.065423] ✅ Wrote 25506 CLOUDFLARE optimized configs
+[2026-06-13T10:58:47.234405] ✅ Generated subscription_base64.txt
+[2026-06-13T10:58:47.234488] ✅ ALL advanced features generated successfully!
+[2026-06-13T10:58:47.363223] Starting Modern Format Conversion...
+[2026-06-13T10:58:47.366302] ✅ Successfully parsed 100 configs for modern formats.
+[2026-06-13T10:58:47.366783] ✅ Generated output/clash_meta.yaml
+[2026-06-13T10:58:47.368285] ✅ Generated output/singbox.json
+[2026-06-13T10:58:47.368327] ✅ Modern Format Conversion completed successfully!

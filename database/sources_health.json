@@ -1645,32 +1645,32 @@
   },
   "https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/sub/base64": {
     "success": 0,
-    "fail": 1,
-    "last_check": "2026-06-13T10:49:56.119697",
+    "fail": 2,
+    "last_check": "2026-06-13T10:58:44.144716",
     "total_valid": 0
   },
   "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub.txt": {
     "success": 0,
-    "fail": 1,
-    "last_check": "2026-06-13T10:49:56.119697",
+    "fail": 2,
+    "last_check": "2026-06-13T10:58:44.144716",
     "total_valid": 0
   },
   "https://raw.githubusercontent.com/MiSaturo/V2ray-Configs/main/Sub.txt": {
     "success": 0,
-    "fail": 1,
-    "last_check": "2026-06-13T10:49:56.119697",
+    "fail": 2,
+    "last_check": "2026-06-13T10:58:44.144716",
     "total_valid": 0
   },
   "https://raw.githubusercontent.com/peyman3073/V2ray/main/v2ray.txt": {
     "success": 0,
-    "fail": 1,
-    "last_check": "2026-06-13T10:49:56.119697",
+    "fail": 2,
+    "last_check": "2026-06-13T10:58:44.144716",
     "total_valid": 0
   },
   "https://raw.githubusercontent.com/azadi_az_inja_migzare/azadi_az_inja_migzare/main/Sub.txt": {
     "success": 0,
-    "fail": 1,
-    "last_check": "2026-06-13T10:49:56.119697",
+    "fail": 2,
+    "last_check": "2026-06-13T10:58:44.144716",
     "total_valid": 0
   }
 }
