@@ -1,34 +1,29 @@
-⚠️ Smart Subscription Update
-🕐 2026-06-14 09:44 UTC
+⏳ Smart Subscription Updated
+🕐 2026-06-14 10:58 UTC
 
-📊 Stats:
-├ Total: `195938`
-├ Active: `0`
-├ Health: `0.0%`
-├ Sources: `19`
-└ New: `195938`
+📊 Live Stats:
+├ 🗄️ Total DB: `196142`
+├ ❤️ Health Rate: `⏳ Pending Nightly Test`
+├ 🔗 Active Sources: `19`
+└ 🆕 New Configs: `196142`
 
-📥 Quick Links:
-🔄 500 Rotating Configs (500
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/rotation500.txt
-🇮🇷 Iran Optimized (140521
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/bestiran.txt
-👑 Premium Top 100 (100
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/besti.txt
-🔐 Base64 (v2rayNG (1
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/subscriptionbase64.txt
-📱 Sing-Box (Hiddify (File
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/singbox.json
-⚔️ Clash Meta (File
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/clashmeta.yaml
-🔹 VLESS Protocol (127513
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/bestvless.txt
-🔻 Trojan Protocol (2256
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/besttrojan.txt
-🛡️ Reality Protocol (60688
-└ https://raw.githubusercontent.com/hasan7z/my-subscription/main/output/bestreality.txt
+📥 Quick Access Links (GitHub Pages:
+▫️ 🔄 Rotation 500 (Every 3h (`500`
+   └ https://hasan7z.github.io/my-subscription/output/rotation500.txt
+▫️ 🇮🇷 Iran Mix 1 (2500 Configs (`2500`
+   └ https://hasan7z.github.io/my-subscription/output/iran1.txt
+▫️ 🔹 VLESS 1 (2500 Configs (`2500`
+   └ https://hasan7z.github.io/my-subscription/output/vless1.txt
+▫️ 🔻 Trojan 1 (2500 Configs (`2500`
+   └ https://hasan7z.github.io/my-subscription/output/trojan1.txt
+▫️ 🛡️ Reality 1 (2500 Configs (`2500`
+   └ https://hasan7z.github.io/my-subscription/output/reality1.txt
+▫️ 🌀 Warp (Emergency (`4`
+   └ https://hasan7z.github.io/my-subscription/output/warp.txt
+▫️ 🇩🇪 Germany (Every 12h (`500`
+   └ https://hasan7z.github.io/my-subscription/output/bestGR.txt
+▫️ 🔐 Base64 (Top 1000 (`1`
+   └ https://hasan7z.github.io/my-subscription/output/subscriptionbase64.txt
 
-🚨 Alerts:
-⚠️ Low health: 0.0%
-
-📎 Files attached below
+🔗 Full Dashboard & All Links:
+👉 [Click Here](https://github.com/hasan7z/my-subscription
