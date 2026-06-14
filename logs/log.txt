@@ -1913,3 +1913,25 @@
 [2026-06-14T14:16:29.458712] ✅ Notification complete: 8 files sent to Telegram.
 [2026-06-14T14:42:10.519491] ✅ Rotation successful: Extracted 500 configs (Index 3500 to 3999) to output/rotation_500.txt
 [2026-06-14T16:56:46.179370] ✅ Rotation successful: Extracted 500 configs (Index 4000 to 4499) to output/rotation_500.txt
+[2026-06-14T19:18:34.348016] 🚀 Starting Multi-File Universal Rotation...
+[2026-06-14T19:18:34.509371] ✅ Generated output/vless_1.txt (2500 configs)
+[2026-06-14T19:18:34.510279] ✅ Generated output/vless_2.txt (2500 configs)
+[2026-06-14T19:18:34.511134] ✅ Generated output/vless_3.txt (2500 configs)
+[2026-06-14T19:18:34.511209] 🔄 vless rotation complete: 3 files created. Next index: 7500
+[2026-06-14T19:18:34.527188] ✅ Generated output/trojan_1.txt (2500 configs)
+[2026-06-14T19:18:34.528030] ✅ Generated output/trojan_2.txt (2500 configs)
+[2026-06-14T19:18:34.528808] ✅ Generated output/trojan_3.txt (2500 configs)
+[2026-06-14T19:18:34.528880] 🔄 trojan rotation complete: 3 files created. Next index: 720
+[2026-06-14T19:18:34.532647] ✅ Generated output/vmess_1.txt (2500 configs)
+[2026-06-14T19:18:34.533625] ✅ Generated output/vmess_2.txt (2318 configs)
+[2026-06-14T19:18:34.534668] ✅ Generated output/vmess_3.txt (2500 configs)
+[2026-06-14T19:18:34.534768] 🔄 vmess rotation complete: 3 files created. Next index: 1578
+[2026-06-14T19:18:34.614455] ✅ Generated output/reality_1.txt (2500 configs)
+[2026-06-14T19:18:34.615506] ✅ Generated output/reality_2.txt (2500 configs)
+[2026-06-14T19:18:34.616567] ✅ Generated output/reality_3.txt (2500 configs)
+[2026-06-14T19:18:34.616641] 🔄 reality rotation complete: 3 files created. Next index: 7500
+[2026-06-14T19:18:34.808362] ✅ Generated output/iran_1.txt (2500 configs)
+[2026-06-14T19:18:34.809337] ✅ Generated output/iran_2.txt (2500 configs)
+[2026-06-14T19:18:34.810206] ✅ Generated output/iran_3.txt (2500 configs)
+[2026-06-14T19:18:34.810280] 🔄 iran rotation complete: 3 files created. Next index: 7500
+[2026-06-14T19:18:34.824172] ✅ Multi-File Rotation completed: 5/5 protocols processed.
