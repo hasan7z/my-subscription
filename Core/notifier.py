@@ -163,7 +163,7 @@ if __name__ == "__main__":
     # تست محلی (اختیاری)
     test_db = {
         "h1": {"success": 10, "fail": 2},
-        "h2": {"success": 0, "fail": 0}, # تست‌نشده
+        "h2": {"success": 0, "fail": 0},
         "h3": {"success": 5, "fail": 5},
     }
     check_health(test_db, 15, 500)
