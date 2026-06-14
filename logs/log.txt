@@ -1912,3 +1912,4 @@
 [2026-06-14T14:16:29.457560] 📤 File sent: subscription_base64.txt
 [2026-06-14T14:16:29.458712] ✅ Notification complete: 8 files sent to Telegram.
 [2026-06-14T14:42:10.519491] ✅ Rotation successful: Extracted 500 configs (Index 3500 to 3999) to output/rotation_500.txt
+[2026-06-14T16:56:46.179370] ✅ Rotation successful: Extracted 500 configs (Index 4000 to 4499) to output/rotation_500.txt
