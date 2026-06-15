@@ -3,7 +3,6 @@ import re
 import random
 from Core.logger import log
 
-# به جای database.json، از best_iran.txt می‌خوانیم که همیشه در مخزن موجود است
 SOURCE_FILE = "output/best_iran.txt"
 OUTPUT_FILE = "output/jojo_style.txt"
 
@@ -16,54 +15,45 @@ GOLDEN_SNI = [
 GOLDEN_PORTS = [443, 8443, 2053, 2083, 2087, 2096]
 
 def is_golden_config(config_str):
-    """بررسی استانداردهای طلایی"""
     cfg_lower = config_str.lower()
     
-    # 1. فقط VLESS یا Trojan
     if not (cfg_lower.startswith('vless://') or cfg_lower.startswith('trojan://')):
         return False
     
-    # 2. فقط TLS یا Reality
     if 'security=tls' not in cfg_lower and 'security=reality' not in cfg_lower:
         return False
     
-    # 3. پورت طلایی
     port_match = re.search(r':(\d+)[?/]', config_str)
     if port_match:
         port = int(port_match.group(1))
         if port not in GOLDEN_PORTS:
             return False
     
-    # 4. SNI طلایی
     sni_match = re.search(r'sni=([^&]+)', cfg_lower)
     if sni_match:
         sni = sni_match.group(1)
         if not any(golden_sni in sni for golden_sni in GOLDEN_SNI):
             return False
     
-    # 5. حذف ناامن
     if 'allowinsecure=1' in cfg_lower or 'allowinsecure=true' in cfg_lower:
         return False
     
     return True
 
-def extract_server_ip(config_str):    """استخراج IP سرور برای جلوگیری از تکرار"""
+def extract_server_ip(config_str):
     match = re.search(r'@([^:]+):', config_str)
     if match:
         return match.group(1)
     return None
 
 def generate_jojo_style():
-    """تولید 30 کانفیگ طلایی از فایل best_iran.txt"""
-    log("=" * 60)
-    log("🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)")
+    log("=" * 60)    log("🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)")
     log("=" * 60)
     
     if not os.path.exists(SOURCE_FILE):
         log(f"❌ ERROR: {SOURCE_FILE} not found! Cannot generate JoJo style.")
         return
     
-    # خواندن کانفیگ‌ها از فایل متنی
     with open(SOURCE_FILE, "r", encoding="utf-8") as f:
         configs = [line.strip() for line in f if line.strip()]
         
@@ -78,12 +68,10 @@ def generate_jojo_style():
         
         server_ip = extract_server_ip(config_str)
         if server_ip and server_ip in seen_servers:
-            continue # رد کردن سرورهای تکراری
+            continue
         
-        # امتیازدهی تصادفی هوشمند برای ایجاد تنوع در هر ۳ ساعت
-        score = random.uniform(70, 100) 
+        score = random.uniform(70, 100)
         
-        # امتیاز اضافی برای کشورهای پایدار
         cfg_lower = config_str.lower()
         if any(kw in cfg_lower for kw in ['de', '🇩🇪', 'germany', 'frankfurt']):
             score += 10
@@ -96,22 +84,19 @@ def generate_jojo_style():
             "server": server_ip
         })
         
-        if server_ip:            seen_servers.add(server_ip)
+        if server_ip:
+            seen_servers.add(server_ip)
             
     log(f"📊 Found {len(golden_configs)} unique golden configs matching criteria")
     
-    # مرتب‌سازی بر اساس امتیاز
     golden_configs.sort(key=lambda x: x["score"], reverse=True)
-    
-    # انتخاب ۳۰ تای برتر
     top_30 = golden_configs[:30]
     
     if top_30:
         os.makedirs("output", exist_ok=True)
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             for item in top_30:
-                f.write(item["config"] + "\n")
-        
+                f.write(item["config"] + "\n")        
         log(f"✅ SUCCESS: Generated {OUTPUT_FILE} with {len(top_30)} configs")
         unique_in_output = len(set(item['server'] for item in top_30 if item['server']))
         log(f"   📊 Unique servers in output: {unique_in_output}")
