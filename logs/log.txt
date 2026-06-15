@@ -2175,3 +2175,4 @@
 [2026-06-15T04:59:32.384005] 📤 File sent: best_GR.txt
 [2026-06-15T04:59:33.291545] 📤 File sent: subscription_base64.txt
 [2026-06-15T04:59:33.292700] ✅ Notification complete: 8 files sent to Telegram.
+[2026-06-15T05:38:32.117481] ✅ Rotation successful: Extracted 500 configs (Index 5500 to 5999) to output/rotation_500.txt
