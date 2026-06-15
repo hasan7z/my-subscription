@@ -90,6 +90,7 @@ def check_health(db, sources_count, new_configs_count):
 
     important_files = [
         ("rotation_500.txt", "🔄 Rotation 500 (Every 3h)"),
+        ("jojo_style.txt", "🏆 JoJo Style (30 Golden)"),
         ("iran_1.txt", "🇮🇷 Iran Mix 1 (2500 Configs)"),
         ("vless_1.txt", "🔹 VLESS 1 (2500 Configs)"),
         ("trojan_1.txt", "🔻 Trojan 1 (2500 Configs)"),
