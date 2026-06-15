@@ -2430,3 +2430,25 @@
 [2026-06-15T12:28:56.862206] 📤 File sent: subscription_base64.txt
 [2026-06-15T12:28:56.863479] ✅ Notification complete: 9 files sent to Telegram.
 [2026-06-15T12:49:57.346168] ✅ Rotation successful: Extracted 500 configs (Index 6000 to 6499) to output/rotation_500.txt
+[2026-06-15T14:55:15.713510] 🚀 Starting Multi-File Universal Rotation...
+[2026-06-15T14:55:15.878914] ✅ Generated output/vless_1.txt (2500 configs)
+[2026-06-15T14:55:15.880556] ✅ Generated output/vless_2.txt (2500 configs)
+[2026-06-15T14:55:15.882245] ✅ Generated output/vless_3.txt (2500 configs)
+[2026-06-15T14:55:15.882418] 🔄 vless rotation complete: 3 files created. Next index: 15000
+[2026-06-15T14:55:15.909659] ✅ Generated output/trojan_1.txt (2500 configs)
+[2026-06-15T14:55:15.910731] ✅ Generated output/trojan_2.txt (2500 configs)
+[2026-06-15T14:55:15.911793] ✅ Generated output/trojan_3.txt (2500 configs)
+[2026-06-15T14:55:15.911902] 🔄 trojan rotation complete: 3 files created. Next index: 1446
+[2026-06-15T14:55:15.916047] ✅ Generated output/vmess_1.txt (2500 configs)
+[2026-06-15T14:55:15.917539] ✅ Generated output/vmess_2.txt (2500 configs)
+[2026-06-15T14:55:15.918813] ✅ Generated output/vmess_3.txt (2058 configs)
+[2026-06-15T14:55:15.918919] 🔄 vmess rotation complete: 3 files created. Next index: 1286
+[2026-06-15T14:55:15.996670] ✅ Generated output/reality_1.txt (2500 configs)
+[2026-06-15T14:55:15.998099] ✅ Generated output/reality_2.txt (2500 configs)
+[2026-06-15T14:55:15.999495] ✅ Generated output/reality_3.txt (2500 configs)
+[2026-06-15T14:55:15.999601] 🔄 reality rotation complete: 3 files created. Next index: 15000
+[2026-06-15T14:55:16.184630] ✅ Generated output/iran_1.txt (2500 configs)
+[2026-06-15T14:55:16.185832] ✅ Generated output/iran_2.txt (2500 configs)
+[2026-06-15T14:55:16.187092] ✅ Generated output/iran_3.txt (2500 configs)
+[2026-06-15T14:55:16.187202] 🔄 iran rotation complete: 3 files created. Next index: 15000
+[2026-06-15T14:55:16.204169] ✅ Multi-File Rotation completed: 5/5 protocols processed.
