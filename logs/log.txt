@@ -2752,3 +2752,8 @@
 [2026-06-15T19:10:42.759761] 📤 File sent: best_GR.txt
 [2026-06-15T19:10:43.636266] 📤 File sent: subscription_base64.txt
 [2026-06-15T19:10:43.637615] ✅ Notification complete: 9 files sent.
+[2026-06-15T19:14:44.970339] ✅ Rotation successful: Extracted 500 configs (Index 9000 to 9499) to output/rotation_500.txt
+[2026-06-15T19:14:45.014487] ============================================================
+[2026-06-15T19:14:45.014541] 🏆 STARTING JOJO STYLE GENERATION
+[2026-06-15T19:14:45.014579] ============================================================
+[2026-06-15T19:14:45.014619] ❌ ERROR: database/database.json not found!
