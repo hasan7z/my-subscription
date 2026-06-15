@@ -2452,3 +2452,6 @@
 [2026-06-15T14:55:16.187092] ✅ Generated output/iran_3.txt (2500 configs)
 [2026-06-15T14:55:16.187202] 🔄 iran rotation complete: 3 files created. Next index: 15000
 [2026-06-15T14:55:16.204169] ✅ Multi-File Rotation completed: 5/5 protocols processed.
+[2026-06-15T15:07:39.068429] ✅ Rotation successful: Extracted 500 configs (Index 6500 to 6999) to output/rotation_500.txt
+[2026-06-15T15:07:39.116651] 🏆 Generating JoJo Style (30 Golden Configs - MahsaNG Pattern)...
+[2026-06-15T15:07:39.116726] ⚠️ database.json not found. Skipping.
