@@ -1,16 +1,16 @@
 ⏳ Smart Subscription Updated
-🕐 2026-06-15 12:28 UTC
+🕐 2026-06-15 16:47 UTC
 
 📊 Live Stats:
-├ 🗄️ Total DB: `202758`
+├ 🗄️ Total DB: `90000`
 ├ ❤️ Health Rate: `⏳ Pending Nightly Test`
 ├ 🔗 Active Sources: `21`
-└ 🆕 New Configs: `202758`
+└ 🆕 New Configs: `90000`
 
 📥 Quick Access Links (GitHub Pages:
 ▫️ 🔄 Rotation 500 (Every 3h (`500`
    └ https://hasan7z.github.io/my-subscription/output/rotation500.txt
-▫️ 🏆 JoJo Style (30 Golden (`1`
+▫️ 🏆 JoJo Style (30 Golden (`30`
    └ https://hasan7z.github.io/my-subscription/output/jojostyle.txt
 ▫️ 🇮🇷 Iran Mix 1 (2500 Configs (`2500`
    └ https://hasan7z.github.io/my-subscription/output/iran1.txt
