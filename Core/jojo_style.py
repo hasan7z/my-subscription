@@ -4,7 +4,7 @@ import base64
 import re
 from Core.logger import log
 
-DB_FILE = "database/database.json"
+DB_FILE = "output/best_iran.txt"
 OUTPUT_FILE = "output/jojo_style.txt"
 
 # فیلترهای سخت‌گیرانه به سبک MahsaNG
