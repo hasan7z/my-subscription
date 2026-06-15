@@ -2176,3 +2176,116 @@
 [2026-06-15T04:59:33.291545] 📤 File sent: subscription_base64.txt
 [2026-06-15T04:59:33.292700] ✅ Notification complete: 8 files sent to Telegram.
 [2026-06-15T05:38:32.117481] ✅ Rotation successful: Extracted 500 configs (Index 5500 to 5999) to output/rotation_500.txt
+[2026-06-15T07:41:51.234637] ===== RUN START =====
+[2026-06-15T07:41:51.236399] 🧹 Sources cleaned: 19 -> 19 (Removed 0 invalid, limit: 50)
+[2026-06-15T07:41:51.236465] Running Auto-Discovery for new GitHub sources...
+[2026-06-15T07:41:51.236539] 🔍 Searching GitHub for new v2ray repositories...
+[2026-06-15T07:42:08.095569] ℹ️ No new sources discovered
+[2026-06-15T07:42:08.096297] Downloading sources (with Smart Cache)...
+[2026-06-15T07:42:08.126607] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/MahsaNetConfigTopic/config/refs/heads/main/xray_final.txt
+[2026-06-15T07:42:08.579716] ✅ Downloaded (New/Updated): https://github.com/sakha1370/OpenRay/raw/refs/heads/main/output/all_valid_proxies.txt
+[2026-06-15T07:42:08.801261] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt
+[2026-06-15T07:42:17.240025] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt
+[2026-06-15T07:42:17.324596] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
+[2026-06-15T07:42:17.412312] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
+[2026-06-15T07:42:17.489100] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/CidVpn/cid-vpn-config/refs/heads/main/general.txt
+[2026-06-15T07:42:17.586909] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt
+[2026-06-15T07:42:17.658361] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
+[2026-06-15T07:42:18.236271] ✅ Downloaded (New/Updated): https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/raw/refs/heads/main/url_work.txt
+[2026-06-15T07:42:18.320687] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt
+[2026-06-15T07:42:18.660028] ✅ Downloaded (New/Updated): https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt
+[2026-06-15T07:42:18.979815] ✅ Downloaded (New/Updated): https://github.com/MhdiTaheri/V2rayCollector/raw/refs/heads/main/sub/mix
+[2026-06-15T07:42:19.307533] ✅ Downloaded (New/Updated): https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt
+[2026-06-15T07:42:19.404083] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt
+[2026-06-15T07:42:19.487445] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri
+[2026-06-15T07:42:19.718527] ✅ Downloaded (New/Updated): https://github.com/igareck/vpn-configs-for-russia/raw/refs/heads/main/BLACK_VLESS_RUS.txt
+[2026-06-15T07:42:19.796730] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt
+[2026-06-15T07:42:19.830295] ✅ Downloaded (New/Updated): https://raw.githubusercontent.com/amir-reza-bijandi/v2ray-configs/main/configs.txt
+[2026-06-15T07:42:19.832450] 🧹 Sources cleaned: 19 -> 19 (Removed 0 invalid, limit: 50)
+[2026-06-15T07:42:19.832555] Parsing configs...
+[2026-06-15T07:42:19.832636]   https://raw.githubusercontent.com/MahsaNetConfigTopic/config/refs/heads/main/xray_final.txt: 9 configs
+[2026-06-15T07:42:19.836090]   https://github.com/sakha1370/OpenRay/raw/refs/heads/main/output/all_valid_proxies.txt: 4659 configs
+[2026-06-15T07:42:19.994651]   https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt: 175939 configs
+[2026-06-15T07:42:20.005370]   https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt: 11677 configs
+[2026-06-15T07:42:20.005507]   https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt: 51 configs
+[2026-06-15T07:42:20.005685]   https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt: 150 configs
+[2026-06-15T07:42:20.006046]   https://raw.githubusercontent.com/CidVpn/cid-vpn-config/refs/heads/main/general.txt: 357 configs
+[2026-06-15T07:42:20.006381]   https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt: 309 configs
+[2026-06-15T07:42:20.006724]   https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt: 452 configs
+[2026-06-15T07:42:20.013878]   https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/raw/refs/heads/main/url_work.txt: 8227 configs
+[2026-06-15T07:42:20.014196]   https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt: 328 configs
+[2026-06-15T07:42:20.014871]   https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt: 429 configs
+[2026-06-15T07:42:20.016881]   https://github.com/MhdiTaheri/V2rayCollector/raw/refs/heads/main/sub/mix: 2135 configs
+[2026-06-15T07:42:20.018708]   https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt: 2166 configs
+[2026-06-15T07:42:20.021402]   https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt: 2795 configs
+[2026-06-15T07:42:20.021850]   https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri: 469 configs
+[2026-06-15T07:42:20.021939]   https://github.com/igareck/vpn-configs-for-russia/raw/refs/heads/main/BLACK_VLESS_RUS.txt: 48 configs
+[2026-06-15T07:42:20.022155]   https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt: 199 configs
+[2026-06-15T07:42:20.022520]   https://raw.githubusercontent.com/amir-reza-bijandi/v2ray-configs/main/configs.txt: 368 configs
+[2026-06-15T07:42:20.022556] [PARSE DONE] 210767
+[2026-06-15T07:42:20.203562] [DEDUP] 202446 unique configs (Fingerprint verified)
+[2026-06-15T07:42:20.203659] Updating database...
+[2026-06-15T07:42:22.465949] [DB] total=202446 new=202446
+[2026-06-15T07:42:22.466020] Applying Iran-Optimized filter...
+[2026-06-15T07:42:22.746414] 🇮🇷 Iran-Optimized Filter: 145784 configs passed
+[2026-06-15T07:42:22.748985]    - Reality protocol: 63795
+[2026-06-15T07:42:22.749032]    - Safe port 443: 47239
+[2026-06-15T07:42:22.749064]    - Safe port 8443: 14326
+[2026-06-15T07:42:22.749095]    - Safe port 2096: 6024
+[2026-06-15T07:42:22.749123]    - Safe port 2053: 3982
+[2026-06-15T07:42:22.813998] ✅ Generated best_iran.txt (145784 configs)
+[2026-06-15T07:42:22.888635] [EXPORT] 202446 configs to all.txt
+[2026-06-15T07:42:23.085493] ✅ Source Guardian: 0 sources blacklisted.
+[2026-06-15T07:42:23.086312] 🧹 Sources cleaned: 19 -> 19 (Removed 0 invalid, limit: 50)
+[2026-06-15T07:42:23.103636] 📋 Report saved to reports/status_report.md
+[2026-06-15T07:42:23.602561] 📤 Status message sent to Telegram
+[2026-06-15T07:42:23.603894] 📎 Starting to send files as documents...
+[2026-06-15T07:42:24.510153] 📤 File sent: rotation_500.txt
+[2026-06-15T07:42:25.507559] 📤 File sent: iran_1.txt
+[2026-06-15T07:42:26.488924] 📤 File sent: vless_1.txt
+[2026-06-15T07:42:27.386990] 📤 File sent: trojan_1.txt
+[2026-06-15T07:42:28.342634] 📤 File sent: reality_1.txt
+[2026-06-15T07:42:28.774481] 📤 File sent: warp_on_warp.txt
+[2026-06-15T07:42:29.494620] 📤 File sent: best_GR.txt
+[2026-06-15T07:42:30.456828] 📤 File sent: subscription_base64.txt
+[2026-06-15T07:42:30.458131] ✅ Notification complete: 8 files sent to Telegram.
+[2026-06-15T07:42:30.458207] [FINAL] 202446
+[2026-06-15T07:42:30.458268] [NEW] 202446
+[2026-06-15T07:42:30.458301] ===== RUN END =====
+[2026-06-15T07:42:30.617289] Starting Modern Format Conversion...
+[2026-06-15T07:42:30.620831] ✅ Successfully parsed 100 configs for modern formats.
+[2026-06-15T07:42:30.621392] ✅ Generated output/clash_meta.yaml
+[2026-06-15T07:42:30.623427] ✅ Generated output/singbox.json
+[2026-06-15T07:42:30.623472] ✅ Modern Format Conversion completed successfully!
+[2026-06-15T07:42:30.659799] 🏆 Generating JoJo Style (30 Golden Configs - MahsaNG Pattern)...
+[2026-06-15T07:42:31.819087] ✅ Generated output/jojo_style.txt with 30 golden configs (Base64 - MahsaNG style)
+[2026-06-15T07:42:31.819147]    📊 Unique servers: 30
+[2026-06-15T07:42:31.819199]    📊 Average score: 100.0
+[2026-06-15T07:42:31.975724] 🌀 Starting Warp extraction...
+[2026-06-15T07:42:31.975806] 🔍 Fetching Warp configs from 6 sources...
+[2026-06-15T07:42:32.055689]   ✅ https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp: 7 configs
+[2026-06-15T07:42:32.129043]   ⚠️ https://raw.githubusercontent.com/azadi_az_inja_migzare/azadi_az_inja_migzare/main/warp.txt: HTTP 404
+[2026-06-15T07:42:32.192242]   ⚠️ https://raw.githubusercontent.com/yebekhe/V2Hub/main/merged/warp: HTTP 404
+[2026-06-15T07:42:32.277879]   ⚠️ https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/warp.txt: HTTP 404
+[2026-06-15T07:42:32.348167]   ⚠️ https://raw.githubusercontent.com/MhdiTahworworker/v2ray/main/sub/warp: HTTP 404
+[2026-06-15T07:42:32.413149]   ⚠️ https://raw.githubusercontent.com/ArdaYGN/V2ray-Free-Config-Collector/main/sub/warp: HTTP 404
+[2026-06-15T07:42:32.414645] ✅ Generated output/warp.txt with 4 Warp configs.
+[2026-06-15T07:42:32.414690] 🔍 Fetching Warp-on-Warp configs...
+[2026-06-15T07:42:32.414726] 🔍 Fetching Warp-on-Warp configs from 2 sources...
+[2026-06-15T07:42:32.508594]   ⚠️ https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp-on-warp: HTTP 404
+[2026-06-15T07:42:32.577912]   ⚠️ https://raw.githubusercontent.com/azadi_az_inja_migzare/azadi_az_inja_migzare/main/warp-pro.txt: HTTP 404
+[2026-06-15T07:42:32.578863] ⚠️ No valid Warp-on-Warp configs found.
+[2026-06-15T07:42:32.579103] 📊 Total: 4 Warp + 0 WoW = 4 configs
+[2026-06-15T07:42:33.436099] 📋 Report saved to reports/status_report.md
+[2026-06-15T07:42:33.816676] 📤 Status message sent to Telegram
+[2026-06-15T07:42:33.817711] 📎 Starting to send files as documents...
+[2026-06-15T07:42:34.512722] 📤 File sent: rotation_500.txt
+[2026-06-15T07:42:36.930075] 📤 File sent: jojo_style.txt
+[2026-06-15T07:42:37.905055] 📤 File sent: iran_1.txt
+[2026-06-15T07:42:38.903374] 📤 File sent: vless_1.txt
+[2026-06-15T07:42:39.784990] 📤 File sent: trojan_1.txt
+[2026-06-15T07:42:40.859396] 📤 File sent: reality_1.txt
+[2026-06-15T07:42:41.288904] 📤 File sent: warp_on_warp.txt
+[2026-06-15T07:42:42.220491] 📤 File sent: best_GR.txt
+[2026-06-15T07:42:43.269406] 📤 File sent: subscription_base64.txt
+[2026-06-15T07:42:43.270708] ✅ Notification complete: 9 files sent to Telegram.
