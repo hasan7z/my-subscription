@@ -24,8 +24,6 @@ jobs:
         run: python -m Core.smart_best
       - name: 3. Convert to Modern Formats
         run: python -m Core.format_converter
-      - name: 3.5. Generate JoJo Style (30 Golden Configs)
-        run: python -m Core.jojo_style
       - name: 4. Generate Emergency Warp File
         run: python -m Core.warp_manager
       - name: 5. Send Telegram Notification
