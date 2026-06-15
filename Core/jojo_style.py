@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 import re
 from Core.logger import log
 
@@ -10,23 +11,21 @@ OUTPUT_FILE = "output/jojo_style.txt"
 GOLDEN_SNI = [
     'cloudflare.com', 'speedtest.net', 'tap.az', 'amazon.com', 
     'microsoft.com', 'apple.com', 'google.com', 'linkedin.com',
-    'www.speedtest.net', 'cdn.discordapp.com'
+    'vk-cdnvideo.com', 'cdn.discordapp.com'
 ]
 
-GOLDEN_PORTS = [443, 8443]
+GOLDEN_PORTS = [443, 8443, 2053, 2083, 2087, 2096]
 
 def is_golden_config(config_str):
     """بررسی اینکه آیا کانفیگ استانداردهای طلایی MahsaNG را دارد"""
     cfg_lower = config_str.lower()
     
-    # 1. فقط VLESS-Reality
-    if not cfg_lower.startswith('vless://'):
-        return False
-    if 'security=reality' not in cfg_lower:
+    # 1. فقط VLESS یا VMess (MahsaNG از هر دو استفاده می‌کند)
+    if not (cfg_lower.startswith('vless://') or cfg_lower.startswith('vmess://')):
         return False
     
-    # 2. فقط flow xtls-rprx-vision (پایدارترین)
-    if 'flow=xtls-rprx-vision' not in cfg_lower:
+    # 2. فقط TLS یا Reality (نه ناامن)
+    if 'security=tls' not in cfg_lower and 'security=reality' not in cfg_lower:
         return False
     
     # 3. فقط پورت‌های طلایی
@@ -43,12 +42,12 @@ def is_golden_config(config_str):
         if not any(golden_sni in sni for golden_sni in GOLDEN_SNI):
             return False
     
-    # 5. Fingerprint مرورگر (chrome یا firefox)
-    if 'fp=chrome' not in cfg_lower and 'fp=firefox' not in cfg_lower:
+    # 5. Fingerprint مرورگر
+    if 'fp=chrome' not in cfg_lower and 'fp=firefox' not in cfg_lower and 'fp=random' not in cfg_lower:
         return False
     
-    # 6. حذف کانفیگ‌های ناامن    if 'allowinsecure=1' in cfg_lower or 'allowinsecure=true' in cfg_lower:
-        return False
+    # 6. حذف کانفیگ‌های ناامن
+    if 'allowinsecure=1' in cfg_lower or 'allowinsecure=true' in cfg_lower:        return False
     
     return True
 
@@ -60,8 +59,8 @@ def extract_server_ip(config_str):
     return None
 
 def generate_jojo_style():
-    """تولید 30 کانفیگ طلایی به سبک MahsaNG"""
-    log("🏆 Generating JoJo Style (30 Golden Configs)...")
+    """تولید 30 کانفیگ طلایی به سبک MahsaNG (Base64)"""
+    log("🏆 Generating JoJo Style (30 Golden Configs - MahsaNG Pattern)...")
     
     if not os.path.exists(DB_FILE):
         log("⚠️ database.json not found. Skipping.")
@@ -83,31 +82,27 @@ def generate_jojo_style():
         if not is_golden_config(config_str):
             continue
         
-        # بررسی سلامت (اگر تست شده باشد)
+        # بررسی سلامت
         success = info.get("success", 0)
         fail = info.get("fail", 0)
         total_tests = success + fail
         
-        # اگر تست شده، باید حداقل 80% موفقیت داشته باشد
         if total_tests > 0:
             success_rate = success / total_tests
             if success_rate < 0.8:
                 continue
         
-        # حذف تکراری‌های سرور (فقط بهترین کانفیگ هر سرور)
+        # حذف تکراری‌های سرور
         server_ip = extract_server_ip(config_str)
-        if server_ip and server_ip in seen_servers:            continue
-        
-        # امتیازدهی
+        if server_ip and server_ip in seen_servers:
+            continue
+                # امتیازدهی
         score = 0
-        
-        # امتیاز بر اساس نرخ موفقیت
         if total_tests > 0:
             score += (success / total_tests) * 100
         else:
-            score += 70  # امتیاز پیش‌فرض برای کانفیگ‌های تست‌نشده اما باکیفیت
+            score += 70
         
-        # امتیاز بر اساس کشور (آلمان > ترکیه > امارات)
         cfg_lower = config_str.lower()
         if any(kw in cfg_lower for kw in ['de', '🇩🇪', 'germany', 'frankfurt']):
             score += 30
@@ -131,16 +126,21 @@ def generate_jojo_style():
     # 3. انتخاب 30 تای برتر
     top_30 = golden_configs[:30]
     
-    # 4. ذخیره فایل
+    # 4. ✅ ذخیره به صورت Base64 (مثل MahsaNG!)
     if top_30:
         os.makedirs("output", exist_ok=True)
+        
+        # تبدیل به متن ساده
+        raw_text = "\n".join([item["config"] for item in top_30])
+        
+        # کدگذاری Base64
+        base64_encoded = base64.b64encode(raw_text.encode('utf-8')).decode('utf-8')
+        
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            for item in top_30:
-                f.write(item["config"] + "\n")
+            f.write(base64_encoded)
         
-        log(f"✅ Generated {OUTPUT_FILE} with {len(top_30)} golden configs (MahsaNG style)")
+        log(f"✅ Generated {OUTPUT_FILE} with {len(top_30)} golden configs (Base64 - MahsaNG style)")
         
-        # نمایش آمار
         servers = set(item["server"] for item in top_30 if item["server"])
         log(f"   📊 Unique servers: {len(servers)}")
         log(f"   📊 Average score: {sum(item['score'] for item in top_30) / len(top_30):.1f}")
