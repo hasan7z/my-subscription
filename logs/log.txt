@@ -2455,3 +2455,14 @@
 [2026-06-15T15:07:39.068429] ✅ Rotation successful: Extracted 500 configs (Index 6500 to 6999) to output/rotation_500.txt
 [2026-06-15T15:07:39.116651] 🏆 Generating JoJo Style (30 Golden Configs - MahsaNG Pattern)...
 [2026-06-15T15:07:39.116726] ⚠️ database.json not found. Skipping.
+[2026-06-15T15:38:08.598417] ✅ Rotation successful: Extracted 500 configs (Index 7000 to 7499) to output/rotation_500.txt
+[2026-06-15T15:38:08.642001] ============================================================
+[2026-06-15T15:38:08.642056] 🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)
+[2026-06-15T15:38:08.642102] ============================================================
+[2026-06-15T15:38:08.700410] ✅ Loaded 145827 configs from output/best_iran.txt
+[2026-06-15T15:38:09.108414] 📊 Found 2193 unique golden configs matching criteria
+[2026-06-15T15:38:09.109030] ✅ SUCCESS: Generated output/jojo_style.txt with 30 configs
+[2026-06-15T15:38:09.109083]    📊 Unique servers in output: 30
+[2026-06-15T15:38:09.109117] ============================================================
+[2026-06-15T15:38:09.109147] 🏆 JOJO STYLE GENERATION COMPLETE
+[2026-06-15T15:38:09.109175] ============================================================
