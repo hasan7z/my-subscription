@@ -1,9 +1,9 @@
 import os
+import json
 import re
-import random
 from Core.logger import log
 
-SOURCE_FILE = "output/best_iran.txt"
+DB_FILE = "database/database.json"
 OUTPUT_FILE = "output/jojo_style.txt"
 
 GOLDEN_SNI = [
@@ -45,32 +45,47 @@ def extract_server_ip(config_str):
     if match:
         return match.group(1)
     return None
+    
 def generate_jojo_style():
     log("=" * 60)
-    log("🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)")
+    log("🏆 STARTING JOJO STYLE GENERATION")
     log("=" * 60)
     
-    if not os.path.exists(SOURCE_FILE):
-        log(f"❌ ERROR: {SOURCE_FILE} not found! Cannot generate JoJo style.")
+    if not os.path.exists(DB_FILE):
+        log(f"❌ ERROR: {DB_FILE} not found!")
         return
     
-    with open(SOURCE_FILE, "r", encoding="utf-8") as f:
-        configs = [line.strip() for line in f if line.strip()]
-        
-    log(f"✅ Loaded {len(configs)} configs from {SOURCE_FILE}")
+    with open(DB_FILE, "r", encoding="utf-8") as f:
+        db = json.load(f)
+    
+    log(f"✅ Database loaded: {len(db)} total configs")
     
     golden_configs = []
     seen_servers = set()
     
-    for config_str in configs:
+    for cfg_hash, info in db.items():
+        config_str = info.get("config", "")
+        if not config_str:
+            continue
+        
         if not is_golden_config(config_str):
             continue
+        
+        success = info.get("success", 0)
+        fail = info.get("fail", 0)
+        total_tests = success + fail
+        
+        if total_tests > 0:
+            success_rate = success / total_tests
+            if success_rate < 0.8:
+                continue
+            score = success_rate * 100
+        else:
+            score = 70
         
         server_ip = extract_server_ip(config_str)
         if server_ip and server_ip in seen_servers:
             continue
-        
-        score = random.uniform(70, 100)
         
         cfg_lower = config_str.lower()
         if any(kw in cfg_lower for kw in ['de', '🇩🇪', 'germany', 'frankfurt']):
@@ -86,8 +101,8 @@ def generate_jojo_style():
         
         if server_ip:
             seen_servers.add(server_ip)
-            
-    log(f"📊 Found {len(golden_configs)} unique golden configs matching criteria")
+    
+    log(f"📊 Found {len(golden_configs)} unique golden configs")
     
     golden_configs.sort(key=lambda x: x["score"], reverse=True)
     top_30 = golden_configs[:30]
@@ -99,14 +114,16 @@ def generate_jojo_style():
                 f.write(item["config"] + "\n")
         
         log(f"✅ SUCCESS: Generated {OUTPUT_FILE} with {len(top_30)} configs")
-        unique_in_output = len(set(item['server'] for item in top_30 if item['server']))
-        log(f"   📊 Unique servers in output: {unique_in_output}")
+        avg_score = sum(item['score'] for item in top_30) / len(top_30)
+        log(f"   📊 Average score: {avg_score:.1f}")
+        unique_servers = len(set(item['server'] for item in top_30 if item['server']))
+        log(f"   📊 Unique servers: {unique_servers}")
     else:
-        log("⚠️ WARNING: No golden configs found matching criteria.")
+        log("⚠️ WARNING: No golden configs found")
         os.makedirs("output", exist_ok=True)
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("# No golden configs found at this time.\n")
-            
+    
     log("=" * 60)
     log("🏆 JOJO STYLE GENERATION COMPLETE")
     log("=" * 60)
