@@ -1,11 +1,11 @@
 ⏳ Smart Subscription Updated
-🕐 2026-06-15 07:42 UTC
+🕐 2026-06-15 12:28 UTC
 
 📊 Live Stats:
-├ 🗄️ Total DB: `202446`
+├ 🗄️ Total DB: `202758`
 ├ ❤️ Health Rate: `⏳ Pending Nightly Test`
-├ 🔗 Active Sources: `19`
-└ 🆕 New Configs: `202446`
+├ 🔗 Active Sources: `21`
+└ 🆕 New Configs: `202758`
 
 📥 Quick Access Links (GitHub Pages:
 ▫️ 🔄 Rotation 500 (Every 3h (`500`
