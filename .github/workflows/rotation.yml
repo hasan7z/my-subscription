@@ -14,18 +14,21 @@ jobs:
       - name: Run Rotation Manager
         run: python -m Core.rotation_manager
 
+      - name: Generate JoJo Style (30 Golden Configs)
+        run: python -m Core.jojo_style
+
       - name: Commit and Push Rotated File
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # ۱. اضافه کردن همه تغییرات (جلوگیری از خطای unstaged changes)
+          # ۱. اضافه کردن همه تغییرات (شامل jojo_style.txt)
           git add -A
           
           # ۲. کامیت کردن (اگر تغییری نبود، ارور ندهد)
-          git commit -m "🔄 Rotation: New 500 configs at $(date +%H:%M)" || echo "No changes to commit"
+          git commit -m "🔄 Rotation + JoJo Update at $(date +%H:%M)" || echo "No changes to commit"
           
-          # ۳. دریافت تغییرات جدید با مدیریت خودکار استش (autostash) برای جلوگیری از تداخل
+          # ۳. دریافت تغییرات جدید با مدیریت خودکار استش
           git pull --rebase --autostash origin main || echo "Pull skipped or minor conflict resolved"
           
           # ۴. پوش کردن نهایی
