@@ -2757,3 +2757,25 @@
 [2026-06-15T19:14:45.014541] 🏆 STARTING JOJO STYLE GENERATION
 [2026-06-15T19:14:45.014579] ============================================================
 [2026-06-15T19:14:45.014619] ❌ ERROR: database/database.json not found!
+[2026-06-15T20:50:33.111060] 🚀 Starting Multi-File Universal Rotation...
+[2026-06-15T20:50:33.264141] ✅ Generated output/vless_1.txt (2500 configs)
+[2026-06-15T20:50:33.265343] ✅ Generated output/vless_2.txt (2500 configs)
+[2026-06-15T20:50:33.266548] ✅ Generated output/vless_3.txt (2500 configs)
+[2026-06-15T20:50:33.266674] 🔄 vless rotation complete: 3 files created. Next index: 20000
+[2026-06-15T20:50:33.284742] ✅ Generated output/trojan_1.txt (2500 configs)
+[2026-06-15T20:50:33.285820] ✅ Generated output/trojan_2.txt (2500 configs)
+[2026-06-15T20:50:33.286857] ✅ Generated output/trojan_3.txt (2344 configs)
+[2026-06-15T20:50:33.286970] 🔄 trojan rotation complete: 3 files created. Next index: 1930
+[2026-06-15T20:50:33.290877] ✅ Generated output/vmess_1.txt (2058 configs)
+[2026-06-15T20:50:33.292360] ✅ Generated output/vmess_2.txt (2500 configs)
+[2026-06-15T20:50:33.293884] ✅ Generated output/vmess_3.txt (2500 configs)
+[2026-06-15T20:50:33.293987] 🔄 vmess rotation complete: 3 files created. Next index: 442
+[2026-06-15T20:50:33.370377] ✅ Generated output/reality_1.txt (2500 configs)
+[2026-06-15T20:50:33.371722] ✅ Generated output/reality_2.txt (2500 configs)
+[2026-06-15T20:50:33.373106] ✅ Generated output/reality_3.txt (2500 configs)
+[2026-06-15T20:50:33.373210] 🔄 reality rotation complete: 3 files created. Next index: 20000
+[2026-06-15T20:50:33.559058] ✅ Generated output/iran_1.txt (2500 configs)
+[2026-06-15T20:50:33.560317] ✅ Generated output/iran_2.txt (2500 configs)
+[2026-06-15T20:50:33.561576] ✅ Generated output/iran_3.txt (2500 configs)
+[2026-06-15T20:50:33.561683] 🔄 iran rotation complete: 3 files created. Next index: 20000
+[2026-06-15T20:50:33.578113] ✅ Multi-File Rotation completed: 5/5 protocols processed.
