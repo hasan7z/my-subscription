@@ -1,0 +1,46 @@
+name: Unified Smart Update & Rotation (Every 3 Hours)
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"  # ✅ هر ۳ ساعت یک‌بار (مثلاً ۳:۰۰، ۶:۰۰، ۹:۰۰ و ...)
+  workflow_dispatch:       # امکان اجرای دستی
+
+jobs:
+  all_in_one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # ۱. ساخت و بهینه‌سازی دیتابیس (با حذف تکراری و محدودیت ۴۸ مگابایت)
+      - name: 1. Merge & Optimize Database
+        run: python merge.py
+
+      # ۲. ساخت فایل‌های Best (1000, 5000)
+      - name: 2. Generate Smart Best Files
+        run: python -m Core.smart_best
+
+      # ۳. ✅ ساخت فایل JoJo Style (۳۰ کانفیگ طلایی از دیتابیس)
+      - name: 3. Generate JoJo Style (30 Golden Configs)
+        run: python -m Core.jojo_style
+
+      # ۴. چرخش فایل‌های ۵۰۰ تایی (Rotation)
+      - name: 4. Run Rotation Manager
+        run: python -m Core.rotation_manager
+
+      # ۵. ارسال نوتیفیکیشن تلگرام (شامل لینک‌ها و فایل‌ها)
+      - name: 5. Send Telegram Notification
+        run: python -m Core.notifier
+
+      # ۶. ذخیره همه تغییرات در گیت‌هاب
+      - name: Commit and Push All Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # اضافه کردن همه فایل‌های جدید و تغییر یافته
+          git add -A
+          
+          git commit -m "🔄 Unified 3-Hour Update: DB, Best, JoJo & Rotation $(date +%H:%M)" || echo "No changes to commit"
+          
+          git pull --rebase --autostash origin main || echo "Pull skipped"
+          git push origin main
