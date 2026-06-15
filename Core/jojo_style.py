@@ -45,9 +45,9 @@ def extract_server_ip(config_str):
     if match:
         return match.group(1)
     return None
-
 def generate_jojo_style():
-    log("=" * 60)    log("🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)")
+    log("=" * 60)
+    log("🏆 STARTING JOJO STYLE GENERATION (Lightweight Mode)")
     log("=" * 60)
     
     if not os.path.exists(SOURCE_FILE):
@@ -96,7 +96,8 @@ def generate_jojo_style():
         os.makedirs("output", exist_ok=True)
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             for item in top_30:
-                f.write(item["config"] + "\n")        
+                f.write(item["config"] + "\n")
+        
         log(f"✅ SUCCESS: Generated {OUTPUT_FILE} with {len(top_30)} configs")
         unique_in_output = len(set(item['server'] for item in top_30 if item['server']))
         log(f"   📊 Unique servers in output: {unique_in_output}")
