@@ -1,5 +1,5 @@
 ✅ Smart Subscription Updated
-🕐 2026-06-16 04:10 UTC
+🕐 2026-06-16 15:07 UTC
 
 📊 Live Stats:
 ├ 🗄️ Total DB: `2`
@@ -14,11 +14,11 @@
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/iran1.txt)
 ▫️ 🔹 VLESS 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/vless1.txt)
-▫️ 🔻 Trojan 1 (`2500`)
+▫️ 🔻 Trojan 1 (`2344`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/trojan1.txt)
 ▫️ 🛡️ Reality 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/reality1.txt)
-▫️ 🏆 JoJo Style (30 Golden) (`30`)
+▫️ 🏆 JoJo Style (30 Golden) (`1`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/jojostyle.txt)
 ▫️ 🌀 Warp Emergency (`4`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/warp.txt)
