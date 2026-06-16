@@ -1,4 +1,4 @@
-import json, os, base64, urllib.parse, re
+import json, os, base64, urllib.parse, re, random
 from Core.logger import log
 
 def is_cloudflare(cfg):
@@ -7,7 +7,7 @@ def is_cloudflare(cfg):
     cf_ips = ['104.', '172.64.', '172.67.', '188.114.', '104.16.', '104.18.', '104.21.']
     if any(ip in cfg_lower for ip in cf_ips): return True
     if 'cloudflare' in cfg_lower or 'cdn-cgi' in cfg_lower or 'workers.dev' in cfg_lower: return True
-    
+
     # بررسی SNI یا Host
     try:
         if cfg_lower.startswith("vless://") or cfg_lower.startswith("vmess://"):
@@ -26,8 +26,8 @@ def get_country_boost(info):
             data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
             search_text += " " + str(data.get("ps", "")).lower()
         except: pass
-    try: search_text += " " + urllib.parse.unquote(cfg).lower()
-    except: pass
+        try: search_text += " " + urllib.parse.unquote(cfg).lower()
+        except: pass
 
     tier_1 = ['ae', 'tr', 'fi', 'de', '🇦🇪', '🇹🇷', '🇫🇮', '🇩🇪', 'dubai', 'istanbul', 'frankfurt', 'امارات', 'ترکیه', 'فنلاند', 'آلمان']
     for c in tier_1:
@@ -47,33 +47,33 @@ def calc_final_score(info):
     hist = info.get("history", [])
     if hist and hist[-1] == 9999: base *= 0.7
     return round(max(0, base + get_country_boost(info)), 2)
-
 def main():
     log("Loading DB...")
     with open("database/database.json", "r", encoding="utf-8") as f:
         db = json.load(f)
-    
+
     log("Calculating Country-Boosted scores...")
     for h, info in db.items():
         info["final_score"] = calc_final_score(info)
-        
+
     sorted_all = sorted(db.values(), key=lambda x: x.get("final_score", 0), reverse=True)
-    
+
+    import hashlib
     unique_configs = []
     seen_fingerprints = set()
     for cfg in sorted_all:
         cfg_str = cfg.get("config", "").strip()
         if cfg_str:
-            fp = hashlib.sha256(cfg_str.encode('utf-8')).hexdigest() # اثر انگشت نهایی
+            fp = hashlib.sha256(cfg_str.encode('utf-8')).hexdigest()
             if fp not in seen_fingerprints:
                 seen_fingerprints.add(fp)
                 unique_configs.append(cfg)
-            
+
     log(f"Total unique configs (Fingerprint verified): {len(unique_configs)}")
     os.makedirs("output", exist_ok=True)
-    
+
     # ۱. فایل‌های استاندارد
-    limits = [10, 20, 50, 100, 500, 1000, 2500, 5000]
+    limits = [10, 20, 50, 100, 500, 1000, 2540, 5000]
     pos = 0
     for limit in limits:
         path = f"output/Best{limit}.txt"
@@ -89,47 +89,47 @@ def main():
     # ۳. ✨ تفکیک پروتکل و کلادفلیر
     protocols = {"vless": [], "vmess": [], "trojan": [], "reality": [], "shadowsocks": []}
     cloudflare_configs = []
-    
+
     for cfg in unique_configs:
         cfg_str = cfg.get("config", "").lower()
-        
+
         # بررسی کلادفلیر
         if is_cloudflare(cfg_str):
             cloudflare_configs.append(cfg.get("config", ""))
-            
+
         # بررسی پروتکل
         if "security=reality" in cfg_str or "reality" in cfg_str: protocols["reality"].append(cfg.get("config", ""))
         elif cfg_str.startswith("vless://"): protocols["vless"].append(cfg.get("config", ""))
         elif cfg_str.startswith("trojan://"): protocols["trojan"].append(cfg.get("config", ""))
         elif cfg_str.startswith("vmess://"): protocols["vmess"].append(cfg.get("config", ""))
         elif cfg_str.startswith("ss://") or cfg_str.startswith("ssr://"): protocols["shadowsocks"].append(cfg.get("config", ""))
-            
+
     for proto, configs in protocols.items():
         if configs:
             with open(f"output/best_{proto}.txt", "w", encoding="utf-8") as f:
                 for c in configs: f.write(c + "\n")
             log(f"✅ Wrote {len(configs)} {proto.upper()} configs")
-            
+
     if cloudflare_configs:
         with open("output/best_cloudflare.txt", "w", encoding="utf-8") as f:
             for c in cloudflare_configs: f.write(c + "\n")
         log(f"✅ Wrote {len(cloudflare_configs)} CLOUDFLARE optimized configs")
 
-    # ✅ تولید Base64 با تضمین جداسازی خط به خط
-    # ۱. فقط ۱۰۰۰ کانفیگ برتر را برمی‌داریم
-    top_configs = unique_configs[:1000]
-    
-    # ۲. هر کانفیگ را تمیز می‌کنیم (حذف فاصله‌های اضافی) و مطمئن می‌شویم خالی نیست
-    clean_configs = [cfg.strip() for cfg in top_configs if cfg.strip()]
-    
-    # ۳. همه را با یک "اینتر" (\n) به هم می‌چسبانیم
+    # ✅ تولید Base64 با شافل هوشمند (۲۰۰۰ کانفیگ چرخشی از استخر ۵۰۰۰ تایی)
+    pool_base64 = unique_configs[:5000]
+    random.shuffle(pool_base64)
+    top_configs = pool_base64[:2000]
+
+    clean_configs = [cfg.get("config", "").strip() for cfg in top_configs if cfg.get("config", "").strip()]
     raw_text_to_encode = "\n".join(clean_configs)
-    
-    # ۴. کدگذاری و ذخیره
+
     if raw_text_to_encode:
         base64_encoded = base64.b64encode(raw_text_to_encode.encode('utf-8')).decode('utf-8')
         with open("output/subscription_base64.txt", "w", encoding="utf-8") as f:
             f.write(base64_encoded)
-        log(f"✅ Generated subscription_base64.txt ({len(clean_configs)} configs, properly line-separated before encoding)")
+        log(f"✅ Generated subscription_base64.txt ({len(clean_configs)} ROTATED configs, shuffled from top 5000)")
     else:
         log("⚠️ No configs available for Base64 generation.")
+
+if __name__ == "__main__":
+    main()
