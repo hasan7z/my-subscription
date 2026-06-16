@@ -8,7 +8,6 @@ from Core.logger import log
 DB_FILE = "database/database.json"
 OUTPUT_FILE = "output/jojo_style.txt"
 
-# SNI های طلایی (شامل موارد خاص و پایدار)
 GOLDEN_SNI = [
     'cloudflare.com', 'speedtest.net', 'tap.az', 'amazon.com',
     'microsoft.com', 'apple.com', 'google.com', 'linkedin.com',
@@ -49,6 +48,7 @@ def is_golden_config(config_str):
 def extract_server_ip(config_str):
     match = re.search(r'@([^:]+):', config_str)
     return match.group(1) if match else None
+
 def generate_jojo_style():
     log("=" * 60)
     log("🏆 STARTING JOJO STYLE (Smart Shuffle + Base64)")
@@ -66,7 +66,6 @@ def generate_jojo_style():
     golden_configs = []
     seen_servers = set()
     
-    # ۱. فیلتر و امتیازدهی
     for cfg_hash, info in db.items():
         config_str = info.get("config", "")
         if not config_str or not is_golden_config(config_str):
@@ -78,7 +77,7 @@ def generate_jojo_style():
         
         if total_tests > 0:
             success_rate = success / total_tests
-            if success_rate < 0.75:  
+            if success_rate < 0.75:
                 continue
             score = success_rate * 100
         else:
@@ -98,40 +97,30 @@ def generate_jojo_style():
             "config": config_str,
             "score": score,
             "server": server_ip
-        })        
+        })
+        
         if server_ip:
             seen_servers.add(server_ip)
-            
-    # ۲. مرتب‌سازی بر اساس امتیاز
+    
     golden_configs.sort(key=lambda x: x["score"], reverse=True)
     log(f"📊 Found {len(golden_configs)} unique golden configs")
     
-    # ۳. ✅ منطق شافل هوشمند (تغییر محتوا در هر آپدیت)
-    POOL_SIZE = 150  # استخر ۱۵۰ تایی از بهترین‌ها
-    CHUNK_SIZE = 30  # ✅ تعداد ۳۰ کانفیگ (طبق درخواست شما)
+    POOL_SIZE = 150
+    CHUNK_SIZE = 30
     
     actual_pool_size = min(len(golden_configs), POOL_SIZE)
     top_pool = golden_configs[:actual_pool_size]
     
-    # بر زدن تصادفی لیست ۱۵۰ تایی (این خط باعث تغییر کانفیگ‌ها در هر آپدیت می‌شود)
     random.shuffle(top_pool)
     
-    # انتخاب ۳۰ تای اول از لیست به‌هم‌ریخته
     selected = top_pool[:CHUNK_SIZE]
     
     log(f"🔄 Smart Shuffle: Picked {len(selected)} fresh configs from top {actual_pool_size}")
     
-    # ۴. ذخیره فایل نهایی
     if selected:
         os.makedirs("output", exist_ok=True)
         
-        # تبدیل به متن ساده
         raw_text = "\n".join([item["config"] for item in selected])
-        
-        # ✅ کدگذاری Base64 (استاندارد MahsaNG)
-        # اگر می‌خواهید فایل متن ساده باشد، خط بالا را نگه دارید و دو خط زیری را حذف کنید:
-        # with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        #     f.write(raw_text + "\n")
         
         base64_encoded = base64.b64encode(raw_text.encode('utf-8')).decode('utf-8')
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
@@ -145,9 +134,10 @@ def generate_jojo_style():
         os.makedirs("output", exist_ok=True)
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("# No golden configs found at this time.\n")
-            
+    
     log("=" * 60)
-    log("🏆 JOJO STYLE GENERATION COMPLETE")    log("=" * 60)
+    log("🏆 JOJO STYLE GENERATION COMPLETE")
+    log("=" * 60)
 
 if __name__ == "__main__":
     generate_jojo_style()
