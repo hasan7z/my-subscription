@@ -1,5 +1,5 @@
 ✅ Smart Subscription Updated
-🕐 2026-06-25 22:21 UTC
+🕐 2026-06-26 03:42 UTC
 
 📊 Live Stats:
 ├ 🗄️ Total DB: `2`
@@ -12,7 +12,7 @@
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/rotation500.txt)
 ▫️ 🇮🇷 Iran Mix 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/iran1.txt)
-▫️ 🔹 VLESS 1 (`551`)
+▫️ 🔹 VLESS 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/vless1.txt)
 ▫️ 🔻 Trojan 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/trojan1.txt)
