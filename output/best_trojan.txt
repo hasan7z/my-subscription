@@ -9,8 +9,8 @@ trojan://bpb-trojan@www.speedtest.net:8443?path=/trawQuYV0dBGjBNVXI?ed=2560&amp;
 trojan://MITIVPN@151.101.69.219:443?path=/ed=mitivpn&amp;security=tls&amp;alpn=h2&amp;insecure=1&amp;host=mitivpn-77.global.ssl.fastly.net&amp;fp=chrome&amp;type=ws&amp;allowInsecure=1&amp;sni=speedtest.net#telegram @mtmvpn
 trojan://A4u^p(_UR*F6@www.speedtest.net:443?path=/eyJqdW5rIjoidlhnMXN5OXFUSiIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560&amp;security=tls&amp;alpn=http/1.1&amp;insecure=0&amp;host=027.electrocellco-cf-027.workers.dev&amp;fp=chrome&amp;type=ws&amp;allowInsecure=0&amp;sni=027.ELeCTroCelLco-CF-027.wORkERS.dEv#Channel id: @v2ray_youtube üá®üá¶
 trojan://Pooria@www.speedtest.net:443?path=/trJF1XisQEbWZpxEHh?ed=2560&amp;security=tls&amp;alpn=h2,http/1.1&amp;host=redfree8w.pooriam.ir&amp;fp=randomized&amp;type=ws&amp;sni=redfree8w.pooriam.ir#
-trojan://MITIVPN@151.101.69.219:443?sni=speedtest.net&peer=speedtest.net&security=tls#US   TROJAN-TCP-TLS - FASTLY  151.101.69.219
 trojan://bpb-trojan@www.speedtest.net:443?sni=10-bpb-wORkER-paNel.pAGEs.DeV&peer=10-bpb-wORkER-paNel.pAGEs.DeV&security=tls#XX   TROJAN-TCP-TLS - CLOUDFLARENET  104.17.148.22
+trojan://MITIVPN@151.101.69.219:443?sni=speedtest.net&peer=speedtest.net&security=tls#US   TROJAN-TCP-TLS - FASTLY  151.101.69.219
 trojan://0ab59a11983d4ce7862d156c164d927d@www.speedtest.net:443?path=/eyJqdW5rIjoiajRMMndudHIiLCJwcm90b2NvbCI6InRyIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyIxMDkuMTIyLjE5OC4xMjciXX0=?ed=2560&security=tls&alpn=http/1.1&insecure=0&host=FAST-RouTE-Dd4E2d.fREefIREmO7964.wOrKerS.dev&fp=chrome&type=ws&allowInsecure=0&sni=FAST-Route-DD4E2D.FREEfiReMO7964.WOrkeRS.DEV#```
 trojan://%25%7Bq%3Aqf%7D%27ogr%3B@www.speedtest.net:443?path=%2FeyJqdW5rIjoieDVyTzlGQktZZUJjIiwicHJvdG9jb2wiOiJ0ciIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560&security=tls&alpn=http%2F1.1&insecure=0&host=lumosconfig.codmdemonyt1.workers.dev&fp=chrome&type=ws&allowInsecure=0&sni=lumOSCONfiG.coDmDemoNYt1.WOrkerS.DEv#
 trojan://%3AU%5D2hAN7Y%5BKa0Eb_@www.speedtest.net:8443?path=%2Ftre6QQRE1ue6YL7k30%2FNzIuMTMuMTIyLjEzNw%3D%3D%3Fed%3D2560&security=tls&alpn=h2%2Chttp%2F1.1&insecure=0&host=support.zoom.us.TEst-63W.PaGEs.deV&fp=randomized&type=ws&allowInsecure=0&sni=support.zoom.us.TEst-63W.PaGEs.deV#
@@ -37,7 +37,6 @@ trojan://0ab59a11983d4ce7862d156c164d927d@www.speedtest.net:443?type=ws&host=FAS
 trojan://0e5d5ebb-a1bf-4d7a-9494-8b67e9d78241@www.speedtest.net:8443?encryption=none&security=tls&sni=aged-sun-9128.danicng13.workers.dev&alpn=h2%2Chttp%2F1.1&fp=randomized&insecure=1&type=ws&host=aged-sun-9128.danicng13.workers.dev&path=%2Ftrv9lthtdhp1hvnyc0%2Fynbilnlvdxnlzi5pc2vnyxjvlmnvbq%3D%3D%3Fed%3D2560#
 trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&path=%2Fhowdy&security=tls&insecure=0&host=usa.test3.net&type=ws&allowInsecure=0&sni=usa.test3.net#
 trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?path=%2Fhowdy&security=tls&insecure=0&host=usa.test3.net&type=ws&allowInsecure=0&sni=usa.test3.net#
-trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?path=%2Fhowdy&security=tls&insecure=0&host=usa.test3.net&type=ws&allowInsecure=0&sni=usa.test3.net#%40prrofile_purple%20%20%E2%99%A5%EF%B8%8F%F0%9F%91%88%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
 trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?path=%2Fhowdy&security=tls&insecure=0&host=usa.test3.net&type=ws&allowInsecure=0&sni=usa.test3.net#US
 trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?path=/howdy&%3Bsecurity=tls&%3Binsecure=0&%3Bhost=usa.test3.net&%3Btype=ws&%3BallowInsecure=0&%3Bsni=usa.test3.net#
 trojan://0e681470-6845-11f1-8364-1239d0255272@news.microsoft.com:443?path=/howdy&security=tls&insecure=0&host=usa.test3.net&type=ws&allowInsecure=0&sni=usa.test3.net#
@@ -50,7 +49,7 @@ trojan://SoftNetConnect@37.156.44.157:42549?type=tcp&amp;security=tls&amp;sni=ww
 trojan://SoftNetConnect@37.156.44.157:42549?security=tls&amp;insecure=1&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;allowInsecure=1&amp;sni=www.speedtest.net#@mehrosaboran
 trojan://SoftNetConnect@37.156.44.157:42549?security=tls&amp;insecure=1&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;allowInsecure=1&amp;sni=www.speedtest.net#ÿ™ŸÑ⁄Øÿ±ÿßŸÖ : mtmvpn
 trojan://SoftNetConnect@37.156.44.50:42549?security=tls&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;sni=www.speedtest.net#‚úÖ  @vistav2ray  üëàüëà⁄©ÿßŸÜÿßŸÑ ŸÖÿß ‚úÖ
-trojan://SoftNetConnect@194.5.193.58:42549?security=tls&headerType=none&fp=chrome&type=tcp&sni=www.speedtest.net#@Vip_Security join us - 384
+trojan://SoftNetConnect@194.5.193.58:42549?security=tls&headerType=none&fp=chrome&type=tcp&sni=www.speedtest.net#@Vip_Security join us - 380
 trojan://SoftNetConnect@37.156.44.215:42549?sni=www.speedtest.net&peer=www.speedtest.net&security=tls#CH   TROJAN-TCP-TLS - Infomaniak Network SA  37.156.44.215
 trojan://SoftNetConnect@37.156.44.157:42549?sni=www.speedtest.net&peer=www.speedtest.net&security=tls#CH   TROJAN-TCP-TLS - Infomaniak Network SA  37.156.44.157
 trojan://-EleP1yiGc6SD72p-m8Brw@78.39.9.168:6161?mode=gun&security=tls&alpn=h2&fp=chrome&type=grpc&serviceName=gg&sni=speedtest.net#
