@@ -27914,3 +27914,25 @@
 [2026-07-21T16:23:14.697777] 📤 File sent: best_GR.txt
 [2026-07-21T16:23:16.230864] 📤 File sent: subscription_base64.txt
 [2026-07-21T16:23:16.232126] ✅ Notification complete: 9 files sent.
+[2026-07-21T19:11:44.029368] 🚀 Starting Multi-File Universal Rotation...
+[2026-07-21T19:11:44.046092] ✅ Generated output/vless_1.txt (2500 configs)
+[2026-07-21T19:11:44.047435] ✅ Generated output/vless_2.txt (2500 configs)
+[2026-07-21T19:11:44.048882] ✅ Generated output/vless_3.txt (2500 configs)
+[2026-07-21T19:11:44.048991] 🔄 vless rotation complete: 3 files created. Next index: 10815
+[2026-07-21T19:11:44.055428] ✅ Generated output/trojan_1.txt (2500 configs)
+[2026-07-21T19:11:44.056675] ✅ Generated output/trojan_2.txt (2500 configs)
+[2026-07-21T19:11:44.057999] ✅ Generated output/trojan_3.txt (2500 configs)
+[2026-07-21T19:11:44.058109] 🔄 trojan rotation complete: 3 files created. Next index: 1401
+[2026-07-21T19:11:44.058833] ✅ Generated output/vmess_1.txt (135 configs)
+[2026-07-21T19:11:44.059087] ✅ Generated output/vmess_2.txt (85 configs)
+[2026-07-21T19:11:44.059368] ✅ Generated output/vmess_3.txt (105 configs)
+[2026-07-21T19:11:44.059495] 🔄 vmess rotation complete: 3 files created. Next index: 55
+[2026-07-21T19:11:44.155142] ✅ Generated output/reality_1.txt (2500 configs)
+[2026-07-21T19:11:44.156664] ✅ Generated output/reality_2.txt (2500 configs)
+[2026-07-21T19:11:44.158237] ✅ Generated output/reality_3.txt (2500 configs)
+[2026-07-21T19:11:44.158345] 🔄 reality rotation complete: 3 files created. Next index: 30495
+[2026-07-21T19:11:44.345822] ✅ Generated output/iran_1.txt (2500 configs)
+[2026-07-21T19:11:44.347207] ✅ Generated output/iran_2.txt (2500 configs)
+[2026-07-21T19:11:44.348599] ✅ Generated output/iran_3.txt (2500 configs)
+[2026-07-21T19:11:44.348708] 🔄 iran rotation complete: 3 files created. Next index: 88346
+[2026-07-21T19:11:44.365477] ✅ Multi-File Rotation completed: 5/5 protocols processed.
