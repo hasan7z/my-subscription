@@ -1,5 +1,5 @@
 ✅ Smart Subscription Updated
-🕐 2026-07-31 16:46 UTC
+🕐 2026-07-31 19:24 UTC
 
 📊 Live Stats:
 ├ 🗄️ Total DB: `2`
@@ -14,7 +14,7 @@
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/iran1.txt)
 ▫️ 🔹 VLESS 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/vless1.txt)
-▫️ 🔻 Trojan 1 (`36`)
+▫️ 🔻 Trojan 1 (`23`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/trojan1.txt)
 ▫️ 🛡️ Reality 1 (`2500`)
    └ [Open Link](https://hasan7z.github.io/my-subscription/output/reality1.txt)
