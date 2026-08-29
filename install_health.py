@@ -1,16 +1,14 @@
 import json
 import base64
-import urllib.parse
 import socket
 import time
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-TIMEOUT = 3  # ثانیه
-MAX_WORKERS = 50  # تعداد تست همزمان (مناسب برای گیت‌هاب اکشنز)
+TIMEOUT = 5  # افزایش زمان انتظار برای اطمینان بیشتر
+MAX_WORKERS = 30  # کاهش تعداد همزمان برای جلوگیری از مسدود شدن توسط گیت‌هاب
 
 def extract_addr_and_port(cfg):
-    """استخراج دقیق آدرس و پورت از انواع کانفیگ"""
     try:
         cfg = cfg.strip()
         # پردازش VLESS و Trojan
@@ -23,7 +21,7 @@ def extract_addr_and_port(cfg):
                     host, port = address_port.rsplit(":", 1)
                     return host, int(port)
                     
-        # پردازش VMess (که واقعاً Base64 است)
+        # پردازش VMess
         elif cfg.startswith("vmess://"):
             b64 = cfg[8:] + "=" * ((4 - len(cfg[8:]) % 4) % 4)
             data = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
@@ -42,32 +40,25 @@ def extract_addr_and_port(cfg):
     return None, None
 
 def check_tcp_health(host, port, timeout=TIMEOUT):
-    """بررسی سلامت با اتصال TCP (سازگار با GitHub Actions)"""
     try:
         t0 = time.time()
+        # ابتدا تست DNS
+        ip = socket.gethostbyname(host)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(timeout)
-        result = sock.connect_ex((host, port))        sock.close()
-        
+        result = sock.connect_ex((ip, port))
+        sock.close()        
         if result == 0:
             latency = round((time.time() - t0) * 1000, 2)
-            return True, latency, None
-        return False, None, "connection_refused"
+            return True, latency, "OK"
+        else:
+            return False, -1, f"Connection Failed (Code: {result})"
+    except socket.gaierror:
+        return False, -1, "DNS Resolution Failed"
     except socket.timeout:
-        return False, None, "timeout"
+        return False, -1, "Socket Timeout"
     except Exception as e:
-        return False, None, str(e)
-
-def process_config(hash_key, info):
-    """پردازش یک کانفیگ و به‌روزرسانی دیتابیس"""
-    cfg_str = info.get("config", "")
-    host, port = extract_addr_and_port(cfg_str)
-    
-    if not host or not port:
-        return hash_key, False, None, "invalid_format"
-        
-    is_up, latency, error = check_tcp_health(host, port)
-    return hash_key, is_up, latency, error
+        return False, -1, str(e)
 
 def main():
     db_file = "database/database.json"
@@ -80,33 +71,50 @@ def main():
         db = json.load(f)
 
     print(f"🚀 Starting TCP Health Check for {len(db)} configs...")
-    updated_count = 0
     
-    # استفاده از ThreadPool برای سرعت بالا در گیت‌هاب اکشنز
+    debug_logs = []
+    success_count = 0
+    fail_count = 0
+
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_config, h, info): h for h, info in db.items()}
+        futures = {executor.submit(check_tcp_health, *extract_addr_and_port(info.get("config", "")), h): h for h, info in db.items()}
         
         for future in as_completed(futures):
-            hash_key, is_up, latency, error = future.result()
-            
+            hash_key = futures[future]
+            try:
+                is_up, latency, error = future.result()
+            except Exception as e:
+                is_up, latency, error = False, -1, f"Crash: {str(e)}"
+
             if is_up:
                 db[hash_key]["success"] = db[hash_key].get("success", 0) + 1
-                db[hash_key]["fail"] = db[hash_key].get("fail", 0)
                 db[hash_key]["last_latency"] = latency
                 db[hash_key]["history"] = db[hash_key].get("history", [])[-19:] + [latency]
+                success_count += 1
             else:
-                db[hash_key]["success"] = db[hash_key].get("success", 0)
-                db[hash_key]["fail"] = db[hash_key].get("fail", 0) + 1                db[hash_key]["history"] = db[hash_key].get("history", [])[-19:] + [9999]
-            
-            updated_count += 1
-            if updated_count % 500 == 0:
-                print(f"✅ Processed {updated_count}/{len(db)} configs...")
+                db[hash_key]["fail"] = db[hash_key].get("fail", 0) + 1
+                db[hash_key]["history"] = db[hash_key].get("history", [])[-19:] + [9999]
+                fail_count += 1
+                
+                # ذخیره ۲۰ خطای اول برای دیباگ                if len(debug_logs) < 20:
+                    host, port = extract_addr_and_port(db[hash_key].get("config", ""))
+                    debug_logs.append(f"❌ FAIL: {host}:{port} -> {error}")
+
+    print("\n" + "="*50)
+    print(f"📊 RESULTS: {success_count} SUCCESS | {fail_count} FAILED")
+    print("="*50)
+    
+    if debug_logs:
+        print("🔍 DEBUG INFO (First 20 failures):")
+        for log in debug_logs:
+            print(log)
+    else:
+        print("✅ All configs passed or no failures to report!")
 
     print("💾 Saving updated database...")
     with open(db_file, "w", encoding="utf-8") as f:
         json.dump(db, f, ensure_ascii=False, indent=2)
-        
-    print("🎉 Health check completed successfully!")
+    print("🎉 Health check completed!")
 
 if __name__ == "__main__":
     main()
