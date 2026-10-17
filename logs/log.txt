@@ -81681,3 +81681,95 @@
 [2026-10-17T20:13:31.774944] 📤 File sent: best_GR.txt
 [2026-10-17T20:13:32.612413] 📤 File sent: subscription_base64.txt
 [2026-10-17T20:13:32.613404] ✅ Notification complete: 9 files sent.
+[2026-10-17T22:54:39.466157] ============================================================
+[2026-10-17T22:54:39.466208] 🔄 STARTING CONFIG MERGE WITH DEDUPLICATION
+[2026-10-17T22:54:39.466231] ============================================================
+[2026-10-17T22:54:39.466282] 📥 Found 21 sources
+[2026-10-17T22:54:39.466320] 📥 Fetching: https://raw.githubusercontent.com/MahsaNetConfigTopic/config/refs/heads/main/xray_final.txt
+[2026-10-17T22:54:39.607111]    ❌ HTTP 404
+[2026-10-17T22:54:39.607176] 📥 Fetching: https://github.com/sakha1370/OpenRay/raw/refs/heads/main/output/all_valid_proxies.txt
+[2026-10-17T22:54:40.260623]    ✅ Extracted 16726 configs
+[2026-10-17T22:54:40.260715] 📥 Fetching: https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt
+[2026-10-17T22:54:42.352892]    ✅ Extracted 420430 configs
+[2026-10-17T22:54:42.352995] 📥 Fetching: https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt
+[2026-10-17T22:54:47.356760]    ✅ Extracted 13684 configs
+[2026-10-17T22:54:47.356866] 📥 Fetching: https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
+[2026-10-17T22:54:48.206128]    ✅ Extracted 637 configs
+[2026-10-17T22:54:48.206217] 📥 Fetching: https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
+[2026-10-17T22:54:48.310812]    ✅ Extracted 150 configs
+[2026-10-17T22:54:48.310896] 📥 Fetching: https://raw.githubusercontent.com/CidVpn/cid-vpn-config/refs/heads/main/general.txt
+[2026-10-17T22:54:48.437126]    ✅ Extracted 362 configs
+[2026-10-17T22:54:48.437212] 📥 Fetching: https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt
+[2026-10-17T22:54:48.598396]    ✅ Extracted 303 configs
+[2026-10-17T22:54:48.598481] 📥 Fetching: https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
+[2026-10-17T22:54:48.653283]    ✅ Extracted 591 configs
+[2026-10-17T22:54:48.653361] 📥 Fetching: https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/raw/refs/heads/main/url_work.txt
+[2026-10-17T22:54:49.228243]    ✅ Extracted 1662 configs
+[2026-10-17T22:54:49.228337] 📥 Fetching: https://raw.githubusercontent.com/miladtahanian/Config-Collector/refs/heads/main/mixed_iran.txt
+[2026-10-17T22:54:49.367761]    ✅ Extracted 411 configs
+[2026-10-17T22:54:49.367843] 📥 Fetching: https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt
+[2026-10-17T22:54:49.996799]    ✅ Extracted 481 configs
+[2026-10-17T22:54:49.996889] 📥 Fetching: https://github.com/MhdiTaheri/V2rayCollector/raw/refs/heads/main/sub/mix
+[2026-10-17T22:54:50.472521]    ✅ Extracted 1847 configs
+[2026-10-17T22:54:50.472619] 📥 Fetching: https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt
+[2026-10-17T22:54:52.559933]    ✅ Extracted 2625 configs
+[2026-10-17T22:54:52.560031] 📥 Fetching: https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt
+[2026-10-17T22:55:20.541243]    ✅ Extracted 49844 configs
+[2026-10-17T22:55:20.541321] 📥 Fetching: https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri
+[2026-10-17T22:55:20.648748]    ✅ Extracted 323 configs
+[2026-10-17T22:55:20.648828] 📥 Fetching: https://github.com/igareck/vpn-configs-for-russia/raw/refs/heads/main/BLACK_VLESS_RUS.txt
+[2026-10-17T22:55:21.020444]    ✅ Extracted 128 configs
+[2026-10-17T22:55:21.020524] 📥 Fetching: https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt
+[2026-10-17T22:55:21.314112]    ✅ Extracted 263 configs
+[2026-10-17T22:55:21.314197] 📥 Fetching: https://raw.githubusercontent.com/amir-reza-bijandi/v2ray-configs/main/configs.txt
+[2026-10-17T22:55:21.472775]    ✅ Extracted 338 configs
+[2026-10-17T22:55:21.472857] 📥 Fetching: https://raw.githubusercontent.com/Seyedhub/Subscription/main/sub.txt
+[2026-10-17T22:55:21.861040]    ✅ Extracted 19 configs
+[2026-10-17T22:55:21.861125] 📥 Fetching: https://raw.githubusercontent.com/Seyedhub/Subscription/master/sub.txt
+[2026-10-17T22:55:22.023922]    ✅ Extracted 19 configs
+[2026-10-17T22:55:22.024003] 📊 Merge Stats:
+[2026-10-17T22:55:22.024025]    ├ Total configs found: 510843
+[2026-10-17T22:55:22.024041]    ├ Duplicates removed: 38090
+[2026-10-17T22:55:22.024055]    ├ New configs added: 472753
+[2026-10-17T22:55:22.024076]    └ Total unique in DB: 472753
+[2026-10-17T22:55:24.767969] 📊 Database size: 187.27MB (Limit: 48.0MB)
+[2026-10-17T22:55:24.768074] ⚠️ CRITICAL: Database exceeds 48.0MB!
+[2026-10-17T22:55:24.768097] 🔄 Activating Smart Trim: Keeping only highest-quality configs...
+[2026-10-17T22:55:26.251946] ✅ Smart Trim Complete: Kept top 90000 configs
+[2026-10-17T22:55:26.820296] 📉 New size: 38.14MB
+[2026-10-17T22:55:27.376863] 💾 Database saved: 38.14MB
+[2026-10-17T22:55:27.414894] ============================================================
+[2026-10-17T22:55:27.414988] 🔄 CONFIG MERGE COMPLETE
+[2026-10-17T22:55:27.415010] ============================================================
+[2026-10-17T22:55:27.531787] Loading DB...
+[2026-10-17T22:55:27.807269] Calculating Country-Boosted scores...
+[2026-10-17T22:55:28.037395] Total unique configs (Fingerprint verified): 90000
+[2026-10-17T22:55:28.412922] ✅ Wrote 284 TROJAN configs
+[2026-10-17T22:55:28.510536] ✅ Wrote 89716 REALITY configs
+[2026-10-17T22:55:28.513987] ✅ Wrote 5568 CLOUDFLARE optimized configs
+[2026-10-17T22:55:28.552747] ✅ Generated subscription_base64.txt (2000 ROTATED configs, shuffled from top 5000)
+[2026-10-17T22:55:28.621610] ============================================================
+[2026-10-17T22:55:28.621669] 🏆 STARTING JOJO STYLE (50/50 Chance Mode)
+[2026-10-17T22:55:28.621692] ============================================================
+[2026-10-17T22:55:28.896210] ✅ Database loaded: 90000 total configs
+[2026-10-17T22:55:29.056176] 📊 Scored 14431 valid configs
+[2026-10-17T22:55:29.056329] 🔄 50/50 Shuffle: Picked 30 configs from top 200
+[2026-10-17T22:55:29.056827] ✅ SUCCESS: Generated output/jojo_style.txt (Base64) with 30 configs
+[2026-10-17T22:55:29.056862]    📊 Average score: 73.8
+[2026-10-17T22:55:29.056877] ============================================================
+[2026-10-17T22:55:29.056891] 🏆 JOJO STYLE GENERATION COMPLETE
+[2026-10-17T22:55:29.056904] ============================================================
+[2026-10-17T22:55:29.159648] ✅ Rotation successful: Extracted 500 configs (Index 87500 to 87999) to output/rotation_500.txt
+[2026-10-17T22:55:29.276124] 📋 Report saved to reports/status_report.md
+[2026-10-17T22:55:29.755483] 📤 Status message sent to Telegram
+[2026-10-17T22:55:29.756188] 📎 Sending files as documents...
+[2026-10-17T22:55:30.953450] 📤 File sent: rotation_500.txt
+[2026-10-17T22:55:32.339715] 📤 File sent: iran_1.txt
+[2026-10-17T22:55:33.487898] 📤 File sent: vless_1.txt
+[2026-10-17T22:55:34.471908] 📤 File sent: trojan_1.txt
+[2026-10-17T22:55:35.624414] 📤 File sent: reality_1.txt
+[2026-10-17T22:55:36.200152] 📤 File sent: jojo_style.txt
+[2026-10-17T22:55:36.659381] 📤 File sent: warp.txt
+[2026-10-17T22:55:37.527642] 📤 File sent: best_GR.txt
+[2026-10-17T22:55:38.813589] 📤 File sent: subscription_base64.txt
+[2026-10-17T22:55:38.814610] ✅ Notification complete: 9 files sent.
